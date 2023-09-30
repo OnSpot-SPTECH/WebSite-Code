@@ -118,3 +118,42 @@ nav ul a:hover::after {
 	padding-bottom: 25px;
 }
 
+
+.tudo {
+	margin-top: 75px;
+	font-family: Arial;
+	display: flex;
+	padding: 40px;
+}
+
+.sobre-nos {
+	font-size: 50px;
+	color: #2A0873;
+}
+
+.texto-1 {
+	white-space: pre-line;
+	font-size: 20px;
+	padding: 20px 0;
+}
+
+.texto-2 {
+	list-style: none;
+}
+
+.texto-2 li {
+	font-size: 20px;
+	display: flex;
+	align-items: center;
+	margin-bottom: 15px;
+}
+
+.bolinha-roxa {
+	width: 35px;
+	margin-right: 25px;
+}
+
+.imagem-2 {
+	width: 500px;
+	margin: 0 40px;
+}
