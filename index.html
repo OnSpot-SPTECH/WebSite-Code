@@ -47,17 +47,15 @@
 
 			<h1 class="sobre-nos">SOBRE NÓS</h1>
 
-			<p class="texto-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-				sed do eiusmod tempor incididunt ut labore et dolore
-				magna aliqua. <br> <br>
+			<p class="texto-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 			</p>
 
 			<ul class="texto-2">
-				<li> <img src="./img/iconVerf.svg" class="bolinha-roxa">Lorem ipsum dolor sit amet, consectetur adipiscing
+				<li> <img src="./img/Rectangle 52.svg" class="bolinha-roxa">Lorem ipsum dolor sit amet, consectetur adipiscing
 					elit</li>
-				<li> <img src="./img/iconVerf.svg" class="bolinha-roxa">Lorem ipsum dolor sit amet, consectetur adipiscing
+				<li> <img src="./img/Rectangle 52.svg" class="bolinha-roxa">Lorem ipsum dolor sit amet, consectetur adipiscing
 					elit</li>
-				<li> <img src="./img/iconVerf.svg" class="bolinha-roxa">Lorem ipsum dolor sit amet, consectetur adipiscing
+				<li> <img src="./img/Rectangle 52.svg" class="bolinha-roxa">Lorem ipsum dolor sit amet, consectetur adipiscing
 					elit,
 					sed do eiusmod tempor incididunt ut labore et dolore
 					magna aliqua</li>
@@ -70,6 +68,42 @@
 		</div>
 	</div>
 
+	<section class="calculadora-container">
+		<div class="container-calculadora">
+
+			<div class="titulo">
+				<h1>PODER ECONOMICO</h1>
+				<hr>
+				<p class="texto-titulo">Simplifique suas finanças e tome decisões inteligentes com nossa calculadora de alto desempenho.</p>
+			</div>
+
+			<div class="calculadora-card">
+				<div class="logo">
+					<p id="calculadora-logo">OnSpot</p>
+				</div>
+
+				<div class="calculadora">
+					<label for="DatacenterTamanho">Quantos metros quadrados possui o seu data center(m²):</label>
+					<input type="number" id="DatacenterTamanho" name="DatacenterTamanho" placeholder="100">
+					<label for="ResfriamentoCapacidade">Quantos racks ele possui:</label>
+					<input type="number" id="ResfriamentoCapacidade" name="ResfriamentoCapacidade" placeholder="50">
+					<label for="Eletricidade">Quanto você gasta com manutenção anual por rack?:</label>
+					<input type="number" id="Eletricidade" name="Eletricidade" placeholder="0.50">
+					<label for="custoI">Plano de escolha:</label>
+					<input type="number" id="custoI" name="custoI" placeholder="50000">
+					<label for="custoOperacionalMensal">Custos Operacionais Mensais (R$):</label>
+					<input type="number" id="custoOperacionalMensal" name="custoOperacionalMensal" placeholder="2000">
+					<button id="calcular-btn" onclick="calcularCustos()">CALCULAR</button>
+					<!-- <div id="resultados">
+						<p>Economia Mensal de Energia: <span id="economiaMensalEnergia">0</span> R$</p>
+						<p>ROI Estimado: <span id="roi">0</span> meses</p>
+					</div> -->
+
+				</div>
+			</div>
+
+		</div>
+	</section>
 
 </body>
 

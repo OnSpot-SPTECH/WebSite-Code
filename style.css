@@ -27,7 +27,7 @@ h3 {
 }
 
 p {
-	color: #f3eeee;
+	color: #dbd9d9;
 	font-size: 25px;
 }
 
@@ -118,7 +118,7 @@ nav ul a:hover::after {
 	padding-bottom: 25px;
 }
 
-
+/* sobre nos */
 .tudo {
 	margin-top: 75px;
 	font-family: Arial;
@@ -135,6 +135,7 @@ nav ul a:hover::after {
 	white-space: pre-line;
 	font-size: 20px;
 	padding: 20px 0;
+	color: black;
 }
 
 .texto-2 {
@@ -156,4 +157,105 @@ nav ul a:hover::after {
 .imagem-2 {
 	width: 500px;
 	margin: 0 40px;
+}
+
+/* clientes-dados */
+
+
+/* calculadora */
+
+.titulo h1{
+	margin: auto;
+	text-align: center;
+	font-size: 30px;
+	color: #2A0873;
+}
+
+hr{
+	border: none;
+	height: 2px;
+	background-color: #2A0873;
+	margin: auto;
+	width: 20%;
+}
+
+.texto-titulo{
+	color: rgb(10, 9, 9);
+	padding: 10px 0;
+	margin: auto;
+	width: 50%;
+	text-align: center;
+	margin-top: 25px;
+	margin-bottom: 30px;
+}
+
+.calculadora-card
+{
+	margin: auto;
+	width: 800px;
+	background-color: rgb(255, 255, 255);
+	padding: 15px 0;
+	border-radius: 15px;
+	height: 650px;
+    box-shadow: 2px 2px 10px 10px #0000004d;
+}
+
+.logo{
+	margin-top: 15px;	
+	border-radius: 0 20px 20px 0px;
+	width: 150px;
+	background-image: url(./img/Rectangle\ 45.svg);
+	height: 30px;
+	margin-bottom: 40px;
+}
+
+#calculadora-logo{
+	color: white;
+	justify-content: center;
+	padding: 4px 0 0 0;
+	font-size: 20px;
+	margin-left: 35px;
+}
+
+.calculadora{
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+}
+
+.calculadora label{
+	font-size: 25px;
+	color: rgb(0, 0, 0);
+	margin-bottom: 10px;
+	margin-top: 15px;
+}
+
+.calculadora input{
+	border-radius: 15px;
+	width: 30%;
+	height: 25px;
+	padding: 10px;
+}
+
+.calculadora input::placeholder {
+    color: #999; 
+    font-style: italic; 
+    font-size: 14px;
+	padding: 10px;
+}
+
+.calculadora input:focus::placeholder {
+    font-style: italic;
+}
+
+#calcular-btn{
+	margin: auto;
+	margin-top: 45px;
+	width: 500px;
+	height: 45px;
+	border-radius: 25px;
+	border: none;
+	background-color: #6B2DEF;
+	color: white;
+	font-size: 30px;
 }
