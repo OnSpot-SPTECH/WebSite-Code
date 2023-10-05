@@ -19,10 +19,10 @@
 				</a>
 
 				<ul class="ul">
-					<a href="index.html">Home</a>
-					<a href="index.html">Sobre nos</a>
+					<a href="index.html">Sobre Nós</a>
 					<a href="index.html">simulador</a>
-					<button class="btn-header">Get started</button>
+					<a href="index.html">dashboard</a>
+					<button class="btn-header"><a class="btn-link" href="./login.html">LOGIN</a></button>
 					<!-- <a class="btn" href="#">Get started</a> -->
 				</ul>
 			</nav>
@@ -31,7 +31,7 @@
 				<div class="banner-text">
 					<h1><strong>Bettter Digital<br> Experience With <br> Techie</strong></h1>
 					<p>We are team of talented designers making <br> websites with Bootstrap</p>
-					<button class="btn">Get started</button>
+					<button class="btn"><a href="./cadastro.html">cadastre-se</a></button>
 				</div>
 
 				<div class="banner_img">
@@ -140,20 +140,141 @@
 					<input type="number" id="ResfriamentoCapacidade" name="ResfriamentoCapacidade" placeholder="50">
 					<label for="Eletricidade">Quanto você gasta com manutenção anual por rack?:</label>
 					<input type="number" id="Eletricidade" name="Eletricidade" placeholder="0.50">
-					<label for="custoI">Plano de escolha:</label>
-					<input type="number" id="custoI" name="custoI" placeholder="50000">
+					<label for="plano">Plano de escolha:</label>
+					<input type="text" id="plano" name="plano" placeholder="Planos">
 					<label for="custoOperacionalMensal">Custos Operacionais Mensais (R$):</label>
 					<input type="number" id="custoOperacionalMensal" name="custoOperacionalMensal" placeholder="2000">
 					<button id="calcular-btn" onclick="calcularCustos()">CALCULAR</button>
-					<!-- <div id="resultados">
-						<p>Economia Mensal de Energia: <span id="economiaMensalEnergia">0</span> R$</p>
-						<p>ROI Estimado: <span id="roi">0</span> meses</p>
-					</div> -->
+				</div>
 
+			</div>
+
+			<div class="plano-gold">
+
+				<div class="topo">
+					<div class="logo-gold">
+						<p class="logo2">OnSpot</p>
+					</div>
+
+					<div class="xizinho">
+						<button onclick="fecharPagina()"> <img src="./img/close.png" alt="xzinhu">
+						</button>
+					</div>
+				</div>
+
+
+				<div class="plano_conteudo">
+					<h1 class="plano_titulo">Plano</h1>
+					<h1 class="plano_titulo2_gold">Gold</h1>
+					<div class="plano_alinhamento">
+						<p class="plano_texto1">Em 1 ano você teria:</p>
+						<p class="plano_texto2">R$</p>
+						<div class="plano_valores">
+							<span class="plano_resultado_gold">XXXXXXXXX</span>
+							<span class="plano_resultado_de"> de lucro</span>
+						</div>
+						<hr class="plano_linha">
+						</hr>
+						<div class="plano_conteudo">
+							<div class="plano_alinhamento">
+								<p class="plano_texto1">Em 1 ano você economizaria:</p>
+								<p class="plano_texto2">R$</p>
+								<div class="plano_valores">
+									<span class="plano_resultado_gold">XXXXXXXXX</span>
+									<span class="plano_resultado_de"> em energia</span>
+								</div>
+								<hr class="plano_linha">
+								</hr>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 
+			<div class="plano-plat">
+
+				<div class="topo">
+					<div class="logo-plat">
+						<p class="logo2">OnSpot</p>
+					</div>
+
+					<div class="xizinho">
+						<button onclick="fecharPagina()"> <img src="./img/close.png" alt="xzinhu">
+					</div>
+
+				</div>
+
+				<div class="plano_conteudo">
+					<h1 class="plano_titulo">Plano</h1>
+					<h1 class="plano_titulo2_platinum">Platinum</h1>
+					<div class="plano_alinhamento">
+						<p class="plano_texto1">Em 1 ano você teria:</p>
+						<p class="plano_texto2">R$</p>
+						<div class="plano_valores">
+							<span class="plano_resultado_plat">XXXXXXXXX</span>
+							<span class="plano_resultado_de"> de lucro</span>
+						</div>
+						<hr class="plano_linha">
+						</hr>
+						<div class="plano_conteudo">
+							<div class="plano_alinhamento">
+								<p class="plano_texto1">Em 1 ano você economizaria:</p>
+								<p class="plano_texto2">R$</p>
+								<div class="plano_valores">
+									<span class="plano_resultado_plat">XXXXXXXXX</span>
+									<span class="plano_resultado_de"> em energia</span>
+								</div>
+								<hr class="plano_linha">
+								</hr>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="plano-onspot">
+
+				<div class="topo">
+					<div class="logo-onspot">
+						<p class="logo2">OnSpot</p>
+					</div>
+
+					<div class="xizinho">
+						<button onclick="fecharPagina()"> <img  src="./img/close.png" alt="xzinhu">
+					</div>
+
+				</div>
+
+				<div class="plano_conteudo">
+					<h1 class="plano_titulo">Plano</h1>
+					<h1 class="plano_titulo2_onspot">OnSpot</h1>
+					<div class="plano_alinhamento">
+						<p class="plano_texto1">Em 1 ano você teria:</p>
+						<p class="plano_texto2">R$</p>
+						<div class="plano_valores">
+							<span class="plano_resultado_onspot">XXXXXXXXX</span>
+							<span class="plano_resultado_de"> de lucro</span>
+						</div>
+						<hr class="plano_linha">
+						</hr>
+						<div class="plano_conteudo">
+							<div class="plano_alinhamento">
+								<p class="plano_texto1">Em 1 ano você economizaria:</p>
+								<p class="plano_texto2">R$</p>
+								<div class="plano_valores">
+									<span class="plano_resultado_onspot">XXXXXXXXX</span>
+									<span class="plano_resultado_de"> em energia</span>
+								</div>
+								<hr class="plano_linha">
+								</hr>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
+
 	</section>
 
 	<footer>
