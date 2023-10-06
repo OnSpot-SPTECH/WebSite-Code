@@ -335,3 +335,32 @@
 </body>
 
 </html>
+
+<script>
+
+    function calcularCustos() {
+
+        var resposta = plano.value.toLowerCase();
+
+        if (resposta === 'gold') {
+            document.querySelector('.calculadora-card').style.display = 'none'
+            document.querySelector('.plano-gold').style.display = 'block'
+        } else if (resposta === 'platinum') {
+            document.querySelector('.calculadora-card').style.display = 'none'
+            document.querySelector('.plano-plat').style.display = 'block'
+        } else if (resposta === 'onspot') {
+            document.querySelector('.calculadora-card').style.display = 'none'
+            document.querySelector('.plano-onspot').style.display = 'block'
+        } else {
+            alert('Plano inválido. Escolha entre Gold, Platinum ou Onspot.')
+        }
+    }
+
+    function fecharPagina(){
+        document.querySelector('.calculadora-card').style.display = 'block'
+        document.querySelector('.plano-gold').style.display = 'none';
+        document.querySelector('.plano-plat').style.display = 'none';
+        document.querySelector('.plano-onspot').style.display = 'none';
+    }
+
+</script>
