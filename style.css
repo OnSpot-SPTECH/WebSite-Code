@@ -15,30 +15,36 @@
 	padding: 0 5%;
 }
 
-.header {
+header {
 	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;
 }
+.logo{
+	width: 80%;
+}
 
-nav {
+nav{
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	padding-top: 20px;
 }
 
-nav ul {
+nav ul{
 	align-items: center;
 	display: flex;
 }
+nav ul li{
+	list-style: none;
+}
 
-nav ul a {
+nav ul a{
 	color: white;
 	margin: 0 25px;
 	text-transform: uppercase;
 	/* para ficar em maiusculo */
-	font-size: 20px;
+	font-size: 18px;
 	display: block;
 }
 
@@ -52,8 +58,6 @@ nav ul a:not(.btn-link):after {
 	transition: 0.3s;
 }
 
-
-
 nav ul a:hover::after {
 	width: 100%;
 }
@@ -64,7 +68,6 @@ nav ul a:hover::after {
 	background: none;
 	padding: 10px;
 	color: white;
-	font-size: 20px;
 	cursor: pointer;
 	margin-left: 135px;
 	text-decoration: none;
@@ -77,6 +80,9 @@ nav ul a:hover::after {
     transition: 0.5s;
     cursor: pointer;
     outline: none;
+}
+.btn-link{
+	font-size: 18px;
 }
 
 .btn-link:hover{
@@ -93,7 +99,7 @@ nav ul a:hover::after {
 	background: none;
 	padding: 10px;
 	color: white;
-	font-size: 20px;
+	font-size: 18px;
 	cursor: pointer;
 	margin-top: 15px;
 	margin-bottom: 30px;
@@ -125,12 +131,12 @@ nav ul a:hover::after {
 	padding-top: 50px;
 }
 .banner-text h1 {
-	font-size: 50px;
+	font-size: 35px;
 	color: white;
 }
 .banner-text p
 	{
-	font-size: 25px;
+	font-size: 18px;
 	}
 .server {
 	height: 420px;
@@ -151,7 +157,7 @@ nav ul a:hover::after {
 }
 
 .sobre-nos {
-	font-size: 50px;
+	font-size: 35px;
 	color: #2A0873;
 }
 
@@ -166,15 +172,18 @@ nav ul a:hover::after {
 	padding: 20px 0;
 	color: black;
 }
-
+.texto-1 span{
+	font-size: 18px;
+}
 
 .texto-2 {
 	list-style: none;
 	margin-top: 5px;
+	font-size: 18px;
 }
 
 .texto-2 li {
-	font-size: 20px;
+	font-size: 18px;
 	display: flex;
 	align-items: center;
 	margin-bottom: 15px;
@@ -205,16 +214,17 @@ nav ul a:hover::after {
 	justify-content: space-evenly;
 	background-image: url(./img/Rectangle\ 45.svg);
 	background-size: cover;
+	height: 135px;
 }
 
 .numero {
-	font-size: 40px;
+	font-size: 35px;
 	font-weight: bold;
 
 }
 
 .frase {
-	font-size: 30px;
+	font-size: 18px;
 }
 
 .texts {
@@ -240,10 +250,12 @@ nav ul a:hover::after {
 	margin: 40px;
 	display: block;
 	text-align: center;
-	font-size: 50px;
+	font-size: 35px;
 	color: #2A0873;
 }
-
+.proposito h2{
+	font-size: 18px;
+}
 .proposito_cardbox {
 	margin: 50px 0 0;
 	display: flex;
@@ -265,19 +277,19 @@ nav ul a:hover::after {
 
 #visao {
 	height: 45px;
-	font-size: 15px;
+	font-size: 18px;
 	color: black;
 }
 
 #missao {
 	height: 45px;
-	font-size: 15px;
+	font-size: 18px;
 	color: black;
 }
 
 #valores {
 	height: 45px;
-	font-size: 15px;
+	font-size: 18px;
 	color: black;
 }
 
@@ -297,7 +309,7 @@ nav ul a:hover::after {
 .titulo h1 {
 	margin: auto;
 	text-align: center;
-	font-size: 30px;
+	font-size: 35px;
 	color: #2A0873;
 }
 
@@ -342,7 +354,7 @@ hr {
 	color: white;
 	justify-content: center;
 	padding: 2px 0 0 0;
-	font-size: 20px;
+	font-size: 35px;
 	margin-left: 35px;
 }
 
@@ -354,7 +366,7 @@ hr {
 }
 
 .calculadora label {
-	font-size: 25px;
+	font-size: 18px;
 	color: rgb(0, 0, 0);
 	margin-bottom: 10px;
 	margin-top: 15px;
@@ -370,7 +382,7 @@ hr {
 .calculadora input::placeholder {
 	color: #999;
 	font-style: italic;
-	font-size: 14px;
+	font-size: 12px;
 	padding: 10px;
 }
 
@@ -387,7 +399,7 @@ hr {
 	border: none;
 	background-color: #6B2DEF;
 	color: white;
-	font-size: 30px;
+	font-size: 20px;
 }
 
 #calcular-btn:hover{
@@ -443,7 +455,7 @@ hr {
 	color: white;
 	justify-content: center;
 	padding: 2px 0 0 0;
-	font-size: 20px;
+	font-size: 18px;
 	margin-left: 2px;
 }
 
@@ -452,7 +464,7 @@ hr {
 }
 
 .plano_titulo2_gold {
-	font-size: 60px;
+	font-size: 35px;
 	background: linear-gradient(180deg, #B5A403 44.58%, rgba(240, 216, 3, 0.13) 100%);
 	background-clip: text;
 	-webkit-background-clip: text;
@@ -469,7 +481,7 @@ hr {
 	display: block;
 	margin: auto;
 	width: 400px;
-	font-size: 30px;
+	font-size: 35px;
 	font-weight: 300;
 	color: black;
 }
@@ -484,7 +496,7 @@ hr {
 .plano_resultado_gold {
 	display: flex;
 	width: 75%;
-	font-size: 40px;
+	font-size: 35px;
 	height: 40px;
 	font-weight: bold;
 	border: none;
@@ -533,7 +545,7 @@ hr {
 	color: white;
 	justify-content: center;
 	padding: 2px 0 0 0;
-	font-size: 20px;
+	font-size: 18px;
 	margin-left: 2px;
 }
 
@@ -542,7 +554,7 @@ hr {
 }
 
 .plano_titulo2_platinum {
-	font-size: 60px;
+	font-size: 35px;
 	background: linear-gradient(180deg, #0A9B81 41.46%, rgba(10, 155, 129, 0.13) 100%);
 	background-clip: text;
 	-webkit-background-clip: text;
@@ -559,7 +571,7 @@ hr {
 	display: block;
 	margin: auto;
 	width: 400px;
-	font-size: 30px;
+	font-size: 35px;
 	font-weight: 300;
 	color: black;
 }
@@ -574,7 +586,7 @@ hr {
 .plano_resultado_plat {
 	display: flex;
 	width: 75%;
-	font-size: 40px;
+	font-size: 35px;
 	height: 40px;
 	font-weight: bold;
 	border: none;
@@ -624,7 +636,7 @@ hr {
 	color: white;
 	justify-content: center;
 	padding: 2px 0 0 0;
-	font-size: 20px;
+	font-size: 18px;
 	margin-left: 2px;
 }
 
@@ -633,7 +645,7 @@ hr {
 }
 
 .plano_titulo2_onspot {
-	font-size: 60px;
+	font-size: 35px;
 	background: linear-gradient(180deg, #7B21C1 27.92%, rgba(123, 33, 193, 0.37) 90.1%);
 	background-clip: text;
 	-webkit-background-clip: text;
@@ -650,7 +662,7 @@ hr {
 	display: block;
 	margin: auto;
 	width: 400px;
-	font-size: 30px;
+	font-size: 35px;
 	font-weight: 300;
 	color: black;
 }
@@ -665,7 +677,7 @@ hr {
 .plano_resultado_onspot {
 	display: flex;
 	width: 75%;
-	font-size: 40px;
+	font-size: 35px;
 	height: 40px;
 	font-weight: bold;
 	border: none;
@@ -709,24 +721,24 @@ footer {
 
 .footer_titulo {
 	margin-bottom: 20px;
-	font-size: 40px;
+	font-size: 35px;
 }
 
 .footer_titulo02,
 .footer_titulo03 {
 	text-align: center;
 	margin-bottom: 10px;
-	font-size: 30px;
+	font-size: 35px;
 }
 
 .footer_cima02>ul {
 	list-style: none;
-	font-size: 17px;
+	font-size: 18px;
 	columns: 2;
 }
 
 .footer_cima02>ul>li::before {
-	font-size: 20px;
+	font-size: 18px;
 	content: "> ";
 	color: white;
 	flex-shrink: 0;
