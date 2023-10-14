@@ -120,7 +120,7 @@
 				<img class="proposito_card_vetor" src="img/proposito_vetor3.svg" alt="">
 				<h2>Valores</h2>
 				<p id="valores">
-					 Excelência
+					Excelência
 					<br>Sustentabilidade
 					<br>Segurança
 					<br>Confiabilidade
@@ -162,9 +162,44 @@
 			<div class="plano-gold">
 
 				<div class="topo">
-					<div class="logo-gold">
-						<p class="logo2">OnSpot</p>
-					</div>
+					<section class="container-calnova">
+						<div class="tudo-calculadora">
+							<div class="logo-calculadora">
+								<p id="logo_cal">OnSpot</p>
+							</div>
+							<p class="titulo-calculadora">Em relação a outros resfriamentos você
+								economizaria:</p>
+							<div class="tudo_2">
+								<div class="parte_1">
+									<p id="numero_1">45%</p>
+									<p class="texto_energ">de energia</p>
+								</div>
+								<hr class="plano_linha2">
+								<div class="parte_1">
+									<div id="numero_1_resultado"></div>
+									<p class="texto_kwh">Kw/h</p>
+								</div>
+								<hr class="plano_linha2">
+								<div class="parte_1">
+									<div id="numero_1_resultado2"></div>
+									<p class="texto_reais">Reais</p>
+								</div>
+								<hr class="plano_linha2">
+							</div>
+							<ul class="parte_2">
+								<li class="text1"> O resfriamento por spray oferece economia
+									de espaço de <span style="color: #B43BD2;">30%.</span></li>
+								<li class="text2"> Com redução anual de até <span style="color: #B43BD2;">1.550
+										toneladas</span>
+									de emissão de <span style="color: #B43BD2;">CO2.</span></li>
+								<li class="text3"> Elimina <span style="color: #B43BD2;">70-75%</span> do calor gerado pelos equipamentos.</li>
+								<li class="text4"> A prevenção eficaz de superaquecimentos
+									resulta em até <span style="color: #B43BD2;">50%</span> de redução nos custos de
+									<span style="color: #B43BD2;">manutenção.</span>
+								</li>
+							</ul>
+						</div>
+					</section>
 
 					<div class="xizinho">
 						<button onclick="fecharPagina()"> <img src="./img/close.png" alt="xzinhu">
@@ -217,19 +252,13 @@
 			<p class="footer_copyright">© Copyright OnSpot. All Rights Reserved</p>
 			<ul class="footer_medias">
 				<div class="footer_circle">
-					<li><img class="footer_social"
-							src="./img/Rectangle 73.svg"
-							alt=""></li>
+					<li><img class="footer_social" src="./img/Rectangle 73.svg" alt=""></li>
 				</div>
 				<div class="footer_circle">
-					<li><img class="footer_social"
-							src="./img/Rectangle 74.svg"
-							alt=""></li>
+					<li><img class="footer_social" src="./img/Rectangle 74.svg" alt=""></li>
 				</div>
 				<div class="footer_circle">
-					<li><img class="footer_social"
-							src="./img/Rectangle 75.svg"
-							alt=""></li>
+					<li><img class="footer_social" src="./img/Rectangle 75.svg" alt=""></li>
 				</div>
 			</ul>
 		</div>
@@ -246,12 +275,14 @@
 	function calcularCustos() {
 
 		var resposta = Number(ConsumoEnergia.value)
-		var contaPorcentagem = resposta * 0.45
+		var contaKw = resposta * 0.45
+		var conta$ = contaKw * 0.85
+
+		numero_1_resultado.innerHTML = `${contaKw}`
+		numero_1_resultado2.innerHTML = `${Math.ceil(conta$)}`
 
 		document.querySelector('.calculadora-card').style.display = 'none'
 		document.querySelector('.plano-gold').style.display = 'block'
-
-		conteudoCalculadora.innerHTML = `${contaPorcentagem}`
 
 	}
 
