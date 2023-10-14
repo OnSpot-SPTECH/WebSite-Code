@@ -426,12 +426,99 @@ hr {
 
 /* Tela resposta calculadora */
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.plano_linha2{
+    border: none;
+    height: 2px;
+    background-color: #40149f;
+    width: 80%;
+}
+
+.parte_1 {
+	display: flex;
+	margin-left: 60px;
+}
+
+.texto_energ {
+    font-weight: bold;
+    margin-top: 80px;
+    margin-left: 20px;
+}
+
+.texto_kwh {
+    font-weight: bold;
+    margin-top: 80px;
+    margin-left: 20px;
+}
+
+.texto_reais {
+    font-weight: bold;
+    margin-top: 80px;
+    margin-left: 20px;
+}
+
+.titulo-calculadora {
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    white-space: pre-line;
+    font-size: 42px;
+}
+
+#numero_1 {
+    font-size: 90px;
+    color: #B43BD2;
+}
+
+#numero_1_resultado {
+    font-size: 90px;
+    color: #B43BD2;
+}
+
+#numero_1_resultado2 {
+    font-size: 90px;
+    color: #B43BD2;
+}
+
+.tudo_2 {
+    margin-left: 10%;
+}
+
+.parte_2 {
+    font-size: 25px;
+    white-space: pre-line;
+    margin-left: 90px;
+    font-weight: bold;
+    margin-top: 20px;
+	list-style: none;
+	text-align: start;
+}
+
+#logo_cal {
+    color: white;
+    justify-content: center;
+    padding: 2px 0 0 0;
+    font-size: 25px;
+    margin-left: 30px;
+}
+
+.logo-calculadora {
+    margin-top: 15px;
+    border-radius: 0 20px 20px 0px;
+    width: 150px;
+    background-image: url(./img/Rectangle\ 45.svg);
+    height: 40px;
+    margin-bottom: 40px;
+} 
+
 .plano-gold {
 	display: none;
 	padding: 20px 0;
 	margin: auto;
 	margin-top: 20px;
-	width: 650px;
+	width: 750px;
 	text-align: center;
 	border-radius: 10px;
 	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.459);
@@ -443,7 +530,6 @@ hr {
 }
 
 .logo-gold {
-
 	border-radius: 0 20px 20px 0px;
 	width: 150px;
 	background-image: url(./img/Rectangle\ 45.svg);
