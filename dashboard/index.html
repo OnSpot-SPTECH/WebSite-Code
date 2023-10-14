@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<link rel="stylesheet" href="style.css">
+
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/highcharts-more.js"></script>
+	<script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script src="https://code.highcharts.com/modules/export-data.js"></script>
+	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+
+<body>
+	<header>
+		<img src="./img/Frame 12 copy.svg" alt="">
+	</header>
+
+	<section class="container">
+		<div class="div-1">
+			<div class="highcharts-figure">
+				<div id="container-temp" class="chart-container"></div>
+				<div id="container-umidade" class="chart-container"></div>
+			</div>
+
+			<div class="graficos">
+				<canvas id="myChart"></canvas>
+				<canvas id="myBar"></canvas>
+			</div>
+		</div>
+
+		<div class="div-2">
+			<div class="box-1"><img src="./img/calendario.png" alt=""></div>
+			<div class="box-2"><img src="./img/avaliacao.png" alt=""></div>
+		</div>
+	</section>
+
+</body>
+
+</html>
+
+<script>
+
+	//grafico 1
+	var gaugeOptions = {
+		chart: {
+			type: 'solidgauge'
+		},
+		title: null,
+		pane: {
+			center: ['50%', '85%'],
+			size: '140%',
+			startAngle: -90,
+			endAngle: 90,
+			background: {
+				backgroundColor:
+					Highcharts.defaultOptions.legend.backgroundColor || '#EEE',
+				innerRadius: '60%',
+				outerRadius: '100%',
+				shape: 'arc'
+			}
+		},
+		exporting: {
+			enabled: false
+		},
+		tooltip: {
+			enabled: false
+		},
+		// the value axis
+		yAxis: {
+			stops: [
+				[0.0, '#46e11f'], // green
+				[0.7, '#DDDF0D'], // yellow
+				[0.9, '#DF5353'] // red
+			],
+			lineWidth: 0,
+			tickWidth: 0,
+			minorTickInterval: null,
+			tickAmount: 2,
+			title: {
+				y: -70
+			},
+			labels: {
+				y: 16
+			}
+		},
+		plotOptions: {
+			solidgauge: {
+				dataLabels: {
+					y: 5,
+					borderWidth: 0,
+					useHTML: true
+				}
+			}
+		}
+	};
+
+	// The temp gauge
+	var chartSpeed = Highcharts.chart('container-temp', Highcharts.merge(gaugeOptions, {
+		yAxis: {
+			min: 0,
+			max: 40,
+			title: {
+				text: 'Temperatura'
+			}
+		},
+		credits: {
+			enabled: false
+		},
+		series: [{
+			name: 'temp',
+			data: [20],
+			dataLabels: {
+				format:
+					'<div style="text-align:center">' +
+					'<span style="font-size:25px">{y}</span><br/>' +
+					'<span style="font-size:12px;opacity:0.4">°C</span>' +
+					'</div>'
+			},
+			tooltip: {
+				valueSuffix: '°C'
+			}
+		}]
+	}));
+
+	// The RPM gauge
+	var chartRpm = Highcharts.chart('container-umidade', Highcharts.merge(gaugeOptions, {
+		yAxis: {
+			min: 0,
+			max: 100,
+			title: {
+				text: 'Umidade'
+			}
+		},
+		series: [{
+			name: 'umidade',
+			data: [45],
+			dataLabels: {
+				format:
+					'<div style="text-align:center">' +
+					'<span style="font-size:25px">{y:.1f}</span><br/>' +
+					'<span style="font-size:12px;opacity:0.4">' +
+					' %' +
+					'</span>' +
+					'</div>'
+			},
+			tooltip: {
+				valueSuffix: '%'
+			}
+		}]
+	}));
+
+	//grafico 2
+
+	const xValues = ["12:00", "13:00", "14:00", "15:00", "16:00", "17:00"];
+	const yValues = [80, 82, 80, 85, 85, 83];
+
+	const yValues2 = [30, 29, 28, 25, 22, 23];
+
+	new Chart("myChart", {
+		type: "line",
+		data: {
+			labels: xValues,
+			datasets: [{
+				label: 'Umidade',
+				fill: false,
+				lineTension: 0,
+				backgroundColor: "rgba(0,0,255,1.0)",
+				borderColor: "rgba(0,0,255,1.0)",
+				data: yValues
+			},]
+		},
+		options: {
+			legend: {
+				display: true,
+			},
+			scales: {
+				yAxes: [{
+					ticks: {
+						min: 20,
+						max: 90
+					}
+				}],
+			}
+		}
+	});
+
+	const xGrafico = ["Janeiro", "Fevereiro", "Marco", "Abril", "Maio", "Junho"];
+	const BlueBar = [90, 88, 92, 86, 87, 82]
+	const RedBar = [22, 24, 27, 23, 20, 18];
+
+	const BarColors = ["Red", "Blue"];
+
+	new Chart("myBar", {
+		type: "line",
+		data: {
+			labels: xGrafico,
+			datasets: [{
+				label: 'Umidade media',
+				fill: false,
+				lineTension: 0,
+				backgroundColor: "rgba(255,0,0,1.0)",
+				borderColor: "rgba(255,0,0,1.0)",
+				data: RedBar
+			},]
+		},
+		options: {
+			legend: {
+				display: true,
+			},
+			scales: {
+				yAxes: [{
+					ticks: {
+						min: 0,
+						max: 100
+					}
+				}],
+			}
+		}
+	});
+</script>

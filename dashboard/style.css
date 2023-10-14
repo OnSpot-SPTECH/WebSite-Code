@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+header {
+    background-image: url(./img/Rectangle\ 45\ copy.svg);
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header img {
+    width: 12%;
+    padding: 5px;
+}
+ 
+ body{
+    width: 100%;
+    height: 600px;
+    background-color: gray;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    background-color: gray;
+    display: flex;
+    flex-direction: row;
+}
+
+.div-1 {
+    width: 70%;
+    height: 850px;
+    background-color: white;
+    justify-content: center;
+    
+}
+
+.div-2 {
+    width: 30%;
+    height: 850px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid #A64CEC;
+}
+
+.div-2 .box-1 {
+    height: 40%;
+    margin: auto;
+    margin-right: 5px;
+}
+
+.div-2 .box-2 {
+    width: 50%;
+    height: 40%;
+    margin: auto;
+}
+
+/* graficos */
+.highcharts-figure .chart-container {
+    width: 400px;
+    height: 200px;
+}
+
+.graficos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.graficos canvas {
+    max-width: 600px;
+    height: 300px;
+}
+
+.highcharts-figure,
+.highcharts-data-table table {
+    display: flex;
+    width: 600px;
+    margin: 0 auto;
+}
+
+.highcharts-data-table table {
+    font-family: Verdana, sans-serif;
+    border-collapse: collapse;
+    border: 1px solid #ebebeb;
+    margin: 10px auto;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.highcharts-data-table th {
+    font-weight: 600;
+    padding: 0.5em;
+}
+
+.highcharts-data-table td,
+.highcharts-data-table th,
+.highcharts-data-table caption {
+    padding: 0.5em;
+}
+
+.highcharts-data-table thead tr,
+.highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
+
+@media (max-width: 600px) {
+
+    .highcharts-figure,
+    .highcharts-data-table table {
+        width: 100%;
+    }
+
+    .highcharts-figure .chart-container {
+        width: 300px;
+        float: none;
+        margin: 0 auto;
+    }
+}

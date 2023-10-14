@@ -7,8 +7,8 @@
 	text-decoration: none;
 	outline: none;
 	font-family: 'Poppins', sans-serif;
-	/* font-family: 'Roboto', sans-serif; */
 }
+
 .container {
 	max-width: 1440px;
 	margin: 0 auto;
@@ -20,30 +20,31 @@ header {
 	background-size: cover;
 	background-attachment: fixed;
 }
-.logo{
+
+.logo {
 	width: 80%;
 }
 
-nav{
+nav {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	padding-top: 20px;
 }
 
-nav ul{
+nav ul {
 	align-items: center;
 	display: flex;
 }
-nav ul li{
+
+nav ul li {
 	list-style: none;
 }
 
-nav ul a{
+nav ul a {
 	color: white;
 	margin: 0 25px;
 	text-transform: uppercase;
-	/* para ficar em maiusculo */
 	font-size: 18px;
 	display: block;
 }
@@ -63,6 +64,7 @@ nav ul a:hover::after {
 }
 
 .btn-header {
+	width: 100px;
 	border-color: white;
 	border-radius: 10px;
 	background: none;
@@ -73,24 +75,24 @@ nav ul a:hover::after {
 	text-decoration: none;
 }
 
-.btn-header:hover{
+.btn-header:hover {
 	background-color: #f9f9f9d3;
-    color: #7b21c1;
-    border: 1px solid #7b21c1;
-    transition: 0.5s;
-    cursor: pointer;
-    outline: none;
+	color: #7b21c1;
+	border: 1px solid #7b21c1;
+	transition: 0.5s;
+	cursor: pointer;
+	outline: none;
 }
-.btn-link{
+
+.btn-link {
 	font-size: 18px;
 }
 
-.btn-link:hover{
-    color: #7b21c1;
-    /* border: 1px solid #7b21c1; */
-    transition: 0.5s;
-    cursor: pointer;
-    outline: none;
+.btn-link:hover {
+	color: #7b21c1;
+	transition: 0.5s;
+	cursor: pointer;
+	outline: none;
 }
 
 .btn {
@@ -104,13 +106,14 @@ nav ul a:hover::after {
 	margin-top: 15px;
 	margin-bottom: 30px;
 }
-.banner .btn:hover{
+
+.banner .btn:hover {
 	background-color: #f9f9f9d3;
-    color: #7b21c1;
-    border: 1px solid #7b21c1;
-    transition: 0.5s;
-    cursor: pointer;
-    outline: none;
+	color: #7b21c1;
+	border: 1px solid #7b21c1;
+	transition: 0.5s;
+	cursor: pointer;
+	outline: none;
 }
 
 .btn a {
@@ -130,14 +133,17 @@ nav ul a:hover::after {
 .banner-text {
 	padding-top: 50px;
 }
+
 .banner-text h1 {
 	font-size: 35px;
 	color: white;
+	margin-bottom: 10px;
 }
-.banner-text p
-	{
+
+.banner-text p {
 	font-size: 18px;
-	}
+}
+
 .server {
 	height: 420px;
 	padding-bottom: 25px;
@@ -172,7 +178,8 @@ nav ul a:hover::after {
 	padding: 20px 0;
 	color: black;
 }
-.texto-1 span{
+
+.texto-1 span {
 	font-size: 18px;
 }
 
@@ -203,8 +210,10 @@ nav ul a:hover::after {
 
 .conteudo1 {
 	height: 591px;
-	background-image: url(ASSETS/img_fundo/Rectangle45.svg);
+	background-image: url(./assets/fundo-cadastro.svg);
+	background-position: center;
 	background-size: cover;
+	background-attachment: fixed;
 }
 
 .conteudo2 {
@@ -213,7 +222,9 @@ nav ul a:hover::after {
 	flex-direction: row;
 	justify-content: space-evenly;
 	background-image: url(./img/Rectangle\ 45.svg);
+	background-position: center;
 	background-size: cover;
+	background-attachment: fixed;
 	height: 135px;
 }
 
@@ -253,9 +264,11 @@ nav ul a:hover::after {
 	font-size: 35px;
 	color: #2A0873;
 }
-.proposito h2{
+
+.proposito h2 {
 	font-size: 18px;
 }
+
 .proposito_cardbox {
 	margin: 50px 0 0;
 	display: flex;
@@ -337,7 +350,7 @@ hr {
 	background-color: rgb(255, 255, 255);
 	padding: 15px 0;
 	border-radius: 15px;
-	height: 650px;
+	height: 300px;
 	box-shadow: 2px 2px 10px 10px #0000004d;
 }
 
@@ -354,7 +367,7 @@ hr {
 	color: white;
 	justify-content: center;
 	padding: 2px 0 0 0;
-	font-size: 35px;
+	font-size: 20px;
 	margin-left: 35px;
 }
 
@@ -402,16 +415,16 @@ hr {
 	font-size: 20px;
 }
 
-#calcular-btn:hover{
-    background-color: #f9f9f9;
-    color: #7b21c1;
-    border: 1px solid #7b21c1;
-    transition: 0.5s;
-    cursor: pointer;
-    outline: none;
+#calcular-btn:hover {
+	background-color: #f9f9f9;
+	color: #7b21c1;
+	border: 1px solid #7b21c1;
+	transition: 0.5s;
+	cursor: pointer;
+	outline: none;
 }
 
-/* Plano-gold */
+/* Tela resposta calculadora */
 
 .plano-gold {
 	display: none;
@@ -424,7 +437,7 @@ hr {
 	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.459);
 }
 
-.topo{
+.topo {
 	display: flex;
 	justify-content: space-between;
 }
@@ -438,18 +451,17 @@ hr {
 	margin-bottom: 40px;
 }
 
-.xizinho img{
+.xizinho img {
 	width: 20px;
 	margin-top: 5px;
 	margin-right: 20px;
 }
 
-.xizinho button{
+.xizinho button {
 	border: none;
 	background: none;
 	cursor: pointer;
 }
-
 
 .logo2 {
 	color: white;
@@ -465,7 +477,7 @@ hr {
 
 .plano_titulo2_gold {
 	font-size: 35px;
-	background: linear-gradient(180deg, #B5A403 44.58%, rgba(240, 216, 3, 0.13) 100%);
+	background: linear-gradient(180deg, #b50303 44.58%, rgba(240, 216, 3, 0.13) 100%);
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
@@ -478,211 +490,32 @@ hr {
 
 .plano_texto1,
 .plano_texto2 {
-	display: block;
 	margin: auto;
 	width: 400px;
-	font-size: 35px;
+	font-size: 25px;
 	font-weight: 300;
 	color: black;
 }
 
 .plano_valores {
 	display: flex;
+	justify-content: space-between;
 	margin: auto;
-	text-align: left;
-	width: 400px;
+	width: 60%;
 }
 
-.plano_resultado_gold {
+#conteudoCalculadora {
 	display: flex;
-	width: 75%;
-	font-size: 35px;
-	height: 40px;
-	font-weight: bold;
-	border: none;
-	margin-bottom: 10px;
-	color: black;
-}
-
-.plano_resultado_ {
-	display: grid;
-	width: 25%;
-	height: 40px;
-	align-content: end;
-}
-
-.plano_linha {
-	border: none;
-	height: 4px;
-	background-color: #40149f;
-	margin: auto;
-	width: 400px;
-	margin-bottom: 60px;
-}
-
-/* plano-plat */
-.plano-plat {
-	display: none;
-	padding: 20px 0;
-	margin: auto;
-	margin-top: 20px;
-	width: 650px;
-	text-align: center;
-	border-radius: 10px;
-	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.459);
-}
-
-.logo-plat {
-	margin-top: 15px;
-	border-radius: 0 20px 20px 0px;
-	width: 150px;
-	background-image: url(./img/Rectangle\ 45.svg);
-	height: 30px;
-	margin-bottom: 40px;
-}
-
-.logo2 {
-	color: white;
 	justify-content: center;
-	padding: 2px 0 0 0;
-	font-size: 18px;
-	margin-left: 2px;
-}
-
-.plano_titulo {
-	color: rgb(11, 10, 10);
-}
-
-.plano_titulo2_platinum {
-	font-size: 35px;
-	background: linear-gradient(180deg, #0A9B81 41.46%, rgba(10, 155, 129, 0.13) 100%);
-	background-clip: text;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	margin: 0 0 30px;
-}
-
-.plano_alinhamento {
-	text-align: left;
-}
-
-.plano_texto1,
-.plano_texto2 {
-	display: block;
-	margin: auto;
-	width: 400px;
-	font-size: 35px;
-	font-weight: 300;
-	color: black;
-}
-
-.plano_valores {
-	display: flex;
-	margin: auto;
-	text-align: left;
-	width: 400px;
-}
-
-.plano_resultado_plat {
-	display: flex;
 	width: 75%;
-	font-size: 35px;
+	font-size: 45px;
 	height: 40px;
 	font-weight: bold;
 	border: none;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 	color: black;
-}
-
-.plano_resultado_de {
-	display: grid;
-	width: 25%;
-	height: 40px;
-	align-content: end;
-}
-
-.plano_linha {
-	border: none;
-	height: 4px;
-	background-color: #40149f;
-	margin: auto;
-	width: 400px;
-	margin-bottom: 60px;
-}
-
-/* plano-onspot */
-
-.plano-onspot {
-	display: none;
-	padding: 20px 0;
-	margin: auto;
-	margin-top: 20px;
-	width: 650px;
+	width: 100%;
 	text-align: center;
-	border-radius: 10px;
-	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.459);
-}
-
-.logo-onspot {
-	margin-top: 15px;
-	border-radius: 0 20px 20px 0px;
-	width: 150px;
-	background-image: url(./img/Rectangle\ 45.svg);
-	height: 30px;
-	margin-bottom: 40px;
-}
-
-.logo2 {
-	color: white;
-	justify-content: center;
-	padding: 2px 0 0 0;
-	font-size: 18px;
-	margin-left: 2px;
-}
-
-.plano_titulo {
-	color: rgb(11, 10, 10);
-}
-
-.plano_titulo2_onspot {
-	font-size: 35px;
-	background: linear-gradient(180deg, #7B21C1 27.92%, rgba(123, 33, 193, 0.37) 90.1%);
-	background-clip: text;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	margin: 0 0 30px;
-}
-
-.plano_alinhamento {
-	text-align: left;
-}
-
-.plano_texto1,
-.plano_texto2 {
-	display: block;
-	margin: auto;
-	width: 400px;
-	font-size: 35px;
-	font-weight: 300;
-	color: black;
-}
-
-.plano_valores {
-	display: flex;
-	margin: auto;
-	text-align: left;
-	width: 400px;
-}
-
-.plano_resultado_onspot {
-	display: flex;
-	width: 75%;
-	font-size: 35px;
-	height: 40px;
-	font-weight: bold;
-	border: none;
-	margin-bottom: 10px;
-	color: black;
 }
 
 .plano_resultado_de {
@@ -704,8 +537,11 @@ hr {
 /* footer */
 
 footer {
-	background-image: url(img/footer_fundo.png);
+	background-image: url(./img/Rectangle\ 45.svg);
 	color: white;
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
 }
 
 .footer_cima {

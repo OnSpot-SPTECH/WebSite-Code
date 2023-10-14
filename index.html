@@ -10,7 +10,7 @@
 </head>
 
 <body>
-	
+
 	<!-- Header  -->
 	<header style="background-image: url(./img/Rectangle\ 45.svg);">
 
@@ -24,18 +24,17 @@
 					<li><a href="index.html">Sobre Nós</a></li>
 					<li><a href="index.html">simulador</a></li>
 					<li><a href="index.html">dashboard</a></li>
-					<button class="btn-header"><a class="btn-link" href="./login.html">LOGIN</a></button>
-					<!-- <a class="btn" href="#">Get started</a> -->
+					<a class="btn-link" href="./login.html"><button class="btn-header">LOGIN</button></a>
 				</ul>
 			</nav>
 
 			<section class="banner">
 				<div class="banner-text">
-					<h1><strong>Uma experiência  <br> para o seu Data Center <br> </strong></h1>
+					<h1><strong>Uma experiência <br> para o seu Data Center <br> </strong></h1>
 					<p>Transformando dados em confiança, um grau de <br>inovação de cada vez.<br> </p>
 					<button class="btn"><a href="./cadastro.html">cadastre-se</a></button>
 				</div>
-				
+
 
 				<div class="banner_img">
 					<img class="server" src="./img/Server-amico 2.svg" alt="">
@@ -55,14 +54,19 @@
 			<h1 class="sobre-nos">SOBRE NÓS</h1>
 
 
-			<p class="texto-1">A <span style="color:#7344db;">OnSpot</span>, líder em soluções avançadas de monitoramento de temperatura e umidade para Data Centers. Empenhados em garantir a integridade dos dados e o funcionamento ideal do seu Data Center. 
+			<p class="texto-1">A <span style="color:#7344db;">OnSpot</span>, líder em soluções avançadas de
+				monitoramento de temperatura e umidade para Data Centers. Empenhados em garantir a integridade dos dados
+				e o funcionamento ideal do seu Data Center.
 
 			</p>
 
 			<ul class="texto-2">
-				<li> <img src="./img/Rectangle 52.svg" class="bolinha-roxa">Analisando sempre as melhores e mais sustentáveis soluções.</li>
-				<li> <img src="./img/Rectangle 52.svg" class="bolinha-roxa">Alta qualidade e inovação para atender às demandas crescentes.</li>
-				<li> <img src="./img/Rectangle 52.svg" class="bolinha-roxa">Fundada com a visão de proporcionar tranquilidade e eficiência operacional aos gestores de Data Centers.</li>
+				<li> <img src="./img/Rectangle 52.svg" class="bolinha-roxa">Analisando sempre as melhores e mais
+					sustentáveis soluções.</li>
+				<li> <img src="./img/Rectangle 52.svg" class="bolinha-roxa">Alta qualidade e inovação para atender às
+					demandas crescentes.</li>
+				<li> <img src="./img/Rectangle 52.svg" class="bolinha-roxa">Fundada com a visão de proporcionar
+					tranquilidade e eficiência operacional aos gestores de Data Centers.</li>
 			</ul>
 
 		</div>
@@ -92,7 +96,7 @@
 	</div>
 
 	<!-- Clitentes - Projetos - Horas de Serviço -->
-	
+
 	<!-- Proposito -->
 
 	<section class="proposito">
@@ -103,31 +107,31 @@
 				<img class="proposito_card_vetor" src="img/proposito_vetor1.svg" alt="">
 				<h2>visao</h2>
 				<p id="visao">
-					Inovar através da resiliência,  eficiência, confiança e sustentabilidade.</p>
+					Inovar através da resiliência, eficiência, confiança e sustentabilidade.</p>
 			</div>
 			<div class="proposito_card">
 				<img class="proposito_card_vetor" src="img/proposito_vetor2.svg" alt="">
 				<h2>Missao</h2>
 				<p id="missao">
-					 Proteger a integridade dos ativos mais valiosos da sua organização: os dados.
-					</p>
+					Proteger a integridade dos ativos mais valiosos da sua organização: os dados.
+				</p>
 			</div>
 			<div class="proposito_card">
 				<img class="proposito_card_vetor" src="img/proposito_vetor3.svg" alt="">
 				<h2>Valores</h2>
 				<p id="valores">
-					 ⋆ Excelência
-				<br>⋆Sustentabilidade
-				<br>⋆Segurança
-				<br>⋆Confiabilidade
-				<br>⋆Inovação
+					 Excelência
+					<br>Sustentabilidade
+					<br>Segurança
+					<br>Confiabilidade
+					<br>Inovação
 				</p>
 			</div>
 		</section>
 	</section>
 
 	<!-- Proposito -->
-	
+
 	<!-- Calculadora -->
 
 	<section class="calculadora-container">
@@ -146,16 +150,10 @@
 				</div>
 
 				<div class="calculadora">
-					<label for="DatacenterTamanho">Quantos metros quadrados possui o seu data center(m²):</label>
-					<input type="number" id="DatacenterTamanho" name="DatacenterTamanho" placeholder="100">
-					<label for="ResfriamentoCapacidade">Quantos racks ele possui:</label>
-					<input type="number" id="ResfriamentoCapacidade" name="ResfriamentoCapacidade" placeholder="50">
-					<label for="Eletricidade">Quanto você gasta com manutenção anual por rack?:</label>
-					<input type="number" id="Eletricidade" name="Eletricidade" placeholder="0.50">
-					<label for="plano">Plano de escolha:</label>
-					<input type="text" id="plano" name="plano" placeholder="Planos">
-					<label for="custoOperacionalMensal">Custos Operacionais Mensais (R$):</label>
-					<input type="number" id="custoOperacionalMensal" name="custoOperacionalMensal" placeholder="2000">
+
+					<label for="ConsumoEnergia">Informe consumo de energia atual (kWh/ano) do sistema existente:</label>
+					<input type="number" id="ConsumoEnergia" name="ConsumoEnergia" placeholder="50">
+
 					<button id="calcular-btn" onclick="calcularCustos()">CALCULAR</button>
 				</div>
 
@@ -173,120 +171,9 @@
 						</button>
 					</div>
 				</div>
-
-
-				<div class="plano_conteudo">
-					<h1 class="plano_titulo">Plano</h1>
-					<h1 class="plano_titulo2_gold">Gold</h1>
-					<div class="plano_alinhamento">
-						<p class="plano_texto1">Em 1 ano você teria:</p>
-						<p class="plano_texto2">R$</p>
-						<div class="plano_valores">
-							<span class="plano_resultado_gold">XXXXXXXXX</span>
-							<span class="plano_resultado_de"> de lucro</span>
-						</div>
-						<hr class="plano_linha">
-						</hr>
-						<div class="plano_conteudo">
-							<div class="plano_alinhamento">
-								<p class="plano_texto1">Em 1 ano você economizaria:</p>
-								<p class="plano_texto2">R$</p>
-								<div class="plano_valores">
-									<span class="plano_resultado_gold">XXXXXXXXX</span>
-									<span class="plano_resultado_de"> em energia</span>
-								</div>
-								<hr class="plano_linha">
-								</hr>
-							</div>
-						</div>
-					</div>
-				</div>
 			</div>
 
-			<div class="plano-plat">
-
-				<div class="topo">
-					<div class="logo-plat">
-						<p class="logo2">OnSpot</p>
-					</div>
-
-					<div class="xizinho">
-						<button onclick="fecharPagina()"> <img src="./img/close.png" alt="xzinhu">
-					</div>
-
-				</div>
-
-				<div class="plano_conteudo">
-					<h1 class="plano_titulo">Plano</h1>
-					<h1 class="plano_titulo2_platinum">Platinum</h1>
-					<div class="plano_alinhamento">
-						<p class="plano_texto1">Em 1 ano você teria:</p>
-						<p class="plano_texto2">R$</p>
-						<div class="plano_valores">
-							<span class="plano_resultado_plat">XXXXXXXXX</span>
-							<span class="plano_resultado_de"> de lucro</span>
-						</div>
-						<hr class="plano_linha">
-						</hr>
-						<div class="plano_conteudo">
-							<div class="plano_alinhamento">
-								<p class="plano_texto1">Em 1 ano você economizaria:</p>
-								<p class="plano_texto2">R$</p>
-								<div class="plano_valores">
-									<span class="plano_resultado_plat">XXXXXXXXX</span>
-									<span class="plano_resultado_de"> em energia</span>
-								</div>
-								<hr class="plano_linha">
-								</hr>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-
-			<div class="plano-onspot">
-
-				<div class="topo">
-					<div class="logo-onspot">
-						<p class="logo2">OnSpot</p>
-					</div>
-
-					<div class="xizinho">
-						<button onclick="fecharPagina()"> <img  src="./img/close.png" alt="xzinhu">
-					</div>
-
-				</div>
-
-				<div class="plano_conteudo">
-					<h1 class="plano_titulo">Plano</h1>
-					<h1 class="plano_titulo2_onspot">OnSpot</h1>
-					<div class="plano_alinhamento">
-						<p class="plano_texto1">Em 1 ano você teria:</p>
-						<p class="plano_texto2">R$</p>
-						<div class="plano_valores">
-							<span class="plano_resultado_onspot">XXXXXXXXX</span>
-							<span class="plano_resultado_de"> de lucro</span>
-						</div>
-						<hr class="plano_linha">
-						</hr>
-						<div class="plano_conteudo">
-							<div class="plano_alinhamento">
-								<p class="plano_texto1">Em 1 ano você economizaria:</p>
-								<p class="plano_texto2">R$</p>
-								<div class="plano_valores">
-									<span class="plano_resultado_onspot">XXXXXXXXX</span>
-									<span class="plano_resultado_de"> em energia</span>
-								</div>
-								<hr class="plano_linha">
-								</hr>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
-
 	</section>
 
 	<!-- Proposito -->
@@ -331,17 +218,17 @@
 			<ul class="footer_medias">
 				<div class="footer_circle">
 					<li><img class="footer_social"
-							src="https://s3-alpha-sig.figma.com/img/e0f3/4257/a56f4ee4b6ff23704948f1c24ace7df2?Expires=1696809600&Signature=VvVGVaBJGlxwW7RNvEyqSxwLhFM5W1Lvg1z~1TlEIctrDUhu3VDklNVCVb~N0vK6g2H2Kpnim-gXEToD6Ay2SFI6keOBNn73wWtGYptsNu4DprRc2OuXKqo3ev5b--HIF-KJWXVXUMN31r98BRhevZIxZmckM2htqVZbTFf20QiJmBqnk9TP3tUuhxDkdvImGagqejWa-ASCKh~-NldYqf1IShquZ74e30iv7gtmwV8IWMFGo~kcDCv4LMtJyem~BgqTztkLuKve~HE5OaSFCN4RknVgGGnkuPYtw85dfp74UHFxxnl3qcV6OEMYt2UQL6uMCHFUoErbjPUOKHcAvw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+							src="./img/Rectangle 73.svg"
 							alt=""></li>
 				</div>
 				<div class="footer_circle">
 					<li><img class="footer_social"
-							src="https://s3-alpha-sig.figma.com/img/a789/29ba/78ddf04d37e397c2252494b619e271fd?Expires=1696809600&Signature=Ba2JTq1-d7whp-GVfzt1CNSWv~IiyhUQ1N813Xx43zbzVx~ZaS8QGL70tqszjpiqHBKfbyrs~fQT8XsFhh1iZnkcqct6Ikmrz6dKgMEtTDgKzG-Kj7-R4inxyO5lcSfp8DtZmsGtJEYyWPnaPXA2UxKz4ZZAk1Bu3Irt0xHAWo10uERo-5vbbfQIrdxRbtoFsB988SB9qlMsyPy6fzcADE7NFno1vtMJ75YGAD3VXoxdKyM1pzwgVlb2ycfS3CYrYilXgzYXpXQakkiCkHrSzzVobxcB~G~F4zWabO2-t4k8OxcXJnKyX0G5g8yFjhIgt-QxH4WIDJWnumMVAUIN6g__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+							src="./img/Rectangle 74.svg"
 							alt=""></li>
 				</div>
 				<div class="footer_circle">
 					<li><img class="footer_social"
-							src="https://s3-alpha-sig.figma.com/img/f773/b7e6/5ed305e581813fbb312f6650a30d20f1?Expires=1696809600&Signature=P4NJrcxpAJ5Wp9SIvWQUki2YQbxHNVJvEO37qyNE8yat~LKSVEFiT7kuc07gRlqKqduG3px7176maVeeIf1ujUJ5TsNiKrl0CuSRoVGEbJP59unfZhLF3J-o11vEuXm6wnSQuTd2MdDfN5znJOjhqcoh6~0zFsDV~1gl~sYHAvrmK61X8NM8mYjoP~LpX6dMv0bDcyFREFfb56aPCTg4afwoPkpLfEOdUzC1k-wD1ZhMu2dm8MyrPgFxg2FeYqwal9gY35PlQ66MxzwGYoKQo3lTuawaFhJwnFIzWcKvJ0sGpXoEdMD~ysWXtg1q88TY~Yfn2p3gqz~i0J3qgrN4SA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+							src="./img/Rectangle 75.svg"
 							alt=""></li>
 				</div>
 			</ul>
@@ -349,36 +236,28 @@
 	</footer>
 
 	<!-- Footer -->
-	
+
 </body>
 
 </html>
 
 <script>
 
-    function calcularCustos() {
+	function calcularCustos() {
 
-        var resposta = plano.value.toLowerCase();
+		var resposta = Number(ConsumoEnergia.value)
+		var contaPorcentagem = resposta * 0.45
 
-        if (resposta === 'gold') {
-            document.querySelector('.calculadora-card').style.display = 'none'
-            document.querySelector('.plano-gold').style.display = 'block'
-        } else if (resposta === 'platinum') {
-            document.querySelector('.calculadora-card').style.display = 'none'
-            document.querySelector('.plano-plat').style.display = 'block'
-        } else if (resposta === 'onspot') {
-            document.querySelector('.calculadora-card').style.display = 'none'
-            document.querySelector('.plano-onspot').style.display = 'block'
-        } else {
-            alert('Plano inválido. Escolha entre Gold, Platinum ou Onspot.')
-        }
-    }
+		document.querySelector('.calculadora-card').style.display = 'none'
+		document.querySelector('.plano-gold').style.display = 'block'
 
-    function fecharPagina(){
-        document.querySelector('.calculadora-card').style.display = 'block'
-        document.querySelector('.plano-gold').style.display = 'none';
-        document.querySelector('.plano-plat').style.display = 'none';
-        document.querySelector('.plano-onspot').style.display = 'none';
-    }
+		conteudoCalculadora.innerHTML = `${contaPorcentagem}`
+
+	}
+
+	function fecharPagina() {
+		document.querySelector('.calculadora-card').style.display = 'block'
+		document.querySelector('.plano-gold').style.display = 'none';
+	}
 
 </script>
