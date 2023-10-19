@@ -485,7 +485,7 @@ hr {
 	margin-right: 15px;
 }
 
-#numero_1 {
+#numero_resposta {
 	font-size: 50px;
 	color: #B43BD2;
 }
@@ -544,7 +544,7 @@ hr {
 }
 
 .tela-resposta {
-	/* display: none; */
+	display: none;
 	padding: 20px 0;
 	margin: auto;
 	margin-top: 20px;

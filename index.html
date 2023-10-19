@@ -156,10 +156,9 @@
 
 					<label for="tipoSistema">Informe o tipo de sistema de resfriamento atual:</label>
 					<select id="tipoSistema" name="tipoSistema" form="carform">
-						<option value=""></option>
 						<option id="ar" value="ar">Sistema resfriamento por ar</option>
 						<option id="adaptativo" value="adaptativo">Sistema resfriamento adaptativo</option>
-						<option id="crac" value="CRAC">Sistema resfriamento CRAC</option>
+						<option id="crac" value="crac">Sistema resfriamento CRAC</option>
 						<option id="agua" value="agua">Sistema resfriamento Água</option>
 					</select>
 
@@ -181,7 +180,7 @@
 								economizaria:</p>
 							<div class="tudo_2">
 								<div class="parte_1">
-									<p id="numero_1">45%</p>
+									<div id="numero_resposta"></div>
 									<p class="texto_energ">de energia</p>
 								</div>
 								<hr class="linha">
@@ -291,6 +290,7 @@
 		var contaKw3 = resposta * 0.20
 		var contaKw4 = resposta * 0.17
 		var conta$ = contaKw * 0.85
+		var nadaInput = nada.value
 		var tipo = tipoSistema.value.toLowerCase()
 
 		var tipoAr = ar.value
@@ -298,28 +298,43 @@
 		var tipoCrac = crac.value
 		var tipoAgua = agua.value
 
-		if (tipo == tipoAr) {
-			numero_1_resultado.innerHTML = `${contaKw}`
-			numero_1_resultado2.innerHTML = `${Math.ceil(conta$)}`
-		}
-		else if (tipo == tipoAdap) {
-			numero_1_resultado.innerHTML = `${contaKw2}`
-			numero_1_resultado2.innerHTML = `${Math.ceil(conta$)}`
-		}
-		else if (tipo == tipoCrac) {
-			numero_1_resultado.innerHTML = `${contaKw3}`
-			numero_1_resultado2.innerHTML = `${Math.ceil(conta$)}`
-		}
-		else if (tipo == tipoAgua) {
-			numero_1_resultado.innerHTML = `${contaKw4}`
-			numero_1_resultado2.innerHTML = `${Math.ceil(conta$)}`
-		}
+		var porcentagem = "45%"
 
-		document.querySelector('.calculadora-card').style.display = 'none'
-		document.querySelector('.tela-resposta').style.display = 'block'
+		if (resposta == " " || tipo == " "){
+			alert('Porfavor insira informações válidas em todos os campos.')
+		}
+		else {
+			if (tipo == tipoAr) {
+				numero_resposta.innerHTML = `${porcentagem}`
+				numero_1_resultado.innerHTML = `${contaKw}`
+				numero_1_resultado2.innerHTML = `${Math.ceil(conta$)}`
+			}
+			else if (tipo == tipoAdap) {
+				porcentagem = "30%"
+				numero_resposta.innerHTML = `${porcentagem}`
+				numero_1_resultado.innerHTML = `${contaKw2}`
+				numero_1_resultado2.innerHTML = `${Math.ceil(conta$)}`
+			}
+			else if (tipo == tipoCrac) {
+				porcentagem = "35%"
+				numero_resposta.innerHTML = `${porcentagem}`
+				numero_1_resultado.innerHTML = `${contaKw3}`
+				numero_1_resultado2.innerHTML = `${Math.ceil(conta$)}`
+			}
+			else if (tipo == tipoAgua) {
+				porcentagem = "12%"
+				numero_resposta.innerHTML = `${porcentagem}`
+				numero_1_resultado.innerHTML = `${contaKw4}`
+				numero_1_resultado2.innerHTML = `${Math.ceil(conta$)}`
+			}
 
+			document.querySelector('.calculadora-card').style.display = 'none'
+			document.querySelector('.tela-resposta').style.display = 'block'
+
+		}
+		
 	}
-
+	
 	function fecharPagina() {
 		document.querySelector('.calculadora-card').style.display = 'block'
 		document.querySelector('.tela-resposta').style.display = 'none';
