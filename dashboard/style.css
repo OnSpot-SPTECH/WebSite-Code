@@ -9,8 +9,8 @@
 }
 
 body {
+    height: 100vh;
     width: 100%;
-    height: 600px;
     background-color: gray;
 }
 
@@ -65,40 +65,65 @@ nav ul li:hover::after {
 
 .container {
     display: flex;
+    height: 100%;
     width: 100%;
     background-color: gray;
     display: flex;
     flex-direction: row;
 }
 
-.div-1 {
+.div_main {
     width: 75%;
-    height: 850px;
+    height: 100%;
     background-color: white;
     justify-content: center;
-
-}
-
+    }
+.div_sala
+    {
+    margin: 40px;
+    }
+.div_salas
+    {
+    height: 500px;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    }
+.ul_salas
+    {
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    }
+.ul_salas li
+    {
+    list-style: none;
+    }
 .div-2 {
     width: 25%;
-    height: 850px;
+    height: 100%;
     background-color: white;
     display: flex;
     flex-direction: column;
-    border-left: 2px solid #A64CEC;
-    /* align-items: center; */
+    align-items: center;
+    justify-content: center; 
 }
+.div_aviso
+    {
+    font-weight: bold;
+    color: #A64CEC;
+    height: 100px;
+    }
+
 .highcharts-figure{
     width: 80%;
-    height: 40%;
+    height: 80%;
     display: flex;
     flex-direction: column;
 }
-
 .chart-container{
     width: 100%;
     height: 35%;
-    border: 1px solid #A64CEC;
     margin: auto;
 }
 /* graficos */
