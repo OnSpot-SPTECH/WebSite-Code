@@ -19,17 +19,18 @@
 </head>
 
 <body>
+	<!-- Header -->
 	<header>
-		<img src="./img/Frame 12 copy.svg" alt="">
+		<img class="img-logo" src="./img/Frame 12 copy.svg" alt="">
+		<nav>
+			<ul>
+				<li><a href="../login.html">Sair<img class="icone-logout" src="../assets/icone-logout.svg" alt=""></a></li>
+			</ul>
+		</nav>
 	</header>
-
+	<!--  -->
 	<section class="container">
 		<div class="div-1">
-			<div class="highcharts-figure">
-				<div id="container-temp" class="chart-container"></div>
-				<div id="container-umidade" class="chart-container"></div>
-			</div>
-
 			<div class="graficos">
 				<canvas id="myChart"></canvas>
 				<canvas id="myBar"></canvas>
@@ -37,13 +38,12 @@
 		</div>
 
 		<div class="div-2">
-			<div class="box-div">
-				<img src="./img/calendario.png" alt="">
-			</div>
-			<div class="box-div">
-				<img src="./img/avaliacao.png" alt="">
+			<div class="highcharts-figure">
+				<div id="container-temp" class="chart-container"></div>
+				<div id="container-umidade" class="chart-container"></div>
 			</div>
 		</div>
+
 	</section>
 
 </body>
