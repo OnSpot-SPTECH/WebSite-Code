@@ -23,50 +23,50 @@
 		<img class="img-logo" src="./img/Frame 12 copy.svg" alt="">
 		<nav>
 			<ul>
-				<li><a href="../login.html">Sair<img class="icone-logout" src="../assets/icone-logout.svg" alt=""></a></li>
+				<li><a href="../login.html">Sair<img class="icone-logout" src="../assets/icone-logout.svg" alt=""></a>
+				</li>
 			</ul>
 		</nav>
 	</header>
 	<!--  -->
 	<section class="container">
 		<div class="div_main">
-			<div class="div_sala">
-				Salas
-			</div>
+			<button class="btn_sala" onclick="fecharSalas()">Salas</button>
 			<div class="div_salas">
 				<ul class="ul_salas">
 					<li>
-					Sala 1
-					</li>	
-					<li>
-					Sala 2
-					</li>						
-					Sala 3
-					<li>
-					Sala 4
+						<button>Sala 1</button>
 					</li>
 					<li>
-					Sala 5
+						<button>Sala 2</button>
 					</li>
 					<li>
-					Sala 6
+						<button>Sala 3</button>
 					</li>
 					<li>
-					Sala 7
+						<button>Sala 4</button>
 					</li>
 					<li>
-					Sala 8
+						<button>Sala 5</button>
+					</li>
+					<li>
+						<button>Sala 6</button>
+					</li>
+					<li>
+						<button>Sala 7</button>
+					</li>
+					<li>
+						<button>Sala 8</button>
 					</li>
 				</ul>
 			</div>
-			<!--
-			<div class="graficos">
+			
+			<div class="div_graficos">
 				<canvas id="myChart"></canvas>
 				<canvas id="myBar"></canvas>
-			-->
-			</div>
 		</div>
-		
+		</div>
+
 		<div class="div-2">
 			<div class="div_aviso">
 				Sensores com problema
@@ -211,7 +211,7 @@
 				lineTension: 0,
 				backgroundColor: "rgba(0,0,255,1.0)",
 				borderColor: "rgba(0,0,255,1.0)",
-				data: yValues
+				data: yValues,
 			},]
 		},
 		options: {
@@ -262,4 +262,20 @@
 			}
 		}
 	});
+	var sala = 0;
+	function fecharSalas() 
+		{
+		if(sala == 0)
+			{
+			document.querySelector('.div_salas').style.display = 'flex';
+			document.querySelector('.div_graficos').style.display = 'none';
+			sala++;
+			} else
+				{
+				document.querySelector('.div_salas').style.display = 'none';
+				document.querySelector('.div_graficos').style.display = 'flex';	
+				sala--;
+				}
+		}
+
 </script>

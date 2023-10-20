@@ -5,7 +5,6 @@
     text-decoration: none;
     outline: none;
     font-family: 'Poppins', sans-serif;
-
 }
 
 body {
@@ -78,14 +77,26 @@ nav ul li:hover::after {
     background-color: white;
     justify-content: center;
     }
-.div_sala
+.btn_sala 
     {
     margin: 40px;
     }
-.div_salas
+.btn_sala, .ul_salas li button
+    {
+    background-color: white;
+    color: #A64CEC;
+    border: none;
+    font-size: 20px;
+    }
+    .btn_sala:hover
+        {
+        text-decoration: underline;
+        transition: 0.1s;
+        }
+    .div_salas
     {
     height: 500px;
-    display: flex;
+    display: none;
     margin: auto;
     justify-content: center;
     }
@@ -98,6 +109,10 @@ nav ul li:hover::after {
 .ul_salas li
     {
     list-style: none;
+    }
+.ul_salas li button
+    {
+    font-size: 20px;
     }
 .div-2 {
     width: 25%;
@@ -126,23 +141,19 @@ nav ul li:hover::after {
     height: 35%;
     margin: auto;
 }
-/* graficos */
+/* div_graficos */
 /* .highcharts-figure .chart-container {
     width: 40px;
     height: 20px;
 } */
 
-.graficos {
+.div_graficos {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
 }
 
-.graficos canvas {
-    max-width: 600px;
-    height: 300px;
+.div_graficos canvas {
+    max-width: 50%;
 }
 
 .highcharts-figure,
