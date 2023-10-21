@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>Dashboard</title>
 
 	<link rel="stylesheet" href="style.css">
 
@@ -22,6 +22,7 @@
 	<!-- Header -->
 	<header>
 		<img class="img-logo" src="./img/Frame 12 copy.svg" alt="">
+		<a class="a_sala" onclick="fecharSalas()">Salas</a>
 		<nav>
 			<ul>
 				<li>
@@ -33,65 +34,31 @@
 	<!--  -->
 	<main>
 		<div class="div_main">
-			<button class="btn_sala" onclick="fecharSalas()">Salas</button>
 			<div class="div_salas">
 				<ul class="ul_salas">
 					<li>
-						<button>Sala 1</button>
+						<a href="sala.html">Sala 1</a>
 					</li>
 					<li>
-						<button>Sala 2</button>
+						<a href="sala.html">Sala 2</a>
 					</li>
 					<li>
-						<button>Sala 3</button>
+						<a href="sala.html">Sala 3</a>
 					</li>
 					<li>
-						<button>Sala 4</button>
+						<a href="sala.html">Sala 4</a>
 					</li>
 					<li>
-						<button>Sala 5</button>
+						<a href="sala.html">Sala 5</a>
 					</li>
 					<li>
-						<button>Sala 6</button>
+						<a href="sala.html">Sala 6</a>
 					</li>
 					<li>
-						<button>Sala 7</button>
+						<a href="sala.html">Sala 7</a>
 					</li>
 					<li>
-						<button>Sala 8</button>
-					</li>
-				</ul>
-				<ul class="ul_sensores">
-					<li class="div_sensor_sala1 sensor_sala">
-						Sensor 1
-
-						<canvas id="mainGraficoUmidade2"></canvas>
-
-					</li>
-					<li class="div_sensor_sala2 sensor_sala">
-						Sensor 2
-						<canvas id="mainGraficoUmidade3"></canvas>
-					</li>
-					<li class="div_sensor_sala3 sensor_sala">
-						Sensor 3
-					</li>
-					<li class="div_sensor_sala4 sensor_sala">
-						Sensor 4
-					</li>
-					<li class="div_sensor_sala5 sensor_sala">
-						Sensor 5
-					</li>
-					<li class="div_sensor_sala6 sensor_sala">
-						Sensor 6
-					</li>
-					<li class="div_sensor_sala7 sensor_sala">
-						Sensor 7
-					</li>
-					<li class="div_sensor_sala8 sensor_sala">
-						Sensor 8
-					</li>
-					<li class="div_sensor_sala9 sensor_sala">
-						Sensor 9
+						<a href="sala.html">Sala 8</a>
 					</li>
 				</ul>
 			</div>
@@ -279,62 +246,7 @@
 	const yValues = [80, 82, 80, 85, 85, 83];
 
 	const yValues2 = [30, 29, 28, 25, 22, 23];
-	new Chart("mainGraficoUmidade2", {
-		type: "line",
-		data: {
-			labels: xValues,
-			datasets: [{
-				label: 'Umidade',
-				fill: false,
-				lineTension: 0,
-				borderColor: "#7B21C1",
-				borderColor: "#7B21C1",
-				data: yValues,
-			},]
-		},
-		options: {
-			legend: {
-				display: true,
-			},
-			scales: {
-				yAxes: [{
-					ticks: {
-						min: 20,
-						max: 90
-					}
-				}],
-			}
-		}
-	});
-
-	new Chart("mainGraficoUmidade3", {
-		type: "line",
-		data: {
-			labels: xValues,
-			datasets: [{
-				label: 'Umidade',
-				fill: false,
-				lineTension: 0,
-				borderColor: "#7B21C1",
-				borderColor: "#7B21C1",
-				data: yValues,
-			},]
-		},
-		options: {
-			legend: {
-				display: true,
-			},
-			scales: {
-				yAxes: [{
-					ticks: {
-						min: 20,
-						max: 90
-					}
-				}],
-			}
-		}
-	});
-
+	
 	new Chart("mainGraficoUmidade", {
 		type: "line",
 		data: {
