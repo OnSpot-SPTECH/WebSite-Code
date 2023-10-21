@@ -24,11 +24,11 @@
                     <div>
                         <form class="inputs-cadastro" action="">
                             <label htmlfor="">Nome da empresa</label>
-                            <input class="estilo-form" type="text"><br>
+                            <input id="nomeEmpresa" class="estilo-form" type="text"><br>
                             <label htmlfor="">CNPJ</label>
-                            <input class="estilo-form" type="text"><br>
+                            <input id="CNPJOTO" class="estilo-form" placeholder=" XX.XXX.XXX/0001-XX" type="text"><br>
                             <label htmlfor="">Razão social</label>
-                            <input class="estilo-form" type="text">
+                            <input id="razaoSocial" class="estilo-form" type="text">
                         </form>
                     </div>
 
@@ -36,19 +36,41 @@
                     <div>
                         <form class="inputs-cadastro" action="">
                             <label htmlfor="">CEP</label>
-                            <input class="estilo-form" type="text"><br>
+                            <input id="CEPregistro" class="estilo-form" placeholder="XXXXX-XXX" type="text"><br>
                             <label htmlfor="">Telefone</label>
-                            <input class="estilo-form" type="text"><br>
+                            <input id="tel" class="estilo-form" placeholder="(XX)XXXXX-XXXX" type="text"><br>
                             <label htmlfor="">Email</label>
-                            <input class="estilo-form" type="text">
+                            <input id="emailRegistro" class="estilo-form" type="text">
                         </form>
                     </div>
 
                 </div>
-                <link href="#"><input type="submit" value="Continuar" id="btn-continuar" /><link>
+                <button onclick="calculo()" href="#"><input type="submit" value="Continuar"
+                        id="btn-continuar" /><button>
             </div>
         </div>
     </div>
 </body>
 
 </html>
+
+<script>
+
+    function calculo() {
+        function calculo() {
+        var nome = nomeEmpresa.value
+        var CNPJ = Number(CNPJOTO.value)
+        var razao = razaoSocial.value
+        var cep = Number(CEPregistro.value)
+        var telefone = Number(tel.value)
+        var email = emailRegistro.value
+        var frase = '@'
+
+        if (nome === '' || CNPJ <= 0 || razao === '' || cep <= 0 || telefone <= 0 || email === '')
+            alert('Por favor preencha o registro')
+        else
+            window.location.href = './cadastro2.html'
+    }
+    }
+</script>
+
