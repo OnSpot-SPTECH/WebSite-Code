@@ -49,17 +49,18 @@ header nav ul a {
     color: #fff;
 }
 
-header ul li:after{
+header ul li:after {
     content: "";
-	background-color: #ffffff;
-	height: 3px;
-	width: 0%;
-	display: block;
-	margin: 0 auto;
-	transition: 0.3s;
+    background-color: #ffffff;
+    height: 3px;
+    width: 0%;
+    display: block;
+    margin: 0 auto;
+    transition: 0.3s;
 }
+
 nav ul li:hover::after {
-	width: 100%;
+    width: 100%;
 }
 
 main {
@@ -76,59 +77,61 @@ main {
     height: 100%;
     background-color: white;
     justify-content: center;
-    }
-.btn_sala 
-    {
+}
+
+.btn_sala {
     margin: 40px;
-    }
-.btn_sala, .ul_salas li button
-    {
+}
+
+.btn_sala,
+.ul_salas li button {
     background-color: white;
     color: #7B21C1;
     border: none;
     font-size: 20px;
-    }
-.btn_sala:hover
-    {
+}
+
+.btn_sala:hover {
     text-decoration: underline;
     transition: 0.1s;
-    }
-.div_salas
-    {
+}
+
+.div_salas {
     height: 500px;
     display: none;
     margin: auto;
-    }
-.ul_salas
-    {
+}
+
+.ul_salas {
     margin: 20px 5%;
     display: flex;
     flex-wrap: wrap;
-    }
-.ul_salas li
-    {
+}
+
+.ul_salas li {
     flex-grow: 1;
     flex-basis: 100px;
     list-style: none;
-    }
-.ul_salas li button
-    {
+}
+
+.ul_salas li button {
     font-size: 20px;
-    }
-.ul_sensores
-    {
+}
+
+.ul_sensores {
     display: flex;
     flex-wrap: wrap;
-    list-style:none;
+    list-style: none;
     margin: 20px 5%;
-    }
-.sensor_sala
-    {
+}
+
+.sensor_sala {
     flex-grow: 1;
     flex-basis: 50%;
     margin: 10px 0;
     padding: 10px;
-    }
+}
+
 aside {
     width: 25%;
     height: 100%;
@@ -136,35 +139,31 @@ aside {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
 }
-.div_aviso
-    {
+
+.div_aviso {
     font-weight: bold;
     color: #7B21C1;
     height: 100px;
-    }
+}
 
-.highcharts-figure{
+.highcharts-figure {
     width: 80%;
     height: 80%;
     display: flex;
     flex-direction: column;
 }
-.chart-container{
+
+.chart-container {
     width: 100%;
     height: 35%;
     margin: auto;
 }
-/* div_graficos */
-/* .highcharts-figure .chart-container {
+
+div_graficos .highcharts-figure .chart-container {
     width: 40px;
     height: 20px;
-} */
-
-.div_graficos_main { 
-    display: flex;
-    justify-content: center;
 }
 
 .div_graficos_main canvas {
@@ -228,7 +227,22 @@ aside {
     }
 }
 
-#chartdiv {
-    width: 40%;
-    height: 490px;
-  }
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.tabela {
+    background-color: #AB69DE;
+}

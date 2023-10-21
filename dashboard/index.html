@@ -15,9 +15,6 @@
 	<script src="https://code.highcharts.com/modules/export-data.js"></script>
 	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-	<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-	<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
-	<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
 
 </head>
 
@@ -66,46 +63,87 @@
 				</ul>
 				<ul class="ul_sensores">
 					<li class="div_sensor_sala1 sensor_sala">
-					Sensor 1
-					
+						Sensor 1
+
 						<canvas id="mainGraficoUmidade2"></canvas>
-					
+
 					</li>
 					<li class="div_sensor_sala2 sensor_sala">
-					Sensor 2
+						Sensor 2
 						<canvas id="mainGraficoUmidade3"></canvas>
 					</li>
 					<li class="div_sensor_sala3 sensor_sala">
-					Sensor 3
+						Sensor 3
 					</li>
 					<li class="div_sensor_sala4 sensor_sala">
-					Sensor 4
+						Sensor 4
 					</li>
 					<li class="div_sensor_sala5 sensor_sala">
-					Sensor 5
+						Sensor 5
 					</li>
 					<li class="div_sensor_sala6 sensor_sala">
-					Sensor 6
+						Sensor 6
 					</li>
 					<li class="div_sensor_sala7 sensor_sala">
-					Sensor 7
+						Sensor 7
 					</li>
 					<li class="div_sensor_sala8 sensor_sala">
-					Sensor 8
+						Sensor 8
 					</li>
 					<li class="div_sensor_sala9 sensor_sala">
-					Sensor 9
+						Sensor 9
 					</li>
 				</ul>
 			</div>
+
+			<div>
+				<table class="table">
+					<thead>
+						<tr>
+							<th class="tabela"></th>
+							<th class="tabela">Mínimo</th>
+							<th class="tabela">1º Quartil</th>
+							<th class="tabela">Média</th>
+							<th class="tabela">Mediana</th>
+							<th class="tabela">3º Quartil</th>
+							<th class="tabela">Máximo</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Temp DHT11</td>
+							<td>18,0</td>
+							<td>18,6</td>
+							<td>19,0</td>
+							<td>19,4</td>
+							<td>19,9</td>
+							<td>20</td>
+						</tr>
+
+						<tr>
+							<td>Umidade</td>
+							<td>45,5</td>
+							<td>50,0</td>
+							<td>52,4</td>
+							<td>54,7</td>
+							<td>56,0</td>
+							<td>56,8</td>
+						</tr>
+						<!-- Adicione mais linhas conforme necessário -->
+					</tbody>
+				</table>
+			</div>
+
+
+
 			<div class="div_graficos_main">
 				<canvas id="mainGraficoUmidade"></canvas>
 				<canvas id="mainGraficoUmidadeMedia"></canvas>
 			</div>
-			<div id="chartdiv"></div>
+
 		</div>
 
-		
+
 
 		<aside>
 			<div class="div_aviso">
@@ -114,7 +152,7 @@
 			<div class="highcharts-figure">
 				<div id="containerTemp" class="chart-container"></div>
 				<div id="containerUmidade" class="chart-container"></div>
-				
+
 			</div>
 		</aside>
 
@@ -125,153 +163,6 @@
 </html>
 
 <script>
-
-	//grafico barra
-
-	// Chart code 
-
-	am5.ready(function () {
-
-		// Create root element
-		// https://www.amcharts.com/docs/v5/getting-started/#Root_element
-		var root = am5.Root.new("chartdiv");
-
-
-		// // Set themes
-		// // https://www.amcharts.com/docs/v5/concepts/themes/
-		// root.setThemes([
-		// 	am5themes_Animated.new(root)
-		// ]);
-
-
-		// Create chart
-		// https://www.amcharts.com/docs/v5/charts/xy-chart/
-		var chart = root.container.children.push(am5xy.XYChart.new(root, {
-			panX: true,
-			panY: true,
-			wheelX: "panX",
-			wheelY: "zoomX",
-			pinchZoomX: true,
-			layout: root.verticalLayout
-		}));
-
-		// chart.set("colors", am5.ColorSet.new(root, {
-		// 	colors: [
-		// 		am5.color(0x7B21C1),
-		// 		am5.color(0xF2AA6B),
-		// 		am5.color(0xF28F6B),
-		// 		am5.color(0xA95A52),
-		// 		am5.color(0xE35B5D),
-		// 		am5.color(0xFFA446)
-		// 	]
-		// }))
-
-		//Create axes
-		//https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
-		var xRenderer = am5xy.AxisRendererX.new(root, {
-			minGridDistance: 50
-		});
-
-		xRenderer.grid.template.setAll({
-			location: 1
-		})
-
-		var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
-			maxDeviation: 0.3,
-			categoryField: "country",
-			renderer: xRenderer,
-			tooltip: am5.Tooltip.new(root, {})
-		}));
-
-		var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-			maxDeviation: 0.3,
-			min: 0,
-			renderer: am5xy.AxisRendererY.new(root, {
-				strokeOpacity: 0.1
-			})
-		}));
-
-
-		// Create series
-		// https://www.amcharts.com/docs/v5/charts/xy-chart/series/
-		var series = chart.series.push(am5xy.ColumnSeries.new(root, {
-			name: "Series 1",
-			xAxis: xAxis,
-			yAxis: yAxis,
-			valueYField: "value",
-			categoryXField: "country",
-			tooltip: am5.Tooltip.new(root, {
-				labelText: "{valueY}"
-			}),
-		}));
-
-		series.columns.template.setAll({
-			tooltipY: 0,
-			tooltipText: "{categoryX}: {valueY}",
-			shadowOpacity: 0.1,
-			shadowOffsetX: 2,
-			shadowOffsetY: 2,
-			shadowBlur: 1,
-			strokeWidth: 2,
-			stroke: am5.color(0x7B21C1),
-			shadowColor: am5.color(0x000000),
-			cornerRadiusTL: 50,
-			cornerRadiusTR: 50,
-			fillGradient: am5.LinearGradient.new(root, {
-				stops: [
-					{}, // will use original column color
-					{ color: am5.color(0x7B21C1) }
-				]
-			}),
-			fillPattern: am5.GrainPattern.new(root, {
-				maxOpacity: 0.15,
-				density: 0.5,
-				colors: [am5.color(0x000000), am5.color(0x000000), am5.color(0xffffff)]
-			})
-		});
-
-
-		series.columns.template.states.create("hover", {
-			shadowOpacity: 1,
-			shadowBlur: 10,
-			cornerRadiusTL: 10,
-			cornerRadiusTR: 10
-		})
-
-		series.columns.template.adapters.add("fill", function (fill, target) {
-
-		});
-
-		// Set data
-		var data = [{
-			country: "USA",
-			value: 2025
-		}, {
-			country: "China",
-			value: 1282
-		}, {
-			country: "Japan",
-			value: 909
-		}, {
-			country: "Germany",
-			value: 752
-		}, {
-			country: "UK",
-			value: 652
-		}, {
-			country: "Italy",
-			value: 452
-		}];
-
-		xAxis.data.setAll(data);
-		series.data.setAll(data);
-
-		// Make stuff animate on load
-		// https://www.amcharts.com/docs/v5/concepts/animations/
-		series.appear(1000);
-		chart.appear(1000, 100);
-
-	}); // end am5.ready()
 
 	//grafico 1
 	var gaugeOptions = {
@@ -396,8 +287,8 @@
 				label: 'Umidade',
 				fill: false,
 				lineTension: 0,
-				backgroundColor: "rgba(0,0,255,1.0)",
-				borderColor: "rgba(0,0,255,1.0)",
+				borderColor: "#7B21C1",
+				borderColor: "#7B21C1",
 				data: yValues,
 			},]
 		},
@@ -424,8 +315,8 @@
 				label: 'Umidade',
 				fill: false,
 				lineTension: 0,
-				backgroundColor: "rgba(0,0,255,1.0)",
-				borderColor: "rgba(0,0,255,1.0)",
+				borderColor: "#7B21C1",
+				borderColor: "#7B21C1",
 				data: yValues,
 			},]
 		},
@@ -452,8 +343,8 @@
 				label: 'Umidade',
 				fill: false,
 				lineTension: 0,
-				backgroundColor: "rgba(0,0,255,1.0)",
-				borderColor: "rgba(0,0,255,1.0)",
+				borderColor: "#7B21C1",
+				borderColor: "#7B21C1",
 				data: yValues,
 			},]
 		},
@@ -483,11 +374,11 @@
 		data: {
 			labels: xGrafico,
 			datasets: [{
-				label: 'Umidade media',
+				label: 'Umidade Média',
 				fill: false,
 				lineTension: 0,
-				backgroundColor: "rgba(255,0,0,1.0)",
-				borderColor: "rgba(255,0,0,1.0)",
+				backgroundColor: "#7B21C1",
+				borderColor: "#7B21C1",
 				data: RedBar
 			},]
 		},
@@ -517,6 +408,22 @@
 			sala--;
 		}
 	}
+
+	const table = document.querySelector('.table tbody');
+	const data = [
+		['Temp LM35', '16,6', '16,9', '17', '17,4', '17,8', '18'],
+		// Adicione mais linhas conforme necessário
+	];
+
+	data.forEach(rowData => {
+		const row = document.createElement('tr');
+		rowData.forEach(cellData => {
+			const cell = document.createElement('td');
+			cell.textContent = cellData;
+			row.appendChild(cell);
+		});
+		table.appendChild(row);
+	});
 
 
 
