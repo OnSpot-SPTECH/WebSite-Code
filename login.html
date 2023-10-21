@@ -28,13 +28,13 @@
                         <h2>Faça seu login</h2>
                     </div>
 
-                    <form id="formulario-login" action="./dashboard/index.html">
+                    <form id="formulario-login">
                         <label htmlFor="">Email</label><br />
-                        <input type="text" class="estiloform"> <br /> <br /> <br />
+                        <input type="text" id="emailFormulario" class="estiloform"> <br /> <br /> <br />
                         <label htmlFor="">Senha</label> <br />
-                        <input type="password" class="estiloform" /> <br />
-                        <a href="./dashboard/index.html"><button id="botao-acessar">ACESSAR</button></a>
+                        <input type="password" id="senhaFormulario" class="estiloform" /> <br />
                     </form>
+                        <button onclick="calculo()" id="botao-acessar">ACESSAR</button>
                 </div>
             </div>
         </div>
@@ -42,3 +42,20 @@
 </body>
 
 </html>
+
+<script>
+
+    function calculo()
+    {
+        
+        var email = emailFormulario.value
+        var senha = senhaFormulario.value
+        var frase = '@'
+        
+        if(email === '' || email.indexOf(frase) === -1 || senha === '')
+            alert('dados invalidos.Por favor preencha o registro')
+        else
+            window.location.href = './dashboard/index.html'
+
+    }
+</script>

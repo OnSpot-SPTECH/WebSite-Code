@@ -109,13 +109,12 @@ body{
     margin-bottom: 10px;
     margin-top: 10px;
     background-color: #f9f9f9;
-    cursor: pointer;
     outline: none;
 }
 
 #botao-acessar{
-    width: 100%;
-    padding: 5%;
+    width: 100px;
+    height: 40px;
     border: 1px solid #5B08F6;
     margin-top: 35px;
     border-radius: 5px;
@@ -129,6 +128,5 @@ body{
     border:1px solid #7B21C1;
     background-image: url(../assets/fundo-btn-onspt.svg);
     transition: 0.5s;
-    cursor: pointer;
     outline: none;
 }
