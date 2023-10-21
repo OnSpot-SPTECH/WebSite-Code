@@ -33,12 +33,12 @@ header .img-logo {
     width: 22px;
     height: 22px;
 }
-.a_sala 
-    {
+
+.a_sala {
     color: white;
     margin: 40px;
     font-size: 22px;
-    }
+}
 
 header nav ul {
     list-style: none;
@@ -54,7 +54,9 @@ header nav ul a {
     font-size: 22px;
     color: #fff;
 }
-.a_sala:after,header ul li:after{
+
+.a_sala:after,
+header ul li:after {
     content: "";
     background-color: #ffffff;
     height: 3px;
@@ -63,8 +65,10 @@ header nav ul a {
     margin: 0 auto;
     transition: 0.3s;
 }
-.a_sala:hover::after,nav ul li:hover::after {
-	width: 100%;
+
+.a_sala:hover::after,
+nav ul li:hover::after {
+    width: 100%;
 }
 
 main {
@@ -77,26 +81,27 @@ main {
 }
 
 .div_main {
-    width: 75%;
+    width: 60%;
     height: 100%;
     background-color: white;
     justify-content: center;
-    }
-.ul_salas li button
-    {
+}
+
+.ul_salas li button {
     background-color: white;
     color: #7B21C1;
     border: none;
     font-size: 20px;
-    }
-.div_salas
-    {
+}
+
+.div_salas {
     height: 500px;
-    display: none;
+    display: flex;
     margin: auto;
 }
 
 .ul_salas {
+    padding-left: 30px;
     margin: 20px 5%;
     display: flex;
     flex-wrap: wrap;
@@ -104,13 +109,14 @@ main {
 
 .ul_salas li {
     flex-grow: 1;
-    flex-basis: 100px;
+    flex-basis: 200px;
     list-style: none;
-    }
-.ul_salas li a
-    {
+}
+
+.ul_salas li a {
     font-size: 20px;
-    }
+}
+
 aside {
     width: 25%;
     height: 100%;
@@ -211,7 +217,8 @@ div_graficos .highcharts-figure .chart-container {
     border-collapse: collapse;
 }
 
-th, td {
+th,
+td {
     border: 1px solid #ccc;
     padding: 8px;
     text-align: center;
@@ -224,4 +231,24 @@ th {
 
 .tabela {
     background-color: #AB69DE;
+}
+
+.nav_esquerda {
+    width: 15%;
+    height: 100%;
+    background-color: #ccc;
+}
+
+.texto1 {
+    padding-top: 60%;
+}
+
+.perfil {
+    display: flex;
+    padding-left: 45px;
+    padding-top: 15%;
+    flex-grow: 1;
+    flex-basis: 200px;
+    list-style: none;
+    font-size: 20px;
 }

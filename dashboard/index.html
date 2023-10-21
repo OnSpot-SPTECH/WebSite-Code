@@ -22,7 +22,7 @@
 	<!-- Header -->
 	<header>
 		<img class="img-logo" src="./img/Frame 12 copy.svg" alt="">
-		<a class="a_sala" onclick="fecharSalas()">Salas</a>
+		<!-- <a class="a_sala" onclick="fecharSalas()">Salas</a> -->
 		<nav>
 			<ul>
 				<li>
@@ -33,10 +33,13 @@
 	</header>
 	<!--  -->
 	<main>
-		<div class="div_main">
+		<nav class="nav_esquerda">
+
+			<p class="perfil">Perfil</p>
+		
 			<div class="div_salas">
 				<ul class="ul_salas">
-					<li>
+					<li class="texto1">
 						<a href="sala.html">Sala 1</a>
 					</li>
 					<li>
@@ -62,6 +65,11 @@
 					</li>
 				</ul>
 			</div>
+
+		</nav>
+
+		<div class="div_main">
+			
 
 			<div>
 				<table class="table">
@@ -246,7 +254,7 @@
 	const yValues = [80, 82, 80, 85, 85, 83];
 
 	const yValues2 = [30, 29, 28, 25, 22, 23];
-	
+
 	new Chart("mainGraficoUmidade", {
 		type: "line",
 		data: {
@@ -309,17 +317,17 @@
 		}
 	});
 	var sala = 0;
-	function fecharSalas() {
-		if (sala == 0) {
-			document.querySelector('.div_salas').style.display = 'block';
-			document.querySelector('.div_graficos_main').style.display = 'none';
-			sala++;
-		} else {
-			document.querySelector('.div_salas').style.display = 'none';
-			document.querySelector('.div_graficos_main').style.display = 'flex';
-			sala--;
-		}
-	}
+	// function fecharSalas() {
+	// 	if (sala == 0) {
+	// 		document.querySelector('.div_salas').style.display = 'block';
+	// 		document.querySelector('.div_graficos_main').style.display = 'none';
+	// 		sala++;
+	// 	} else {
+	// 		document.querySelector('.div_salas').style.display = 'none';
+	// 		document.querySelector('.div_graficos_main').style.display = 'flex';
+	// 		sala--;
+	// 	}
+	// }
 
 	const table = document.querySelector('.table tbody');
 	const data = [
