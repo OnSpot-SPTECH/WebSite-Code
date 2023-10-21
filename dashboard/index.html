@@ -35,11 +35,13 @@
 	<main>
 		<nav class="nav_esquerda">
 
-			<p class="perfil">Perfil</p>
-		
+			
 			<div class="div_salas">
 				<ul class="ul_salas">
-					<li class="texto1">
+					<li class="nav_esquerda_dashboard">
+						<a href="index.html">Dashboard</a>
+					</li>
+					<li>
 						<a href="sala.html">Sala 1</a>
 					</li>
 					<li>
@@ -68,20 +70,18 @@
 
 		</nav>
 
-		<div class="div_main">
-			
-
+		<div class="div_conteudo">
 			<div>
-				<table class="table">
+				<table class="tabela_analitics">
 					<thead>
 						<tr>
-							<th class="tabela"></th>
-							<th class="tabela">Mínimo</th>
-							<th class="tabela">1º Quartil</th>
-							<th class="tabela">Média</th>
-							<th class="tabela">Mediana</th>
-							<th class="tabela">3º Quartil</th>
-							<th class="tabela">Máximo</th>
+							<th class="tabela_cabecalho"></th>
+							<th class="tabela_cabecalho">Mínimo</th>
+							<th class="tabela_cabecalho">1º Quartil</th>
+							<th class="tabela_cabecalho">Média</th>
+							<th class="tabela_cabecalho">Mediana</th>
+							<th class="tabela_cabecalho">3º Quartil</th>
+							<th class="tabela_cabecalho">Máximo</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -92,7 +92,7 @@
 							<td>19,0</td>
 							<td>19,4</td>
 							<td>19,9</td>
-							<td>20</td>
+							<td>21</td>
 						</tr>
 
 						<tr>
@@ -104,7 +104,6 @@
 							<td>56,0</td>
 							<td>56,8</td>
 						</tr>
-						<!-- Adicione mais linhas conforme necessário -->
 					</tbody>
 				</table>
 			</div>
@@ -112,22 +111,21 @@
 
 
 			<div class="div_graficos_main">
-				<canvas id="mainGraficoUmidade"></canvas>
 				<canvas id="mainGraficoUmidadeMedia"></canvas>
+				<canvas id="mainGraficoUmidadeMediaMes"></canvas>
 			</div>
-
+			<div class="div_graficos_main">
+				<canvas id="mainGraficoTemperaturaMedia"></canvas>
+				<canvas id="mainGraficoTemperaturaMediaMes"></canvas>
+			</div>
 		</div>
 
 
 
 		<aside>
-			<div class="div_aviso">
-				Sensores com problema
-			</div>
-			<div class="highcharts-figure">
-				<div id="containerTemp" class="chart-container"></div>
+			<div class="div_graficos_aside">
 				<div id="containerUmidade" class="chart-container"></div>
-
+				<div id="containerTemp" class="chart-container"></div>
 			</div>
 		</aside>
 
@@ -140,14 +138,139 @@
 <script>
 
 	//grafico 1
-	var gaugeOptions = {
+	//grafico 2
+
+	const xHorario = ["12:00", "13:00", "14:00", "15:00", "16:00", "17:00"];
+	const xMes = ["Janeiro", "Fevereiro", "Marco", "Abril", "Maio", "Junho"];
+	const yUmidade = [50, 51, 49, 50, 52, 55];
+	const yUmidadeMes = [56, 51, 56, 55, 52, 56];
+	const yTemperatura = [21, 19, 20, 20, 19, 19];
+	const yTemperaturaMes = [21, 19, 20, 19, 19, 19];
+
+
+	// Sensores Main
+
+	new Chart("mainGraficoUmidadeMedia", {
+		type: "line",
+		data: {
+			labels: xHorario,
+			datasets: [{
+				label: 'Umidade Média',
+				fill: false,
+				lineTension: 0,
+				backgroundColor: "#745BF7",
+				borderColor: "#745BF7",
+				data: yUmidade,
+			},]
+		},
+		options: {
+			legend: {
+				display: true,
+			},
+			scales: {
+				yAxes: [{
+					ticks: {
+						min: 40,
+						max: 70
+					}
+				}],
+			}
+		}
+	});
+	const BarColors = ["Red"];
+
+	new Chart("mainGraficoUmidadeMediaMes", {
+		type: "line",
+		data: {
+			labels: xMes,
+			datasets: [{
+				label: 'Umidade Média Mensal',
+				fill: false,
+				lineTension: 0,
+				backgroundColor: "#745BF7",
+				borderColor: "#745BF7",
+				data: yUmidadeMes
+			},]
+		},
+		options: {
+			legend: {
+				display: true,
+			},
+			scales: {
+				yAxes: [{
+					ticks: {
+						min: 40,
+						max: 70
+					}
+				}],
+			}
+		}
+	});
+	new Chart("mainGraficoTemperaturaMedia", {
+		type: "line",
+		data: {
+			labels: xHorario,
+			datasets: [{
+				label: 'Temperatura Média',
+				fill: false,
+				lineTension: 0,
+				backgroundColor: "#FB8421",
+				borderColor: "#FB8421",
+				data: yTemperatura,
+			},]
+		},
+		options: {
+			legend: {
+				display: true,
+			},
+			scales: {
+				yAxes: [{
+					ticks: {
+						min: 15,
+						max: 40
+					}
+				}],
+			}
+		}
+	});
+	new Chart("mainGraficoTemperaturaMediaMes", {
+		type: "line",
+		data: {
+			labels: xMes,
+			datasets: [{
+				label: 'Temperatura Média Mensal',
+				fill: false,
+				lineTension: 0,
+				backgroundColor: "#FB8421",
+				borderColor: "#FB8421",
+				data: yTemperaturaMes
+			},]
+		},
+		options: {
+			legend: {
+				display: true,
+			},
+			scales: {
+				yAxes: [{
+					ticks: {
+						min: 15,
+						max: 40
+					}
+				}],
+			}
+		}
+	});
+	
+	//Configuração dos sensores dentro do Aside
+
+	var graficoUmidadeAsideConfig = {
 		chart: {
 			type: 'solidgauge'
 		},
 		title: null,
 		pane: {
 			center: ['50%', '85%'],
-			size: '140%',
+			size: '100%',
 			startAngle: -90,
 			endAngle: 90,
 			background: {
@@ -167,9 +290,61 @@
 		// the value axis
 		yAxis: {
 			stops: [
-				[0.0, '#46e11f'], // green
-				[0.7, '#DDDF0D'], // yellow
-				[0.9, '#DF5353'] // red
+				[0.0, '#00BEDB'], // green
+				[0.5, '#0079DB'], // yellow
+				[0.7, '#1300DB'] // red
+			],
+			lineWidth: 0,
+			tickWidth: 0,
+			minorTickInterval: null,
+			tickAmount: 2,
+			title: {
+				y: -70
+			},
+			labels: {
+				y: 16
+			}
+		},
+		plotOptions: {
+			solidgauge: {
+				dataLabels: {
+					y: 5,
+					borderWidth: 0,
+					useHTML: true
+				}
+			}
+		}
+	};
+	var graficoTemperaturaAsideConfig = {
+		chart: {
+			type: 'solidgauge'
+		},
+		title: null,
+		pane: {
+			center: ['50%', '85%'],
+			size: '100%',
+			startAngle: -90,
+			endAngle: 90,
+			background: {
+				backgroundColor:
+					Highcharts.defaultOptions.legend.backgroundColor || '#EEE',
+				innerRadius: '60%',
+				outerRadius: '100%',
+				shape: 'arc'
+			}
+		},
+		exporting: {
+			enabled: false
+		},
+		tooltip: {
+			enabled: false
+		},
+		// the value axis
+		yAxis: {
+			stops: [
+				[0.0, '#00B4FF'], // green
+				[0.5, '#FFF300'], // yellow
+				[0.7, '#FFBE01'] // red
 			],
 			lineWidth: 0,
 			tickWidth: 0,
@@ -193,50 +368,26 @@
 		}
 	};
 
+
+	// Sensores dentro do Aside
 	// The temp gauge
-	var chartSpeed = Highcharts.chart('containerTemp', Highcharts.merge(gaugeOptions, {
-		yAxis: {
-			min: 0,
-			max: 40,
-			title: {
-				text: 'Temperatura'
-			}
-		},
-		credits: {
-			enabled: false
-		},
-		series: [{
-			name: 'temp',
-			data: [20],
-			dataLabels: {
-				format:
-					'<div style="text-align:center">' +
-					'<span style="font-size:25px">{y}</span><br/>' +
-					'<span style="font-size:12px;opacity:0.4">°C</span>' +
-					'</div>'
-			},
-			tooltip: {
-				valueSuffix: '°C'
-			}
-		}]
-	}));
 
 	// The RPM gauge
-	var chartRpm = Highcharts.chart('containerUmidade', Highcharts.merge(gaugeOptions, {
+	var chartRpm = Highcharts.chart('containerUmidade', Highcharts.merge(graficoUmidadeAsideConfig, {
 		yAxis: {
 			min: 0,
-			max: 100,
+			max: 80,
 			title: {
-				text: 'Umidade'
+				text: 'Umidade Ideal'
 			}
 		},
 		series: [{
 			name: 'umidade',
-			data: [50],
+			data: [40],
 			dataLabels: {
 				format:
 					'<div style="text-align:center">' +
-					'<span style="font-size:25px">{y:.1f}</span><br/>' +
+					'<span style="font-size:20px">{y:.1f}</span><br/>' +
 					'<span style="font-size:12px;opacity:0.4">' +
 					' %' +
 					'</span>' +
@@ -248,75 +399,35 @@
 		}]
 	}));
 
-	//grafico 2
-
-	const xValues = ["12:00", "13:00", "14:00", "15:00", "16:00", "17:00"];
-	const yValues = [80, 82, 80, 85, 85, 83];
-
-	const yValues2 = [30, 29, 28, 25, 22, 23];
-
-	new Chart("mainGraficoUmidade", {
-		type: "line",
-		data: {
-			labels: xValues,
-			datasets: [{
-				label: 'Umidade',
-				fill: false,
-				lineTension: 0,
-				borderColor: "#7B21C1",
-				borderColor: "#7B21C1",
-				data: yValues,
-			},]
-		},
-		options: {
-			legend: {
-				display: true,
-			},
-			scales: {
-				yAxes: [{
-					ticks: {
-						min: 20,
-						max: 90
-					}
-				}],
+	var chartSpeed = Highcharts.chart('containerTemp', Highcharts.merge(graficoTemperaturaAsideConfig, {
+		yAxis: {
+			min: 15,
+			max: 35,
+			title: {
+				text: 'Temperatura Ideal'
 			}
-		}
-	});
-
-	const xGrafico = ["Janeiro", "Fevereiro", "Marco", "Abril", "Maio", "Junho"];
-	const BlueBar = [90, 88, 92, 86, 87, 82]
-	const RedBar = [22, 24, 27, 23, 20, 18];
-
-	const BarColors = ["Red", "Blue"];
-
-	new Chart("mainGraficoUmidadeMedia", {
-		type: "line",
-		data: {
-			labels: xGrafico,
-			datasets: [{
-				label: 'Umidade Média',
-				fill: false,
-				lineTension: 0,
-				backgroundColor: "#7B21C1",
-				borderColor: "#7B21C1",
-				data: RedBar
-			},]
 		},
-		options: {
-			legend: {
-				display: true,
+		credits: {
+			enabled: false
+		},
+		series: [{
+			name: 'temp',
+			data: [20],
+			dataLabels: {
+				format:
+					'<div style="text-align:center">' +
+					'<span style="font-size:20px">{y}</span><br/>' +
+					'<span style="font-size:12px;opacity:0.4">°C</span>' +
+					'</div>'
 			},
-			scales: {
-				yAxes: [{
-					ticks: {
-						min: 0,
-						max: 100
-					}
-				}],
+			tooltip: {
+				valueSuffix: '°C'
 			}
-		}
-	});
-	var sala = 0;
+		}]
+	}));
+
+
+	// var sala = 0;
 	// function fecharSalas() {
 	// 	if (sala == 0) {
 	// 		document.querySelector('.div_salas').style.display = 'block';
