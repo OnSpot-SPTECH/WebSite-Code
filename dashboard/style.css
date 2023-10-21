@@ -115,13 +115,17 @@ main {
     {
     font-size: 20px;
     }
-.div_sensores
+.ul_sensores
     {
+    display: flex;
+    flex-wrap: wrap;
     list-style:none;
     margin: 20px 5%;
     }
 .sensor_sala
     {
+    flex-grow: 1;
+    flex-basis: 50%;
     margin: 10px 0;
     padding: 10px;
     }
