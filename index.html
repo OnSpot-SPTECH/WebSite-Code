@@ -176,7 +176,7 @@
 							<p id="logo_cal">OnSpot</p>
 						</div>
 						<div class="tudo-calculadora">
-							<p class="titulo-calculadora">Em relação a outros resfriamentos você
+							<p class="titulo-calculadora">Com o nosso serviço você
 								economizaria:</p>
 							<div class="tudo_2">
 								<div class="parte_1">
@@ -196,6 +196,9 @@
 								<hr class="linha">
 							</div>
 							<ul class="parte_2">
+
+								<p>Em relação ao sistema de resfriamento por <span style="color: #B43BD2;" id="tipoSis"></span></p>
+								
 								<li class="text1"> O resfriamento por spray oferece economia
 									de espaço de <span style="color: #B43BD2;">30%.</span></li>
 								<li class="text2"> Com redução anual de até <span style="color: #B43BD2;">1.550
@@ -289,7 +292,11 @@
 		var contaKw2 = resposta * 0.25
 		var contaKw3 = resposta * 0.20
 		var contaKw4 = resposta * 0.17
+
 		var conta$ = contaKw * 0.85
+		var conta$2 = contaKw2 * 0.85
+		var conta$3 = contaKw3 * 0.85
+		var conta$4 = contaKw4 * 0.85
 		var tipo = tipoSistema.value.toLowerCase()
 
 		var tipoAr = ar.value
@@ -307,24 +314,29 @@
 				numero_resposta.innerHTML = `${porcentagem}`
 				numero_1_resultado.innerHTML = `${contaKw}`
 				numero_1_resultado2.innerHTML = `${Math.ceil(conta$)}`
+				tipoSis.innerHTML = `AR`
 			}
 			else if (tipo == tipoAdap) {
 				porcentagem = "30%"
 				numero_resposta.innerHTML = `${porcentagem}`
 				numero_1_resultado.innerHTML = `${contaKw2}`
-				numero_1_resultado2.innerHTML = `${Math.ceil(conta$)}`
+				numero_1_resultado2.innerHTML = `${Math.ceil(conta$2)}`
+				tipoSis.innerHTML = `ADAPTATIVO`
 			}
 			else if (tipo == tipoCrac) {
 				porcentagem = "35%"
 				numero_resposta.innerHTML = `${porcentagem}`
 				numero_1_resultado.innerHTML = `${contaKw3}`
-				numero_1_resultado2.innerHTML = `${Math.ceil(conta$)}`
+				numero_1_resultado2.innerHTML = `${Math.ceil(conta$3)}`
+				tipoSis.innerHTML = `C.R.A.C.`
+
 			}
 			else if (tipo == tipoAgua) {
 				porcentagem = "12%"
 				numero_resposta.innerHTML = `${porcentagem}`
 				numero_1_resultado.innerHTML = `${contaKw4}`
-				numero_1_resultado2.innerHTML = `${Math.ceil(conta$)}`
+				numero_1_resultado2.innerHTML = `${Math.ceil(conta$4)}`
+				tipoSis.innerHTML = `ÁGUA`
 			}
 
 			document.querySelector('.calculadora-card').style.display = 'none'

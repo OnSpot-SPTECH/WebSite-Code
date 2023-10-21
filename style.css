@@ -10,6 +10,10 @@
 	border: 0;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 .container {
 	width: 100%;
 	/* max-width: 1440px; */
@@ -67,7 +71,7 @@ nav ul a:hover::after {
 
 .btn-header {
 	width: 100px;
-	border-color: white;
+	border: white solid 2px;
 	border-radius: 10px;
 	background: none;
 	padding: 10px;
@@ -98,7 +102,7 @@ nav ul a:hover::after {
 }
 
 .btn {
-	border-color: white;
+	border: white solid 2px;
 	border-radius: 10px;
 	background: none;
 	padding: 10px;
@@ -175,8 +179,7 @@ nav ul a:hover::after {
 }
 
 .texto-1 {
-	white-space: pre-line;
-	font-size: 18px;
+	font-size: 19px;
 	padding: 20px 0;
 	color: black;
 }
@@ -447,7 +450,7 @@ hr {
 	border: none;
 	height: 2px;
 	background-color: #40149f;
-	width: 80%;
+	width: 50%;
 }
 
 .parte_1 {
@@ -481,6 +484,7 @@ hr {
 	justify-content: center;
 	white-space: pre-line;
 	font-size: 25px;
+	margin-bottom: 35px;
 }
 
 .tudo_2{
@@ -488,8 +492,17 @@ hr {
 }
 
 #numero_resposta {
+	margin-left: 145px;
 	font-size: 50px;
 	color: #B43BD2;
+}
+
+.parte_2 p{
+	margin-left: 55px;
+	margin-top: 45px;
+	margin-bottom: 50px;
+	font-size: 20px;
+	font-weight: bold;
 }
 
 .text1 {
@@ -509,11 +522,13 @@ hr {
 }
 
 #numero_1_resultado {
+	margin-left: 145px;
 	font-size: 50px;
 	color: #B43BD2;
 }
 
 #numero_1_resultado2 {
+	margin-left: 145px;
 	font-size: 50px;
 	color: #B43BD2;
 }
@@ -522,7 +537,7 @@ hr {
 	font-size: 18px;
 	/* white-space: pre-line; */
 	margin-left: 5px;
-	font-weight: bold;
+	font-weight: 500;
 	margin-top: 20px;
 	list-style: none;
 	text-align: start;
@@ -541,6 +556,9 @@ hr {
 	border-radius: 0 20px 20px 0px;
 	width: 150px;
 	background-image: url(./img/Rectangle\ 45.svg);
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
 	height: 40px;
 	margin-bottom: 40px;
 }
@@ -554,7 +572,7 @@ hr {
 	text-align: center;
 	border-radius: 10px;
 	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.459);
-	height: 700px;
+	height: 820px;
 }
 
 .topo {
