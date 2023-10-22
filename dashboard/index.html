@@ -23,19 +23,13 @@
 	<header>
 		<img class="img-logo" src="./img/Frame 12 copy.svg" alt="">
 		<!-- <a class="a_sala" onclick="fecharSalas()">Salas</a> -->
-		<nav>
-			<ul>
-				<li>
-					<a href="../login.html">Sair<img class="icone-logout" src="../assets/icone-logout.svg" alt=""></a>
-				</li>
-			</ul>
-		</nav>
+
 	</header>
 	<!--  -->
 	<main>
 		<nav class="nav_esquerda">
 
-			
+
 			<div class="div_salas">
 				<ul class="ul_salas">
 					<li class="nav_esquerda_dashboard">
@@ -68,56 +62,54 @@
 				</ul>
 			</div>
 
+			<nav>
+				<ul>
+					<li class="sair_img">
+						<a href="../login.html">Sair<img class="icone-logout" src="../assets/icone-logout.svg"
+								alt=""></a>
+					</li>
+				</ul>
+			</nav>
+
 		</nav>
 
 		<div class="div_conteudo">
-			<div>
-				<table class="tabela_analitics">
-					<thead>
-						<tr>
-							<th class="tabela_cabecalho"></th>
-							<th class="tabela_cabecalho">Mínimo</th>
-							<th class="tabela_cabecalho">1º Quartil</th>
-							<th class="tabela_cabecalho">Média</th>
-							<th class="tabela_cabecalho">Mediana</th>
-							<th class="tabela_cabecalho">3º Quartil</th>
-							<th class="tabela_cabecalho">Máximo</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Temp DHT11</td>
-							<td>18,0</td>
-							<td>18,6</td>
-							<td>19,0</td>
-							<td>19,4</td>
-							<td>19,9</td>
-							<td>21</td>
-						</tr>
 
-						<tr>
-							<td>Umidade</td>
-							<td>45,5</td>
-							<td>50,0</td>
-							<td>52,4</td>
-							<td>54,7</td>
-							<td>56,0</td>
-							<td>56,8</td>
-						</tr>
-					</tbody>
-				</table>
+			<section class="squares_circles">
+				<div class="square">
+					<div class="circle":hoo>
+						<div class="text">
+							40.0
+						</div>
+					</div>
+					<div class="text2">
+						<p>Umidade Ideal</p>
+					</div>
+				</div>
+
+				<div class="square">
+					<div class="circle">
+						<div class="text">
+							20ºC
+						</div>
+					</div>
+					<div class="text2">
+						<p>Temperatura Ideal</p>
+					</div>
+				</div>
+			</section>
+
+			<div class="graficos">
+				<div class="div_graficos_main">
+					<canvas id="mainGraficoUmidadeMedia"></canvas>
+					<canvas id="mainGraficoUmidadeMediaMes"></canvas>
+				</div>
+				<div class="div_graficos_main">
+					<canvas id="mainGraficoTemperaturaMedia"></canvas>
+					<canvas id="mainGraficoTemperaturaMediaMes"></canvas>
+				</div>
 			</div>
 
-
-
-			<div class="div_graficos_main">
-				<canvas id="mainGraficoUmidadeMedia"></canvas>
-				<canvas id="mainGraficoUmidadeMediaMes"></canvas>
-			</div>
-			<div class="div_graficos_main">
-				<canvas id="mainGraficoTemperaturaMedia"></canvas>
-				<canvas id="mainGraficoTemperaturaMediaMes"></canvas>
-			</div>
 		</div>
 
 
@@ -214,8 +206,8 @@
 				label: 'Temperatura Média',
 				fill: false,
 				lineTension: 0,
-				backgroundColor: "#FB8421",
-				borderColor: "#FB8421",
+				backgroundColor: "#745BF7",
+				borderColor: "#745BF7",
 				data: yTemperatura,
 			},]
 		},
@@ -241,8 +233,8 @@
 				label: 'Temperatura Média Mensal',
 				fill: false,
 				lineTension: 0,
-				backgroundColor: "#FB8421",
-				borderColor: "#FB8421",
+				backgroundColor: "#745BF7",
+				borderColor: "#745BF7",
 				data: yTemperaturaMes
 			},]
 		},
@@ -260,7 +252,7 @@
 			}
 		}
 	});
-	
+
 	//Configuração dos sensores dentro do Aside
 
 	var graficoUmidadeAsideConfig = {
