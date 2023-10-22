@@ -14,21 +14,16 @@ body {
     overflow-x: hidden;
 }
 
-.container {
+
+.container_header_banner{
+	background-image: url(img/Rectangle\ 45.svg);
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
 	width: 100%;
 	/* max-width: 1440px; */
 	margin: 0 auto;
 	padding: 0 5%;
-}
-
-header {
-	background-position: center;
-	background-size: cover;
-	background-attachment: fixed;
-}
-
-.logo {
-	width: 80%;
 }
 
 nav {
@@ -38,16 +33,22 @@ nav {
 	padding-top: 20px;
 }
 
-nav ul {
+.ul_header {
 	align-items: center;
 	display: flex;
+	justify-content: space-between;
+	width: 100%;
 }
 
-nav ul li {
+.logo {
+	width: 80%;
+}
+
+.ul_header li {
 	list-style: none;
 }
 
-nav ul a {
+.ul_header a {
 	color: white;
 	margin: 0 25px;
 	text-transform: uppercase;
@@ -55,7 +56,7 @@ nav ul a {
 	display: block;
 }
 
-nav ul a:not(.btn-link):after {
+.ul_header a:not(.btn_header_link):after {
 	content: "";
 	background-color: #ffffff;
 	height: 3px;
@@ -65,11 +66,15 @@ nav ul a:not(.btn-link):after {
 	transition: 0.3s;
 }
 
-nav ul a:hover::after {
+.ul_header a:hover::after {
 	width: 100%;
 }
 
-.btn-header {
+.btn_header_link {
+	font-size: 18px;
+}
+
+.btn_header {
 	width: 100px;
 	border: white solid 2px;
 	border-radius: 10px;
@@ -81,7 +86,7 @@ nav ul a:hover::after {
 	text-decoration: none;
 }
 
-.btn-header:hover {
+.btn_header:hover {
 	background-color: #f9f9f9d3;
 	color: #7b21c1;
 	border: 1px solid #7b21c1;
@@ -90,18 +95,35 @@ nav ul a:hover::after {
 	outline: none;
 }
 
-.btn-link {
-	font-size: 18px;
-}
 
-.btn-link:hover {
+.btn_header_link:hover {
 	color: #7b21c1;
 	transition: 0.5s;
 	cursor: pointer;
 	outline: none;
 }
 
-.btn {
+.div_banner {
+	display: flex;
+	justify-content: space-around;
+	color: #dbd9d9;
+}
+
+.div_banner_text {
+	padding-top: 50px;
+}
+
+.div_banner_text h1 {
+	font-size: 35px;
+	color: white;
+	margin-bottom: 10px;
+}
+
+.div_banner_text p {
+	font-size: 18px;
+}
+
+.btn_banner {
 	border: white solid 2px;
 	border-radius: 10px;
 	background: none;
@@ -113,7 +135,7 @@ nav ul a:hover::after {
 	margin-bottom: 30px;
 }
 
-.banner .btn:hover {
+.div_banner .btn_banner:hover {
 	background-color: #f9f9f9d3;
 	color: #7b21c1;
 	border: 1px solid #7b21c1;
@@ -122,106 +144,87 @@ nav ul a:hover::after {
 	outline: none;
 }
 
-.btn a {
+.btn_banner a {
 	color: inherit;
 }
 
-.banner {
-	display: flex;
-	justify-content: space-around;
-	color: #dbd9d9;
-}
-
-.banner_img {
+.div_banner_img {
 	background-image: 100%;
 }
 
-.banner-text {
-	padding-top: 50px;
-}
-
-.banner-text h1 {
-	font-size: 35px;
-	color: white;
-	margin-bottom: 10px;
-}
-
-.banner-text p {
-	font-size: 18px;
-}
-
-.server {
+.img_banner_server {
 	height: 420px;
 	padding-bottom: 25px;
 }
 
 /* sobre nos */
-.tudo {
-	margin-top: 3%;
+.div_sobrenos {
+	width: 90%;
+	margin: 50px 5%;
 	font-family: Arial;
 	display: flex;
 	justify-content: space-around;
 	padding: 40px;
 }
 
-.text {
-	width: 500px;
+.div_sobrenos_texto {
+	width: 100%;
 }
 
-.sobre-nos {
+.titulo_sobrenos {
 	font-size: 35px;
 	color: #2A0873;
 }
 
-.imagem2 img {
+.div_sobrenos_img img {
 	width: 500px;
 	height: 500px;
 }
 
-.texto-1 {
+.texto1_sobrenos {
 	font-size: 19px;
 	padding: 20px 0;
 	color: black;
 }
 
-.texto-1 span {
+.texto1_sobrenos span {
 	font-size: 18px;
 }
 
-.texto-2 {
+.texto2_sobrenos {
 	list-style: none;
 	margin-top: 5px;
 	font-size: 18px;
-}
+}_
 
-.texto-2 li {
+.texto2_sobrenos li {
 	font-size: 18px;
 	display: flex;
 	align-items: center;
 	margin-bottom: 15px;
 }
 
-.bolinha-roxa {
+.div_img_texto {
 	width: 35px;
 	margin-right: 25px;
 }
 
-.imagem-2 {
+.div_sobrenos_img {
 	width: 500px;
 	margin: 0 40px;
 }
 
 /* clientes-dados */
 
-.conteudo1 {
+/* .conteudo1 {
 	height: 591px;
 	background-image: url(./assets/fundo-cadastro.svg);
 	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;
-}
+} */
 
-.conteudo2 {
+.historico {
 	width: 100%;
 	display: flex;
 	flex-direction: row;
@@ -233,17 +236,7 @@ nav ul a:hover::after {
 	height: 135px;
 }
 
-.numero {
-	font-size: 35px;
-	font-weight: bold;
-
-}
-
-.frase {
-	font-size: 18px;
-}
-
-.texts {
+.historico_texto {
 	display: flex;
 	flex-direction: column;
 	margin: auto;
@@ -253,10 +246,20 @@ nav ul a:hover::after {
 	margin-left: 160px;
 }
 
+.historico_numero {
+	font-size: 35px;
+	font-weight: bold;
+
+}
+
+.historico_frase {
+	font-size: 18px;
+}
+
 /* Propósito*/
 
 .proposito {
-	margin: 0 100px 50px;
+	margin: 0 10% 50px;
 	display: grid;
 	justify-content: center;
 	text-align: center;
@@ -293,45 +296,44 @@ nav ul a:hover::after {
 	margin-bottom: 15px;
 }
 
-#visao {
-	height: 45px;
-	font-size: 18px;
-	color: black;
-}
-
-#missao {
-	height: 45px;
-	font-size: 18px;
-	color: black;
-}
-
-#valores {
-	height: 45px;
-	font-size: 18px;
-	color: black;
-}
-
 .proposito_card_vetor {
 	margin: 20px;
 	width: 80px;
 	height: 80px;
 }
+.proposito_visao {
+	height: 45px;
+	font-size: 18px;
+	color: black;
+}
+
+.proposito_missao {
+	height: 45px;
+	font-size: 18px;
+	color: black;
+}
+
+.proposito_valores {
+	height: 45px;
+	font-size: 18px;
+	color: black;
+}
 
 /* calculadora */
 
-.calculadora-container {
+.calculadora_container {
 	margin-bottom: 25px;
-
+	padding-bottom: 40px;
 }
 
-.titulo h1 {
+.div_calculadora_titulo h1 {
 	margin: auto;
 	text-align: center;
 	font-size: 35px;
 	color: #2A0873;
 }
 
-hr {
+.div_calculadora_titulo hr {
 	border: none;
 	height: 2px;
 	background-color: #2A0873;
@@ -339,7 +341,7 @@ hr {
 	width: 20%;
 }
 
-.texto-titulo {
+.texto_calculadora_titulo {
 	color: rgb(10, 9, 9);
 	padding: 10px 0;
 	margin: auto;
@@ -349,7 +351,7 @@ hr {
 	margin-bottom: 30px;
 }
 
-.calculadora-card {
+.calculadora_card {
 	margin: auto;
 	width: 800px;
 	background-color: rgb(255, 255, 255);
@@ -359,7 +361,7 @@ hr {
 	box-shadow: 2px 2px 10px 10px #0000004d;
 }
 
-.logo-calc {
+.div_calc_logo {
 	margin-top: 15px;
 	border-radius: 0 20px 20px 0px;
 	width: 150px;
@@ -368,7 +370,7 @@ hr {
 	margin-bottom: 40px;
 }
 
-#calculadora-logo {
+.calculadora_logo {
 	color: white;
 	justify-content: center;
 	padding: 2px 0 0 0;
@@ -450,13 +452,14 @@ hr {
 	border: none;
 	height: 2px;
 	background-color: #40149f;
-	width: 50%;
+	width: 100%;
 }
 
 .parte_1 {
 	display: flex;
-	margin-left: 50px;
 	height: 90px;
+	align-items: end;
+	justify-content: center;
 }
 
 .texto_energ {
@@ -492,7 +495,7 @@ hr {
 }
 
 #numero_resposta {
-	margin-left: 145px;
+
 	font-size: 50px;
 	color: #B43BD2;
 }
@@ -522,13 +525,13 @@ hr {
 }
 
 #numero_1_resultado {
-	margin-left: 145px;
+
 	font-size: 50px;
 	color: #B43BD2;
 }
 
 #numero_1_resultado2 {
-	margin-left: 145px;
+
 	font-size: 50px;
 	color: #B43BD2;
 }
@@ -572,7 +575,7 @@ hr {
 	text-align: center;
 	border-radius: 10px;
 	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.459);
-	height: 820px;
+	height: 900px;
 }
 
 .topo {
@@ -704,13 +707,17 @@ footer {
 	font-size: 35px;
 }
 
-.footer_cima02>ul {
+.footer_cima02 ul {
 	list-style: none;
 	font-size: 18px;
 	columns: 2;
 }
-
-.footer_cima02>ul>li::before {
+.footer_cima02 ul a
+	{
+	text-decoration: none;
+	color: white;
+	}
+.footer_cima02 ul li::before {
 	font-size: 18px;
 	content: "> ";
 	color: white;
@@ -718,7 +725,7 @@ footer {
 }
 
 .footer_linha {
-	width: 99.9vw;
+	width:100%;
 	height: 1px;
 	background-color: white;
 }
