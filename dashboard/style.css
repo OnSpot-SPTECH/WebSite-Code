@@ -86,10 +86,6 @@ main {
     position: fixed;
 }
 
-/* .nav_esquerda_dashboard {
-    padding-bottom: 30px;
-} */
-
 .ul_salas li {
     display: flex;
     flex-direction: column;

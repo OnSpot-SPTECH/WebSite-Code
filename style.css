@@ -452,7 +452,8 @@ nav {
 	border: none;
 	height: 2px;
 	background-color: #40149f;
-	width: 100%;
+	width: 50%;
+	margin-left: 150px;
 }
 
 .parte_1 {
@@ -575,7 +576,7 @@ nav {
 	text-align: center;
 	border-radius: 10px;
 	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.459);
-	height: 900px;
+	height: 820px;
 }
 
 .topo {
