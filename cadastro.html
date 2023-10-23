@@ -57,20 +57,17 @@
 <script>
 
     function calculo() {
-        function calculo() {
-        var nome = nomeEmpresa.value
-        var CNPJ = Number(CNPJOTO.value)
-        var razao = razaoSocial.value
-        var cep = Number(CEPregistro.value)
-        var telefone = Number(tel.value)
-        var email = emailRegistro.value
-        var frase = '@'
+            var nome = nomeEmpresa.value
+            var CNPJ = Number(CNPJOTO.value)
+            var razao = razaoSocial.value
+            var cep = Number(CEPregistro.value)
+            var telefone = Number(tel.value)
+            var email = emailRegistro.value
+            var frase = '@'
 
-        if (nome === '' || CNPJ <= 0 || razao === '' || cep <= 0 || telefone <= 0 || email === '')
-            alert('Por favor preencha o registro')
-        else
-            window.location.href = './dashboard/index.html'
-    }
+            if (nome === '' || CNPJ <= 0 || razao === '' || cep <= 0 || telefone <= 0 || email === '' || email.indexOf(frase) === -1)
+                alert('dados invalidos.Por favor preencha o registro')
+            else
+                window.location.href = './dashboard/index.html'
     }
 </script>
-
