@@ -33,35 +33,21 @@
 			<div class="div_salas">
 				<ul class="ul_salas">
 					<li class="nav_esquerda_dashboard">
-						<a href="index.html">Dashboard</a>
+						<img src="./img/user.png"></img>
 					</li>
 					<li>
-						<a href="sala.html">Sala 1</a>
+						<img src="./img/data-center.png"></img>
 					</li>
 					<li>
-						<a href="sala.html">Sala 2</a>
+						<img src="./img/settings.png"></img>
 					</li>
 					<li>
-						<a href="sala.html">Sala 3</a>
-					</li>
-					<li>
-						<a href="sala.html">Sala 4</a>
-					</li>
-					<li>
-						<a href="sala.html">Sala 5</a>
-					</li>
-					<li>
-						<a href="sala.html">Sala 6</a>
-					</li>
-					<li>
-						<a href="sala.html">Sala 7</a>
-					</li>
-					<li>
-						<a href="sala.html">Sala 8</a>
+						<a src="../login.html"><img class="icone-logout" src="../assets/icone-logout.svg"
+							alt=""></a>
 					</li>
 				</ul>
 			</div>
-
+<!-- 
 			<nav>
 				<ul>
 					<li class="sair_img">
@@ -69,37 +55,18 @@
 								alt=""></a>
 					</li>
 				</ul>
-			</nav>
+			</nav> -->
 
 		</nav>
 
 		<div class="div_conteudo">
 
 			<section class="squares_circles">
-				<div class="square">
-					<div class="circle":hoo>
-						<div class="text">
-							40.0
-						</div>
-					</div>
-					<div class="text2">
-						<p>Umidade Ideal</p>
-					</div>
-				</div>
-
-				<div class="square">
-					<div class="circle">
-						<div class="text">
-							20ºC
-						</div>
-					</div>
-					<div class="text2">
-						<p>Temperatura Ideal</p>
-					</div>
-				</div>
+				
 			</section>
 
 			<div class="graficos">
+				
 				<div class="div_graficos_main">
 					<canvas id="mainGraficoUmidadeMedia"></canvas>
 					<canvas id="mainGraficoUmidadeMediaMes"></canvas>
@@ -112,12 +79,29 @@
 
 		</div>
 
-
-
 		<aside>
 			<div class="div_graficos_aside">
-				<div id="containerUmidade" class="chart-container"></div>
-				<div id="containerTemp" class="chart-container"></div>
+				<div class="square-umi">
+					<div class="circle-umi":hoo>
+						<div class="text">
+							40%
+						</div>
+					</div>
+					<div class="text2">
+						<p>Umidade Ideal</p>
+					</div>
+				</div>
+
+				<div class="square-temp">
+					<div class="circle-temp">
+						<div class="text">
+							20ºC
+						</div>
+					</div>
+					<div class="text2">
+						<p>Temperatura Ideal</p>
+					</div>
+				</div>
 			</div>
 		</aside>
 
@@ -133,12 +117,11 @@
 	//grafico 2
 
 	const xHorario = ["12:00", "13:00", "14:00", "15:00", "16:00", "17:00"];
-	const xMes = ["Janeiro", "Fevereiro", "Marco", "Abril", "Maio", "Junho"];
-	const yUmidade = [50, 51, 49, 50, 52, 55];
-	const yUmidadeMes = [56, 51, 56, 55, 52, 56];
+	const xMes = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho","Julho", "Agosto", "setembro", "outubro", "Novembro", "Dezembro"];
+	const yUmidade = [50, 45, 46, 42, 43, 45];
+	const yUmidadeMes = [50, 45, 46, 42, 43, 45,50, 45, 46, 42, 43, 45];
 	const yTemperatura = [21, 19, 20, 20, 19, 19];
-	const yTemperaturaMes = [21, 19, 20, 19, 19, 19];
-
+	const yTemperaturaMes = [21, 19, 20, 19, 19, 19,21, 19, 20, 19, 19, 19];
 
 	// Sensores Main
 
@@ -150,8 +133,8 @@
 				label: 'Umidade Média',
 				fill: false,
 				lineTension: 0,
-				backgroundColor: "#745BF7",
-				borderColor: "#745BF7",
+				backgroundColor: "#4761f4",
+				borderColor: "#4761f4",
 				data: yUmidade,
 			},]
 		},
@@ -162,8 +145,8 @@
 			scales: {
 				yAxes: [{
 					ticks: {
-						min: 40,
-						max: 70
+						min: 20,
+						max: 60
 					}
 				}],
 			}
@@ -172,15 +155,15 @@
 	const BarColors = ["Red"];
 
 	new Chart("mainGraficoUmidadeMediaMes", {
-		type: "line",
+		type: "bar",
 		data: {
 			labels: xMes,
 			datasets: [{
 				label: 'Umidade Média Mensal',
 				fill: false,
 				lineTension: 0,
-				backgroundColor: "#745BF7",
-				borderColor: "#745BF7",
+				backgroundColor: "#4761f4",
+				borderColor: "#4761f4",
 				data: yUmidadeMes
 			},]
 		},
@@ -191,7 +174,7 @@
 			scales: {
 				yAxes: [{
 					ticks: {
-						min: 40,
+						min: 20,
 						max: 70
 					}
 				}],
@@ -206,8 +189,8 @@
 				label: 'Temperatura Média',
 				fill: false,
 				lineTension: 0,
-				backgroundColor: "#745BF7",
-				borderColor: "#745BF7",
+				backgroundColor: "#d73232",
+				borderColor: "#d73232",
 				data: yTemperatura,
 			},]
 		},
@@ -226,15 +209,15 @@
 		}
 	});
 	new Chart("mainGraficoTemperaturaMediaMes", {
-		type: "line",
+		type: "bar",
 		data: {
 			labels: xMes,
 			datasets: [{
 				label: 'Temperatura Média Mensal',
 				fill: false,
 				lineTension: 0,
-				backgroundColor: "#745BF7",
-				borderColor: "#745BF7",
+				backgroundColor: "#d73232",
+				borderColor: "#d73232",
 				data: yTemperaturaMes
 			},]
 		},
@@ -447,8 +430,5 @@
 		});
 		table.appendChild(row);
 	});
-
-
-
 
 </script>
