@@ -79,12 +79,14 @@
         {
             if(email.indexOf(frase) === -1 )
                 alert( `Email inválido`)
-            if(email != confirmacaoEmail)
-                conteudo.innerHTML = 'Os emails não coincidem.'
-            else if(senha != confirmacaoSenha)
-                conteudo2.innerHTML = 'As senhas não coincidem.'
-            else
-                window.location.href = './login.html'
+            else{
+                if(email != confirmacaoEmail)
+                    conteudo.innerHTML = 'Os emails não coincidem.'
+                else if(senha != confirmacaoSenha)
+                    conteudo2.innerHTML = 'As senhas não coincidem.'
+                else
+                    window.location.href = './login.html'
+            }
         }
     }
 
