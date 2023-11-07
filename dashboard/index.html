@@ -17,13 +17,11 @@
 	<header>
 		<img class="img-logo" src="./img/Frame 12.svg" alt="">
 		<!-- <a class="a_sala" onclick="fecharSalas()">Salas</a> -->
-
+		<a id="headerTitulo" class="titulo_header">Salas</a>
 	</header>
-	<!--  -->
+
 	<main>
 		<nav class="nav_esquerda">
-
-
 			<div class="div_salas">
 				<ul class="ul_salas">
 					<li class="nav_esquerda_dashboard">
@@ -46,179 +44,76 @@
 
 		<div class="div_conteudo">
 
-			<section class="squares_circles">
+			<!-- <section class="squares_circles">
 				
+			</section> -->
+			<span id="salasTitulo" class="salas_titulo">Clique na sala desejada</span>
+			<section id="salas" class="main_salas">
+				<div onclick="fecharSalas()" id="salaUm" class="salas">
+					Sala 1
+				</div>
+				<div id="salaDois" class="salas">
+					Sala 2
+				</div>
+				<div id="salaTres" class="salas">
+					Sala 3 					
+				</div>
+				<div id="salaQuatro" class="salas">
+					Sala 4
+				</div>
 			</section>
 
-			<div class="graficos">
-				
-				<div class="div_graficos_main">
-					<canvas id="mainGraficoUmidadeMedia"></canvas>
-					<canvas id="mainGraficoUmidadeMediaMes"></canvas>
+			<div onclick="salaUm()" id="divSala1" class="main_sala">
+				<div class="hacks">
+					<div class="hack">
+						<h2 class="titulo_hack">Hack 1</h2>
+					</div>
+					<div class="hack">
+						<h2 class="titulo_hack">Hack 2</h2>
+					</div>
+					<div class="hack">
+						<h2 class="titulo_hack">Hack 3</h2>
+					</div>
 				</div>
-				<div class="div_graficos_main">
-					<canvas id="mainGraficoTemperaturaMedia"></canvas>
-					<canvas id="mainGraficoTemperaturaMediaMes"></canvas>
-				</div>
+				<aside class="analy">
+					asdasd
+				</aside>
 			</div>
-
-		</div>
-
-		<aside>
-			<div class="div_graficos_aside">
-				<div class="square-umi">
-					<div class="circle-umi":hoo>
-						<div class="text">
-							40%
-						</div>
-					</div>
-					<div class="text2">
-						<p>Umidade Ideal</p>
-					</div>
-				</div>
-
-				<div class="square-temp">
-					<div class="circle-temp">
-						<div class="text">
-							20ºC
-						</div>
-					</div>
-					<div class="text2">
-						<p>Temperatura Ideal</p>
-					</div>
-				</div>
-			</div>
-		</aside>
+			
 
 	</main>
 
 </body>
 
 </html>
-
+	<!-- var visorSala1 = 0;
+	function salaUm()
+		{
+		if(visorSala1 = 0)
+			{
+			body.style.display ='none';
+			document.getElementById("salas").style.display = "none";
+			document.getElementByClass("main_salas").style.display = "none";
+			// salas
+			// divSala1
+			}
+		} -->
 <script>
+	var sala = 0;
+	 function fecharSalas() {
+	 	if (sala == 0) {
+	 		document.querySelector('.main_sala').style.display = 'flex';
+	 		document.querySelector('.main_salas').style.display = 'none';
+			 document.querySelector('.salas_titulo').style.display = 'none';
+			 headerTitulo.innerHTML = 'Sala 1';
+	 		sala++;
+	 	} else {
+			document.querySelector('.main_sala').style.display = 'none';
+	 		document.querySelector('.main_salas').style.display = 'flex';
+			document.querySelector('.salas_titulo').style.display = 'flex';
+			headerTitulo.innerHTML = 'Salas';
+	 		sala--;
+	 	}
+	 }
+</script> 
 
-	//grafico 1
-	//grafico 2
-
-	const xHorario = ["12:00", "13:00", "14:00", "15:00", "16:00", "17:00"];
-	const xMes = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho","Julho", "Agosto", "setembro", "outubro", "Novembro", "Dezembro"];
-	const yUmidade = [50, 45, 46, 42, 43, 45];
-	const yUmidadeMes = [50, 45, 46, 42, 43, 45,50, 45, 46, 42, 43, 45];
-	const yTemperatura = [21, 19, 20, 20, 19, 19];
-	const yTemperaturaMes = [21, 19, 20, 19, 19, 19,21, 19, 20, 19, 19, 19];
-
-	// Sensores Main
-
-	new Chart("mainGraficoUmidadeMedia", {
-		type: "line",
-		data: {
-			labels: xHorario,
-			datasets: [{
-				label: 'Umidade Média',
-				fill: false,
-				lineTension: 0,
-				backgroundColor: "#4761f4",
-				borderColor: "#4761f4",
-				data: yUmidade,
-			},]
-		},
-		options: {
-			legend: {
-				display: true,
-			},
-			scales: {
-				yAxes: [{
-					ticks: {
-						min: 20,
-						max: 60
-					}
-				}],
-			}
-		}
-	});
-	const BarColors = ["Red"];
-
-	new Chart("mainGraficoUmidadeMediaMes", {
-		type: "bar",
-		data: {
-			labels: xMes,
-			datasets: [{
-				label: 'Umidade Média Mensal',
-				fill: false,
-				lineTension: 0,
-				backgroundColor: "#4761f4",
-				borderColor: "#4761f4",
-				data: yUmidadeMes
-			},]
-		},
-		options: {
-			legend: {
-				display: true,
-			},
-			scales: {
-				yAxes: [{
-					ticks: {
-						min: 20,
-						max: 70
-					}
-				}],
-			}
-		}
-	});
-	new Chart("mainGraficoTemperaturaMedia", {
-		type: "line",
-		data: {
-			labels: xHorario,
-			datasets: [{
-				label: 'Temperatura Média',
-				fill: false,
-				lineTension: 0,
-				backgroundColor: "#d73232",
-				borderColor: "#d73232",
-				data: yTemperatura,
-			},]
-		},
-		options: {
-			legend: {
-				display: true,
-			},
-			scales: {
-				yAxes: [{
-					ticks: {
-						min: 15,
-						max: 40
-					}
-				}],
-			}
-		}
-	});
-	new Chart("mainGraficoTemperaturaMediaMes", {
-		type: "bar",
-		data: {
-			labels: xMes,
-			datasets: [{
-				label: 'Temperatura Média Mensal',
-				fill: false,
-				lineTension: 0,
-				backgroundColor: "#d73232",
-				borderColor: "#d73232",
-				data: yTemperaturaMes
-			},]
-		},
-		options: {
-			legend: {
-				display: true,
-			},
-			scales: {
-				yAxes: [{
-					ticks: {
-						min: 15,
-						max: 40
-					}
-				}],
-			}
-		}
-	});
-
-</script>
