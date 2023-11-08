@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dashboard</title>
+
+	<link rel="stylesheet" href="salas.css">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+</head>
+
+<body>
+	<!-- Header -->
+	<header>
+		<img class="img-logo" src="./img/Frame 12.svg" alt="">
+		<!-- <a class="a_sala" onclick="fecharSalas()">Salas</a> -->
+		<a id="headerTitulo" class="titulo_header">Salas</a>
+	</header>
+
+	<main>
+		<nav class="nav_esquerda">
+			<div class="div_salas">
+				<ul class="ul_salas">
+					<li class="nav_esquerda_dashboard">
+						<img src="./img/user.png"></img>
+					</li>
+					<li>
+						<img src="./img/data-center.png"></img>
+					</li>
+					<li>
+						<img src="./img/settings.png"></img>
+					</li>
+					<li>
+						<a href="../login.html"><img class="icone-logout" src="../assets/icone-logout.svg"
+							alt=""></a>
+					</li>
+				</ul>
+			</div>
+
+		</nav>
+
+		<div class="div_conteudo">
+
+			<!-- <section class="squares_circles">
+				
+			</section> -->
+			<span id="salasTitulo" class="salas_titulo">Clique na sala desejada</span>
+			<section id="salas" class="main_salas">
+				<div onclick="fecharSalas()" id="salaUm" class="salas">
+					Sala 1
+				</div>
+				<div id="salaDois" class="salas">
+					Sala 2
+				</div>
+				<div id="salaTres" class="salas">
+					Sala 3 					
+				</div>
+				<div id="salaQuatro" class="salas">
+					Sala 4
+				</div>
+			</section>
+
+			<div onclick="salaUm()" id="divSala1" class="main_sala">
+				<div class="hacks">
+					<div class="hack">
+						<h2 class="titulo_hack">Hack 1</h2>
+					</div>
+					<div class="hack">
+						<h2 class="titulo_hack">Hack 2</h2>
+					</div>
+					<div class="hack">
+						<h2 class="titulo_hack">Hack 3</h2>
+					</div>
+				</div>
+				<aside class="analy">
+					asdasd
+				</aside>
+			</div>
+			
+
+	</main>
+
+</body>
+
+</html>
+	<!-- var visorSala1 = 0;
+	function salaUm()
+		{
+		if(visorSala1 = 0)
+			{
+			body.style.display ='none';
+			document.getElementById("salas").style.display = "none";
+			document.getElementByClass("main_salas").style.display = "none";
+			// salas
+			// divSala1
+			}
+		} -->
+<script>
+	var sala = 0;
+	 function fecharSalas() {
+	 	if (sala == 0) {
+	 		document.querySelector('.main_sala').style.display = 'flex';
+	 		document.querySelector('.main_salas').style.display = 'none';
+			 document.querySelector('.salas_titulo').style.display = 'none';
+			 headerTitulo.innerHTML = 'Sala 1';
+	 		sala++;
+	 	} else {
+			document.querySelector('.main_sala').style.display = 'none';
+	 		document.querySelector('.main_salas').style.display = 'flex';
+			document.querySelector('.salas_titulo').style.display = 'flex';
+			headerTitulo.innerHTML = 'Salas';
+	 		sala--;
+	 	}
+	 }
+</script> 
+
