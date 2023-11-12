@@ -24,10 +24,10 @@
 		<nav class="nav_esquerda">
 			<div class="div_salas">
 				<ul class="ul_salas">
-					
+
 					<li>
 						<a href="salas.html"><img src="./img/data-center.png"></img></a>
-						
+
 					</li>
 					<li>
 						<img src="./img/user.png"></img>
@@ -39,8 +39,7 @@
 						<img src="./img/settings.png"></img>
 					</li>
 					<li>
-						<a href="../login.html"><img class="icone-logout" src="../assets/icone-logout.svg"
-							alt=""></a>
+						<a href="../login.html"><img class="icone-logout" src="../assets/icone-logout.svg" alt=""></a>
 					</li>
 				</ul>
 			</div>
@@ -52,7 +51,12 @@
 			<!-- <section class="squares_circles">
 				
 			</section> -->
-			<span id="salasTitulo" class="salas_titulo">Clique na sala desejada</span>
+			<div class="tituloInput">
+				<span id="salasTitulo" class="salas_titulo">Clique na sala desejada</span>
+				<div class="input-container">
+					<input type="text" id="inputSalas" class="sala-input" placeholder="Sua sala">
+				</div>
+			</div>
 			<section id="salas" class="main_salas">
 				<div onclick="fecharSalas()" id="salaUm" class="salas">
 					Sala 1
@@ -61,14 +65,14 @@
 					Sala 2
 				</div>
 				<div id="salaTres" class="salas">
-					Sala 3 					
+					Sala 3
 				</div>
 				<div id="salaQuatro" class="salas">
 					Sala 4
 				</div>
 			</section>
 
-			<div  id="divSala1" class="main_sala">
+			<div id="divSala1" class="main_sala">
 				<div class="hacks">
 					<div class="hack" id="rackUm">
 						<div class="rack_main">
@@ -99,7 +103,7 @@
 					<div class="hack" id="rackDois">
 						<div class="rack_main">
 							<h2 class="titulo_hack">Rack 2</h2>
-							<div  class="rack_nav"></div>
+							<div class="rack_nav"></div>
 							<div class="square square_umi">
 								<div class="circle circle-umi">
 									<div class="text">
@@ -123,9 +127,9 @@
 						</div>
 					</div>
 					<div class="hack" id="rackTres">
-						<div class="rack_main"> 
+						<div class="rack_main">
 							<h2 class="titulo_hack">Rack 3</h2>
-							<div  class="rack_nav"></div>
+							<div class="rack_nav"></div>
 							<div class="square square_umi">
 								<div class="circle circle-umi">
 									<div class="text">
@@ -149,18 +153,23 @@
 						</div>
 					</div>
 				</div>
-				<aside class="analy">
-					asdasd
-				</aside>
+				<section class="analy-section">
+					<aside class="analy">
+						asdasd
+					</aside>
+					<aside class="analy">
+						asdasd
+					</aside>
+				</section>
 			</div>
-			
+
 
 	</main>
 
 </body>
 
 </html>
-	<!-- var visorSala1 = 0;
+<!-- var visorSala1 = 0;
 	function salaUm()
 		{
 		if(visorSala1 = 0)
@@ -173,36 +182,37 @@
 			}
 		} -->
 <script>
+
 	var sala = 0;
 	var primeiroRack = 0;
-	 function fecharSalas() {
-	 	if (sala == 0) {
-	 		document.querySelector('.main_sala').style.display = 'flex';
-	 		document.querySelector('.main_salas').style.display = 'none';
-			 document.querySelector('.salas_titulo').style.display = 'none';
-			 headerTitulo.innerHTML = 'Sala 1';
-	 		sala++;
-	 	} else {
+	function fecharSalas() {
+
+		document.getElementById("inputSalas").style.display = 'none'
+
+		if (sala == 0) {
+			document.querySelector('.main_sala').style.display = 'flex';
+			document.querySelector('.main_salas').style.display = 'none';
+			document.querySelector('.salas_titulo').style.display = 'none';
+			headerTitulo.innerHTML = 'Sala 1';
+			sala++;
+		} else {
 			document.querySelector('.main_sala').style.display = 'none';
-	 		document.querySelector('.main_salas').style.display = 'flex';
+			document.querySelector('.main_salas').style.display = 'flex';
 			document.querySelector('.salas_titulo').style.display = 'flex';
 			headerTitulo.innerHTML = 'Salas';
-	 		sala--;
-	 	}
+			sala--;
+		}
 	}
-	function rack1()
-	 	{
-		if(primeiroRack==0)
-		{
-		primeiroRack++;
-		document.getElementById("rackDois").style.display = 'none';
-		document.getElementById("rackTres").style.display = 'none';
-		} else
-			{
+	function rack1() {
+
+		if (primeiroRack == 0) {
+			primeiroRack++;
+			document.getElementById("rackDois").style.display = 'none';
+			document.getElementById("rackTres").style.display = 'none';
+		} else {
 			document.getElementById("rackDois").style.display = 'flex';
 			document.getElementById("rackTres").style.display = 'flex';
 			primeiroRack--;
-			}
+		}
 	}
-</script> 
-
+</script>
