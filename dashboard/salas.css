@@ -207,7 +207,7 @@ main {
     margin: 0 4% 0 10%;
     display: flex;
     align-items: center;
-    font-size: 40px;
+    font-size: 37px;
     height: 100%;
     width: fit-content;
 }
@@ -218,6 +218,12 @@ main {
     width: 40px;
     margin: 0 0 10px 5%;
     border: solid 1px var(--cor2);
+}
+
+.rack_nav img{
+    width: 15px;
+    margin-top: 10px;
+    margin-left: 11px;
 }
 
 .square {

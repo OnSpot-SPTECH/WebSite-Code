@@ -77,7 +77,7 @@
 					<div class="rack" id="rackUm">
 						<div class="rack_main" id="rackMain">
 							<h2 class="titulo_rack">Rack 1</h2>
-							<div class="rack_nav" onclick="rack1()"></div>
+							<div class="rack_nav" onclick="rack1()"><img src="./img/plus.png" alt=""></div>
 							<div class="square square_umi">
 								<div class="circle circle-umi">
 									<div class="text">
@@ -114,7 +114,7 @@
 					<div class="rack" id="rackDois">
 						<div class="rack_main" id="rackMain2">
 							<h2 class="titulo_rack">Rack 2</h2>
-							<div class="rack_nav" onclick="rack2()"></div>
+							<div class="rack_nav" onclick="rack2()"><img src="./img/plus.png" alt=""></div>
 							<div class="square square_umi">
 								<div class="circle circle-umi">
 									<div class="text">
@@ -151,7 +151,7 @@
 					<div class="rack" id="rackTres">
 						<div class="rack_main" id="rackMain3">
 							<h2 class="titulo_rack">Rack 3</h2>
-							<div class="rack_nav" onclick="rack3()"></div>
+							<div class="rack_nav" onclick="rack3()"><img src="./img/plus.png" alt=""></div>
 							<div class="square square_umi">
 								<div class="circle circle-umi">
 									<div class="text">
@@ -198,11 +198,11 @@
 
 
 	</main>
-
 </body>
 
 </html>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <!-- var visorSala1 = 0;
 	function salaUm()
 		{
@@ -215,185 +215,5 @@
 			// divSala1
 			}
 		} -->
-<script>
 
-
-	
-	const ctx = document.getElementById('myChart');
-
-	new Chart(ctx, {
-	type: 'line',
-	data: {
-		labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-		datasets: [
-			{
-			label: 'temperatura',
-			data: [12, 19, 3, 5, 2, 3],
-			borderWidth: 2,
-			backgroundColor: "red",
-			borderColor: "red",
-			},
-			{
-			label: 'umidade',
-			data: [12, 19, 23, 5, 2, 3],
-			borderWidth: 2,
-			backgroundColor: "#4761f4",
-			borderColor: "#4761f4",
-			},
-		]
-	},
-	options: {
-		scales: {
-		y: {
-			beginAtZero: true
-		}
-		}
-	}
-	});
-
-	const ctx2 = document.getElementById('myChart2');
-
-	new Chart(ctx2, {
-	type: 'line',
-	data: {
-		labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-		datasets: [
-			{
-			label: 'temperatura',
-			data: [12, 19, 3, 5, 2, 3],
-			borderWidth: 2,
-			backgroundColor: "red",
-			borderColor: "red",
-			},
-			{
-			label: 'umidade',
-			data: [12, 19, 23, 5, 2, 3],
-			borderWidth: 2,
-			backgroundColor: "#4761f4",
-			borderColor: "#4761f4",
-			},
-		]
-	},
-	options: {
-		scales: {
-		y: {
-			beginAtZero: true
-		}
-		}
-	}
-	});
-
-	const ctx3 = document.getElementById('myChart3');
-
-	new Chart(ctx3, {
-	type: 'line',
-	data: {
-		labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-		datasets: [
-			{
-			label: 'temperatura',
-			data: [12, 19, 3, 5, 2, 3],
-			borderWidth: 2,
-			backgroundColor: "red",
-			borderColor: "red",
-			},
-			{
-			label: 'umidade',
-			data: [12, 19, 23, 5, 2, 3],
-			borderWidth: 2,
-			backgroundColor: "#4761f4",
-			borderColor: "#4761f4",
-			},
-		]
-	},
-	options: {
-		scales: {
-		y: {
-			beginAtZero: true
-		}
-		}
-	}
-	});
-
-
-	var sala = 0;
-	var primeiroRack = 0;
-	function fecharSalas() {
-
-		document.getElementById("inputSalas").style.display = 'none'
-
-		if (sala == 0) {
-			document.querySelector('.main_sala').style.display = 'flex';
-			document.querySelector('.main_salas').style.display = 'none';
-			document.querySelector('.salas_titulo').style.display = 'none';
-			headerTitulo.innerHTML = 'Sala 1';
-			sala++;
-		} else {
-			document.querySelector('.main_sala').style.display = 'none';
-			document.querySelector('.main_salas').style.display = 'flex';
-			document.querySelector('.salas_titulo').style.display = 'flex';
-			headerTitulo.innerHTML = 'Salas';
-			sala--;
-		}
-	}
-	function rack1() {
-
-		if (primeiroRack == 0) {
-			primeiroRack++;
-			document.getElementById("rackDois").style.display = 'none';
-			document.getElementById("rackTres").style.display = 'none';
-			document.getElementById("rackUm").style.height = '95%';
-			document.getElementById("rackMain").style.height = '32%';
-			document.getElementById("varSensores").style.display = 'block';
-			document.getElementById("graficosRacks").style.display = 'flex';
-		} else {
-			document.getElementById("rackDois").style.display = 'block';
-			document.getElementById("rackTres").style.display = 'block';
-			document.getElementById("rackUm").style.height = '30%';
-			document.getElementById("rackMain").style.height = '100%';
-			document.getElementById("varSensores").style.display = 'none';
-			document.getElementById("graficosRacks").style.display = 'none';
-			primeiroRack--;
-		}
-	}
-	function rack2() {
-
-	if (primeiroRack == 0) {
-		primeiroRack++;
-		document.getElementById("rackUm").style.display = 'none';
-		document.getElementById("rackTres").style.display = 'none';
-		document.getElementById("rackDois").style.height = '95%';
-		document.getElementById("rackMain2").style.height = '32%';
-		document.getElementById("varSensores2").style.display = 'block';
-		document.getElementById("graficosRacks2").style.display = 'flex';
-	} else {
-		document.getElementById("rackUm").style.display = 'block';
-		document.getElementById("rackTres").style.display = 'block';
-		document.getElementById("rackDois").style.height = '30%';
-		document.getElementById("rackMain2").style.height = '100%';
-		document.getElementById("varSensores2").style.display = 'none';
-		document.getElementById("graficosRacks2").style.display = 'none';
-		primeiroRack--;
-	}
-	}
-	function rack3() {
-
-	if (primeiroRack == 0) {
-		primeiroRack++;
-		document.getElementById("rackDois").style.display = 'none';
-		document.getElementById("rackUm").style.display = 'none';
-		document.getElementById("rackTres").style.height = '95%';
-		document.getElementById("rackMain3").style.height = '32%';
-		document.getElementById("varSensores3").style.display = 'block';
-		document.getElementById("graficosRacks3").style.display = 'flex';
-	} else {
-		document.getElementById("rackDois").style.display = 'block';
-		document.getElementById("rackUm").style.display = 'block';
-		document.getElementById("rackTres").style.height = '30%';
-		document.getElementById("rackMain3").style.height = '100%';
-		document.getElementById("varSensores3").style.display = 'none';
-		document.getElementById("graficosRacks3").style.display = 'none';
-		primeiroRack--;
-	}
-	}
-</script>
+<script src="index.js"></script>
