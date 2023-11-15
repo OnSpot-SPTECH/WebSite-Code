@@ -73,10 +73,10 @@
 			</section>
 
 			<div id="divSala1" class="main_sala">
-				<div class="hacks">
-					<div class="hack" id="rackUm">
-						<div class="rack_main">
-							<h2 class="titulo_hack">Rack 1</h2>
+				<div class="racks">
+					<div class="rack" id="rackUm">
+						<div class="rack_main" id="rackMain">
+							<h2 class="titulo_rack">Rack 1</h2>
 							<div class="rack_nav" onclick="rack1()"></div>
 							<div class="square square_umi">
 								<div class="circle circle-umi">
@@ -99,11 +99,22 @@
 								</div>
 							</div>
 						</div>
+						<div class="var_Sensores" id="varSensores">
+							Temperatura
+							<div class="barra_sensores"><span class="triangulo_sensor"></span></div>
+							Umidade
+							<div class="barra_sensores"><span class="triangulo_sensor"></span></div>
+						</div>
+						<div class="graficos_Racks" id="graficosRacks">
+							<div class="grafico_Rack" id="graficoRack" >
+								<canvas class="grafico" id="myChart"></canvas>
+							</div>
+						</div>
 					</div>
-					<div class="hack" id="rackDois">
-						<div class="rack_main">
-							<h2 class="titulo_hack">Rack 2</h2>
-							<div class="rack_nav"></div>
+					<div class="rack" id="rackDois">
+						<div class="rack_main" id="rackMain2">
+							<h2 class="titulo_rack">Rack 2</h2>
+							<div class="rack_nav" onclick="rack2()"></div>
 							<div class="square square_umi">
 								<div class="circle circle-umi">
 									<div class="text">
@@ -125,11 +136,22 @@
 								</div>
 							</div>
 						</div>
+						<div class="var_Sensores" id="varSensores2">
+						Temperatura
+						<div class="barra_sensores"><span class="triangulo_sensor"></span></div>
+						Umidade
+						<div class="barra_sensores"><span class="triangulo_sensor"></span></div>
+						</div>
+						<div class="graficos_Racks" id="graficosRacks2">
+							<div class="grafico_Rack" id="graficoRack2">
+								<canvas class="grafico" id="myChart2"></canvas>
+							</div>
+						</div>
 					</div>
-					<div class="hack" id="rackTres">
-						<div class="rack_main">
-							<h2 class="titulo_hack">Rack 3</h2>
-							<div class="rack_nav"></div>
+					<div class="rack" id="rackTres">
+						<div class="rack_main" id="rackMain3">
+							<h2 class="titulo_rack">Rack 3</h2>
+							<div class="rack_nav" onclick="rack3()"></div>
 							<div class="square square_umi">
 								<div class="circle circle-umi">
 									<div class="text">
@@ -149,13 +171,24 @@
 								<div class="text2">
 									<p>Temperatura</p>
 								</div>
+							</div>
+						</div>
+						<div class="var_Sensores" id="varSensores3">
+						Temperatura
+						<div class="barra_sensores"><span class="triangulo_sensor"></span></div>
+						Umidade
+						<div class="barra_sensores"><span class="triangulo_sensor"></span></div>	
+						</div>
+						<div class="graficos_Racks" id="graficosRacks3">
+							<div class="grafico_Rack" id="graficoRack3" >
+								<canvas class="grafico" id="myChart3"></canvas>
 							</div>
 						</div>
 					</div>
 				</div>
 				<section class="analy-section">
 					<aside class="analy">
-						<img class="imgLegenda" src="img/legenda Umidade.png" alt="">
+						<img class="imgLegenda" src="img/legenda Umidade.svg" alt="">
 					</aside>
 					<aside class="analy">
 						<img class="imgLegenda" src="img/legenda Temperatura.png" alt="">
@@ -169,6 +202,7 @@
 </body>
 
 </html>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <!-- var visorSala1 = 0;
 	function salaUm()
 		{
@@ -182,6 +216,105 @@
 			}
 		} -->
 <script>
+
+
+	
+	const ctx = document.getElementById('myChart');
+
+	new Chart(ctx, {
+	type: 'line',
+	data: {
+		labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+		datasets: [
+			{
+			label: 'temperatura',
+			data: [12, 19, 3, 5, 2, 3],
+			borderWidth: 2,
+			backgroundColor: "red",
+			borderColor: "red",
+			},
+			{
+			label: 'umidade',
+			data: [12, 19, 23, 5, 2, 3],
+			borderWidth: 2,
+			backgroundColor: "#4761f4",
+			borderColor: "#4761f4",
+			},
+		]
+	},
+	options: {
+		scales: {
+		y: {
+			beginAtZero: true
+		}
+		}
+	}
+	});
+
+	const ctx2 = document.getElementById('myChart2');
+
+	new Chart(ctx2, {
+	type: 'line',
+	data: {
+		labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+		datasets: [
+			{
+			label: 'temperatura',
+			data: [12, 19, 3, 5, 2, 3],
+			borderWidth: 2,
+			backgroundColor: "red",
+			borderColor: "red",
+			},
+			{
+			label: 'umidade',
+			data: [12, 19, 23, 5, 2, 3],
+			borderWidth: 2,
+			backgroundColor: "#4761f4",
+			borderColor: "#4761f4",
+			},
+		]
+	},
+	options: {
+		scales: {
+		y: {
+			beginAtZero: true
+		}
+		}
+	}
+	});
+
+	const ctx3 = document.getElementById('myChart3');
+
+	new Chart(ctx3, {
+	type: 'line',
+	data: {
+		labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+		datasets: [
+			{
+			label: 'temperatura',
+			data: [12, 19, 3, 5, 2, 3],
+			borderWidth: 2,
+			backgroundColor: "red",
+			borderColor: "red",
+			},
+			{
+			label: 'umidade',
+			data: [12, 19, 23, 5, 2, 3],
+			borderWidth: 2,
+			backgroundColor: "#4761f4",
+			borderColor: "#4761f4",
+			},
+		]
+	},
+	options: {
+		scales: {
+		y: {
+			beginAtZero: true
+		}
+		}
+	}
+	});
+
 
 	var sala = 0;
 	var primeiroRack = 0;
@@ -209,10 +342,58 @@
 			primeiroRack++;
 			document.getElementById("rackDois").style.display = 'none';
 			document.getElementById("rackTres").style.display = 'none';
+			document.getElementById("rackUm").style.height = '95%';
+			document.getElementById("rackMain").style.height = '32%';
+			document.getElementById("varSensores").style.display = 'block';
+			document.getElementById("graficosRacks").style.display = 'flex';
 		} else {
-			document.getElementById("rackDois").style.display = 'flex';
-			document.getElementById("rackTres").style.display = 'flex';
+			document.getElementById("rackDois").style.display = 'block';
+			document.getElementById("rackTres").style.display = 'block';
+			document.getElementById("rackUm").style.height = '30%';
+			document.getElementById("rackMain").style.height = '100%';
+			document.getElementById("varSensores").style.display = 'none';
+			document.getElementById("graficosRacks").style.display = 'none';
 			primeiroRack--;
 		}
+	}
+	function rack2() {
+
+	if (primeiroRack == 0) {
+		primeiroRack++;
+		document.getElementById("rackUm").style.display = 'none';
+		document.getElementById("rackTres").style.display = 'none';
+		document.getElementById("rackDois").style.height = '95%';
+		document.getElementById("rackMain2").style.height = '32%';
+		document.getElementById("varSensores2").style.display = 'block';
+		document.getElementById("graficosRacks2").style.display = 'flex';
+	} else {
+		document.getElementById("rackUm").style.display = 'block';
+		document.getElementById("rackTres").style.display = 'block';
+		document.getElementById("rackDois").style.height = '30%';
+		document.getElementById("rackMain2").style.height = '100%';
+		document.getElementById("varSensores2").style.display = 'none';
+		document.getElementById("graficosRacks2").style.display = 'none';
+		primeiroRack--;
+	}
+	}
+	function rack3() {
+
+	if (primeiroRack == 0) {
+		primeiroRack++;
+		document.getElementById("rackDois").style.display = 'none';
+		document.getElementById("rackUm").style.display = 'none';
+		document.getElementById("rackTres").style.height = '95%';
+		document.getElementById("rackMain3").style.height = '32%';
+		document.getElementById("varSensores3").style.display = 'block';
+		document.getElementById("graficosRacks3").style.display = 'flex';
+	} else {
+		document.getElementById("rackDois").style.display = 'block';
+		document.getElementById("rackUm").style.display = 'block';
+		document.getElementById("rackTres").style.height = '30%';
+		document.getElementById("rackMain3").style.height = '100%';
+		document.getElementById("varSensores3").style.display = 'none';
+		document.getElementById("graficosRacks3").style.display = 'none';
+		primeiroRack--;
+	}
 	}
 </script>
