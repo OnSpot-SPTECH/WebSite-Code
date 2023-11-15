@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/cadastro2.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="div-fundo">
+        <div class="div-container-cadastro">
+            <div id="div-logo-texto">
+                <img src="./assets/logo-cd-onspot.svg" alt="logo da empresa OnSpot">
+                <h1>OnSpot</h1>
+                <h3>Cadastro de <span style="color: #7B21C1;">Usuario</span></h3>
+            </div>
+
+
+            <div class="div-sessao-cadastro">
+
+                <div class="formulario-cadastro">
+                    <div>
+                        <form class="inputs-cadastro" action="">
+                            <label htmlfor="">Nome:</label>
+                            <input id="nomeUsuario" class="estilo-form" type="text"><br>
+                            <label htmlfor="">Email:</label>
+                            <input id="emailUsuario" class="estilo-form" type="text"><br>
+                            <!-- <p style="font-size: 10px; color: red; height: 2.5%; width: 100%;" id="conteudo3"></p> -->
+                            <label htmlfor="">Confirme seu email:</label>
+                            <input id="emailCheck" class="estilo-form" type="text">
+                            <p style="font-size: 10px; color: red; height: 2.5%; width: 100%;" id="conteudo"></p>
+                        </form>
+                    </div>
+
+
+                    <div>
+                        <form class="inputs-cadastro" action="">
+                            <label htmlfor="">CPF:</label>
+                            <input id="CPFusuario" class="estilo-form"  type="text"><br>
+                            <label htmlfor="">Senha:</label>
+                            <input id="senhaUsuario" class="estilo-form" type="password"><br>
+                            <label htmlfor="">Confirme sua senha: </label>
+                            <input id="senhaCheck" class="estilo-form" type="password">
+                            <p style="font-size: 10px; color: red; height: 2.5%; width: 100%;" id="conteudo2"></p>
+
+                        </form>
+                    </div>
+
+                </div>
+                <button onclick="calculo()" href="../WebSite-Code/login.html"><input type="submit" value="Continuar"
+                        id="btn-continuar" /><button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+
+<script>
+
+        function calculo() {
+            conteudo.innerHTML = ``
+            conteudo2.innerHTML = ``
+        var nome = nomeUsuario.value
+        var CPF = Number(CPFusuario.value)
+        var senha = senhaUsuario.value
+        var confirmacaoSenha = senhaCheck.value
+        var email = emailUsuario.value
+        var confirmacaoEmail = emailCheck.value
+        var frase = '@'
+
+        if (nome === '' || CPF <= 0 || email === '')
+            alert('Por favor preencha o registro')
+        else
+        {
+            if(email.indexOf(frase) === -1 )
+                alert( `Email inválido`)
+            else{
+                if(email != confirmacaoEmail)
+                    conteudo.innerHTML = 'Os emails não coincidem.'
+                else if(senha != confirmacaoSenha)
+                    conteudo2.innerHTML = 'As senhas não coincidem.'
+                else
+                    window.location.href = './login.html'
+            }
+        }
+    }
+
+</script>
+
