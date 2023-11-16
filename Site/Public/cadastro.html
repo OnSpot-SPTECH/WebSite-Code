@@ -44,7 +44,7 @@
                     </div>
 
                 </div>
-                <button onclick="calculo()" href="#"><input type="submit" value="Continuar"
+                <button onclick="cadastrar()" href="#"><input type="submit" value="Continuar"
                         id="btn-continuar" /><button>
             </div>
         </div>
@@ -55,18 +55,94 @@
 
 <script>
 
-    function calculo() {
-            var nome = nomeEmpresa.value
-            var CNPJ = Number(CNPJOTO.value)
-            var razao = razaoSocial.value
-            var cep = Number(CEPregistro.value)
-            var telefone = Number(tel.value)
-            var email = emailRegistro.value
-            var frase = '@'
+    function cadastrar() {
+        aguardar();
 
-            if (nome === '' || CNPJ <= 0 || razao === '' || cep <= 0 || telefone <= 0 || email === '' || email.indexOf(frase) === -1)
-                alert('dados invalidos.Por favor preencha o registro')
-            else
-                window.location.href = './cadastro2.html'
+        var nomeVar = nomeEmpresa.value;
+        var cnpjVar = CNPJOTO.value
+        var razaoVar = razaoSocial.value;
+        var cepVar = CEPregistro.value;
+        var telefoneVar = tel.value;
+        var emailVar = emailRegistro.value;
+        var frase = '@'
+
+        if (nome === '' || CNPJ <= 0 || razao === '' || cep <= 0 || telefone <= 0 || email === '' || email.indexOf(frase) === -1) {
+            alert('dados invalidos.Por favor preencha o registro')
+
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            window.location.href = './cadastro2.html'
+            setInterval(sumirMensagem, 5000);
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                cnpjServer: cnpjVar,
+                razaoServer: razaoVar,
+                cepServer: cepVar,
+                telefoneServer: telefoneVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar,
+                // empresaServer: empresaVar
+            }),
+        })
+            .then(function (resposta) {
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    cardErro.style.display = "block";
+
+                    mensagem_erro.innerHTML =
+                        "Cadastro realizado com sucesso! Redirecionando para tela de Cadastro do usuario...";
+
+                    setTimeout(() => {
+                        window.location = "./cadastro2.html";
+                    }, "2000");
+
+                    limparFormulario();
+                    finalizarAguardar();
+                } else {
+                    throw "Houve um erro ao tentar realizar o cadastro!";
+                }
+            })
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+                finalizarAguardar();
+            });
+
+        return false;
     }
+
+    function listar() {
+        fetch("/empresas/listar", {
+            method: "GET",
+        })
+            .then(function (resposta) {
+                resposta.json().then((empresas) => {
+                    empresas.forEach((empresa) => {
+                        listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.cnpj}</option>`;
+                    });
+                });
+            })
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none";
+    }
+
+
+
 </script>

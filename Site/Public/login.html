@@ -34,7 +34,7 @@
                         <label htmlFor="">Senha</label> <br />
                         <input type="password" id="senhaFormulario" class="estiloform" /> <br />
                     </form>
-                        <button onclick="calculo()" id="botao-acessar">ACESSAR</button>
+                        <button onclick="entrar()" id="botao-acessar">ACESSAR</button>
                 </div>
             </div>
         </div>
@@ -45,17 +45,70 @@
 
 <script>
 
-    function calculo()
-    {
-        
+    function entrar()
+    {   
         var email = emailFormulario.value
         var senha = senhaFormulario.value
         var frase = '@'
         
-        if(email === '' || email.indexOf(frase) === -1 || senha === '')
+        if(email === '' || email.indexOf(frase) === -1 || senha === ''){
             alert('dados invalidos.Por favor preencha o registro')
-        else
-            window.location.href = './dashboard/index.html'
+            // finalizarAguardar();
+            return false;
+        }
+        console.log("FORM LOGIN: ", email);
+        console.log("FORM SENHA: ", senha);
 
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: email,
+                senhaServer: senha
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json[0].emailVar;
+                    sessionStorage.NOME_USUARIO = json[0].nomeVar;
+                    sessionStorage.ID_USUARIO = json[0].id;
+                    console.log(sessionStorage);
+                    // sessionStorage.AQUARIOS = JSON.stringify(json.salas)
+
+                    setTimeout(function () {
+                        window.location = "./dashboard/index.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    // finalizarAguardar(texto);
+                });
+            }
+
+        // }).catch(function (erro) {
+        //     console.log(erro);
+        })
+
+        // return false;
     }
+    
+
+    // function sumirMensagem() {
+    //     cardErro.style.display = "none"
+    // }
+
 </script>
