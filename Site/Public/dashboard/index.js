@@ -1,4 +1,3 @@
-w
 
 const ctx = document.getElementById('myChart');
 
