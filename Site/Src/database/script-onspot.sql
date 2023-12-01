@@ -13,6 +13,7 @@ CREATE TABLE Empresa(
   telefone VARCHAR(45),
   cnpj CHAR(14)
 );
+
 INSERT INTO empresa VALUES
 (1, 'sptech', 'sptech@school', 'faculdade', '11989121266', '01234567891234');
 
@@ -29,6 +30,9 @@ CREATE TABLE Endereco(
   CONSTRAINT fkEmpresa FOREIGN KEY (fkEmpresa) REFERENCES Empresa(id)
 );
 
+INSERT INTO endereco VALUES
+(null,	'Avenida Paulista','1010', 'bela vista', 'sao paulo', 'sp', '04428010', 1);
+
 -- TABELA PARA CONTROLE E LOGIN DE CLEINTES 
 CREATE TABLE Usuario(
   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -40,6 +44,9 @@ CREATE TABLE Usuario(
   CONSTRAINT fk_Empresa FOREIGN KEY (fkEmpresa) REFERENCES Empresa(id)
 );
 
+INSERT INTO usuario VALUES 
+(null, 'v@email.com', 'victor',	'46673001836', '123', 1);
+
 -- TABELA PARA IDENTIFICAR AS SALAS DISPONIVEIS NAS EMPRESAS
 CREATE TABLE SalaEmpresa(
   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -47,6 +54,13 @@ CREATE TABLE SalaEmpresa(
   fkSalaUnidade INT,
   CONSTRAINT fk_Sala_Unidade FOREIGN KEY (fkSalaUnidade) REFERENCES Endereco(id)
 );
+SELECT * FROM endereco;
+
+
+INSERT INTO salaempresa VALUES
+(null, '1adsb', 1);
+
+SELECT * FROM salaempresa;
 
 -- TABELA PARA O CONTROLE DOS RACKS QUE FICAM NAS SALAS
 CREATE TABLE Rack (
@@ -54,6 +68,8 @@ id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 fkRackSala INT,
 CONSTRAINT fk_Rack_Sala FOREIGN KEY (fkRackSala) REFERENCES SalaEmpresa(id)
 );
+INSERT INTO rack VALUES
+(null, 1);
 
 -- TABELA PARA O CONTROLE DOS SENSORES
 CREATE TABLE Sensor (
@@ -66,6 +82,9 @@ CONSTRAINT fk_Sensor_Rack FOREIGN KEY (fkSensorRack) REFERENCES Rack(id),
 CONSTRAINT fk_Sala_Empresa FOREIGN KEY (fkSalaEmpresa) REFERENCES SalaEmpresa(id)
 );
 
+INSERT INTO Sensor VALUES
+(null, 'dht11', 'temperatura', 1, 1);
+
 -- TABELA PARA O CONTROLE DOS DADOS CAPTADOS PELOS SENSORES
 CREATE TABLE Registro (
 id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -75,3 +94,4 @@ data_hora DATETIME,
 fkRegistroSensor INT,
 CONSTRAINT fk_Registro_Sensor FOREIGN KEY (fkRegistroSensor) REFERENCES Sensor(id)
 );
+
