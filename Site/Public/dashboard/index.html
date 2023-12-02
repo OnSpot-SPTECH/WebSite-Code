@@ -12,7 +12,7 @@
 
 </head>
 
-<body>
+<body onload="obterDadosGraficos(1)">
 	<!-- Header -->
 	<header>
 		<img class="img-logo" src="./img/Frame 12.svg" alt="">
@@ -36,8 +36,7 @@
 						<img src="./img/settings.png"></img>
 					</li>
 					<li>
-						<a href="../login.html"><img class="icone-logout" src="../assets/icone-logout.svg"
-							alt=""></a>
+						<a href="../login.html"><img class="icone-logout" src="../assets/icone-logout.svg" alt=""></a>
 					</li>
 				</ul>
 			</div>
@@ -47,11 +46,11 @@
 		<div class="div_conteudo">
 
 			<section class="squares_circles">
-				
+
 			</section>
 
 			<div class="graficos">
-				
+
 				<div class="div_graficos_main">
 					<canvas id="mainGraficoUmidadeMedia"></canvas>
 					<canvas id="mainGraficoUmidadeMediaMes"></canvas>
@@ -67,7 +66,7 @@
 		<aside>
 			<div class="div_graficos_aside">
 				<div class="square-umi">
-					<div class="circle-umi":hoo>
+					<div class="circle-umi" :hoo>
 						<div class="text">
 							40%
 						</div>
@@ -101,124 +100,408 @@
 	//grafico 1
 	//grafico 2
 
-	const xHorario = ["12:00", "13:00", "14:00", "15:00", "16:00", "17:00"];
-	const xMes = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho","Julho", "Agosto", "setembro", "outubro", "Novembro", "Dezembro"];
-	const yUmidade = [50, 45, 46, 42, 43, 45];
-	const yUmidadeMes = [50, 45, 46, 42, 43, 45,50, 45, 46, 42, 43, 45];
-	const yTemperatura = [21, 19, 20, 20, 19, 19];
-	const yTemperaturaMes = [21, 19, 20, 19, 19, 19,21, 19, 20, 19, 19, 19];
+	console.log("antes da primeira funçao")
+	function obterDadosGraficos(id) {
+		console.log("entrei na primeira")
 
-	// Sensores Main
+		// alterarTitulo(id)
 
-	new Chart("mainGraficoUmidadeMedia", {
-		type: "line",
-		data: {
-			labels: xHorario,
+		// if (proximaAtualizacao != undefined) {
+		// 	// clearTimeout(proximaAtualizacao);
+		// }
+
+		fetch(`/dashboard/obterDadosGraficos/${id}`, { cache: 'no-store' }).then(function (response) {
+			console.log("entrei no fetch")
+			if (response.ok) {
+				response.json().then(function (resposta) {
+					console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+					resposta.reverse();
+
+					plotarGrafico(resposta, id);
+
+				});
+			} else {
+				console.error('Nenhum dado encontrado ou erro na API');
+			}
+		})
+			.catch(function (error) {
+				console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+			});
+
+	}
+
+	console.log("antes da segunda funçao")
+	function plotarGrafico(resposta, id) {
+
+		console.log('iniciando plotagem do gráfico...');
+
+		// Criando estrutura para plotar gráfico - labels
+		let labels = [];
+
+		// Criando estrutura para plotar gráfico - dados
+		let dados = {
+			labels: labels,
 			datasets: [{
-				label: 'Umidade Média',
+				label: 'Umidade',
+				data: [],
+				fill: false,
+				backgroundColor: "#4761f4",
+				borderColor: "#4761f4",
+				tension: 0.1
+			},
+			]
+		};
+
+		let dados2 = {
+			labels: labels,
+			datasets: [{
+				label: 'Temperatura',
+				data: [],
+				fill: false,
+				borderColor: 'rgb(199, 52, 52)',
+				tension: 0.1
+
+			},]
+		}
+
+
+		let dados3 = {
+			labels: ['Outubro', 'Novembro', 'Dezembro'],
+			datasets: [{
+				label: 'Umidade em Tempo Real',
+				data: [],
 				fill: false,
 				lineTension: 0,
 				backgroundColor: "#4761f4",
-				borderColor: "#4761f4",
-				data: yUmidade,
+				borderColor: "#4761f4"
 			},]
-		},
-		options: {
-			legend: {
-				display: true,
-			},
-			scales: {
-				yAxes: [{
-					ticks: {
-						min: 20,
-						max: 60
-					}
-				}],
-			}
 		}
-	});
-	const BarColors = ["Red"];
 
-	new Chart("mainGraficoUmidadeMediaMes", {
-		type: "bar",
-		data: {
-			labels: xMes,
+		let dados4 = {
+			labels: ['Outubro', 'Novembro', 'Dezembro'],
 			datasets: [{
-				label: 'Umidade Média Mensal',
-				fill: false,
-				lineTension: 0,
-				backgroundColor: "#4761f4",
-				borderColor: "#4761f4",
-				data: yUmidadeMes
-			},]
-		},
-		options: {
-			legend: {
-				display: true,
-			},
-			scales: {
-				yAxes: [{
-					ticks: {
-						min: 20,
-						max: 70
-					}
-				}],
-			}
-		}
-	});
-	new Chart("mainGraficoTemperaturaMedia", {
-		type: "line",
-		data: {
-			labels: xHorario,
-			datasets: [{
-				label: 'Temperatura Média',
+				label: 'Temperatura em Tempo Real',
+				data: [],
 				fill: false,
 				lineTension: 0,
 				backgroundColor: "#d73232",
-				borderColor: "#d73232",
-				data: yTemperatura,
+				borderColor: "#d73232"
 			},]
-		},
-		options: {
-			legend: {
-				display: true,
-			},
-			scales: {
-				yAxes: [{
-					ticks: {
-						min: 15,
-						max: 40
-					}
-				}],
-			}
 		}
-	});
-	new Chart("mainGraficoTemperaturaMediaMes", {
-		type: "bar",
-		data: {
-			labels: xMes,
-			datasets: [{
-				label: 'Temperatura Média Mensal',
-				fill: false,
-				lineTension: 0,
-				backgroundColor: "#d73232",
-				borderColor: "#d73232",
-				data: yTemperaturaMes
-			},]
-		},
-		options: {
-			legend: {
-				display: true,
-			},
-			scales: {
-				yAxes: [{
-					ticks: {
-						min: 15,
-						max: 40
-					}
-				}],
-			}
+
+		console.dir("passei do grafico")
+
+
+		// labels: labels,
+		// datasets: [{
+		// 	label: 'Umidade',
+		// 	data: [],
+		// 	fill: false,
+		// 	borderColor: 'rgb(75, 192, 192)',
+		// 	tension: 0.1
+		// },
+		// {
+		// 	label: 'Temperatura',
+		// 	data: [],
+		// 	fill: false,
+		// 	borderColor: 'rgb(199, 52, 52)',
+		// 	tension: 0.1
+		// },];
+
+		console.log('----------------------------------------------')
+		console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+		console.log(resposta)
+
+		// Inserindo valores recebidos em estrutura para plotar o gráfico
+		for (i = 0; i < resposta.length; i++) {
+			var registro = resposta[i];
+			labels.push(registro.data_hora);
+			dados.datasets[0].data.push(registro.umidade);
+			dados2.datasets[0].data.push(registro.temperatura);
+			console.dir("inseriu na plotar")
 		}
-	});
+
+		console.log('----------------------------------------------')
+		console.log('O gráfico será plotado com os respectivos valores:')
+		console.log('Labels:')
+		console.log(labels)
+		console.log('Dados:')
+		console.log(dados.datasets)
+		console.log('----------------------------------------------')
+
+		// Criando estrutura para plotar gráfico - config
+		const config = {
+			type: 'line',
+			data: dados,
+			options: {
+				scales: {
+					yAxes: [{
+						ticks: {
+							min: 20,
+							max: 80
+						}
+					}],
+				}
+			}
+		};
+
+		const config2 = {
+			type: 'line',
+			data: dados2,
+			options: {
+				scales: {
+					yAxes: [{
+						ticks: {
+							min: 0,
+							max: 60
+						}
+					}],
+				}
+			}
+		};
+
+		const config3 = {
+			type: 'bar',
+			data: dados3,
+			options: {
+				scales: {
+					yAxes: [{
+						ticks: {
+							min: 20,
+							max: 80
+						}
+					}],
+
+				}
+			}
+		};
+
+		const config4 = {
+			type: 'bar',
+			data: dados4,
+			options: {
+				scales: {
+					yAxes: [{
+						ticks: {
+							min: 0,
+							max: 60
+						}
+					}],
+				}
+			}
+		};
+
+		// Adicionando gráfico criado em div na tela
+		let myChart = new Chart(
+			document.getElementById(`mainGraficoUmidadeMedia`),
+			config
+		);
+		let myChart2 = new Chart(
+			document.getElementById(`mainGraficoTemperaturaMedia`),
+			config2
+		);
+		let myChart3 = new Chart(
+			document.getElementById(`mainGraficoUmidadeMediaMes`),
+			config3
+		);
+		let myChart4 = new Chart(
+			document.getElementById(`mainGraficoTemperaturaMediaMes`),
+			config4
+		);
+
+		setTimeout(() => atualizarGrafico(id, dados, dados2, dados3, dados4, myChart, myChart2, myChart3, myChart4), 2000);
+
+
+	}
+
+
+
+	function atualizarGrafico(id, dados, dados2, dados3, dados4, myChart, myChart2, myChart3, myChart4) {
+
+
+		fetch(`/dashboard/atualizarGrafico/${id}`, { cache: 'no-store' }).then(function (response) {
+			if (response.ok) {
+				response.json().then(function (novoRegistro) {
+
+					// obterdados(id);
+					// alertar(novoRegistro, idAquario);
+					console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+					console.log(`Dados atuais do gráfico:`);
+					console.log(dados);
+					// let avisoCaptura = document.getElementById(`avisoCaptura${id}`)
+					// avisoCaptura.innerHTML = ""
+
+
+					if (novoRegistro[0].data_hora == dados.labels[dados.labels.length - 1]) {
+						console.log("---------------------------------------------------------------")
+						console.log("Como não há dados novos para captura, o gráfico não atualizará.")
+						// avisoCaptura.innerHTML = "<i class='fa-solid fa-triangle-exclamation'></i> Foi trazido o dado mais atual capturado pelo sensor. <br> Como não há dados novos a exibir, o gráfico não atualizará."
+						console.log("Horário do novo dado capturado:")
+						console.log(novoRegistro[0].data_hora)
+						console.log("Horário do último dado capturado:")
+						console.log(dados.labels[dados.labels.length - 1])
+						console.log("---------------------------------------------------------------")
+					} else {
+						// tirando e colocando valores no gráfico
+						dados.labels.shift(); // apagar o primeiro new Date(registro.dataHora).toLocaleTimeString()
+						dados.labels.push(new Date(novoRegistro[0].data_hora).toLocaleTimeString()); // incluir um novo momento
+
+						dados.datasets[0].data.shift();  // apagar o primeiro de umidade
+						dados.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
+
+						dados2.datasets[0].data.shift();  // apagar o primeiro de temperatura
+						dados2.datasets[0].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura4
+
+						dados3.datasets[0].data.shift();  // apagar o primeiro de temperatura
+						dados3.datasets[0].data = [41, 41, novoRegistro[0].umidade]; // incluir uma nova medida de temperatura
+
+						dados4.datasets[0].data.shift();  // apagar o primeiro de temperatura
+						dados4.datasets[0].data = [22, 22, novoRegistro[0].temperatura]; // incluir uma nova medida de temperatura
+
+						myChart.update();
+						myChart2.update();
+						myChart3.update();
+						myChart4.update();
+					}
+
+					// Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+					proximaAtualizacao = setTimeout(() => atualizarGrafico(id, dados, dados2, dados3, dados4, myChart, myChart2, myChart3, myChart4), 2000);
+				});
+			} else {
+				console.error('Nenhum dado encontrado ou erro na API');
+				// Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+				proximaAtualizacao = setTimeout(() => atualizarGrafico(id, dados, myChart), 2000);
+			}
+		})
+			.catch(function (error) {
+				console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+			});
+
+	}
+
+
+
+
+
+
+	// const xHorario = ["12:00", "13:00", "14:00", "15:00", "16:00", "17:00"];
+	// const xMes = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "setembro", "outubro", "Novembro", "Dezembro"];
+	// const yUmidade = [50, 45, 46, 42, 43, 45];
+	// const yUmidadeMes = [50, 45, 46, 42, 43, 45, 50, 45, 46, 42, 43, 45];
+	// const yTemperatura = [21, 19, 20, 20, 19, 19];
+	// const yTemperaturaMes = [21, 19, 20, 19, 19, 19, 21, 19, 20, 19, 19, 19];
+
+	// // Sensores Main
+
+	// new Chart("mainGraficoUmidadeMedia", {
+	// 	type: "line",
+	// 	data: {
+	// 		labels: xHorario,
+	// 		datasets: [{
+	// 			label: 'Umidade Média',
+	// 			fill: false,
+	// 			lineTension: 0,
+	// 			backgroundColor: "#4761f4",
+	// 			borderColor: "#4761f4",
+	// 			data: yUmidade,
+	// 		},]
+	// 	},
+	// 	options: {
+	// 		legend: {
+	// 			display: true,
+	// 		},
+	// 		scales: {
+	// 			yAxes: [{
+	// 				ticks: {
+	// 					min: 20,
+	// 					max: 60
+	// 				}
+	// 			}],
+	// 		}
+	// 	}
+	// });
+	// const BarColors = ["Red"];
+
+	// new Chart("mainGraficoUmidadeMediaMes", {
+	// 	type: "bar",
+	// 	data: {
+	// 		labels: xMes,
+	// 		datasets: [{
+	// 			label: 'Umidade Média Mensal',
+	// 			fill: false,
+	// 			lineTension: 0,
+	// 			backgroundColor: "#4761f4",
+	// 			borderColor: "#4761f4",
+	// 			data: yUmidadeMes
+	// 		},]
+	// 	},
+	// 	options: {
+	// 		legend: {
+	// 			display: true,
+	// 		},
+	// 		scales: {
+	// 			yAxes: [{
+	// 				ticks: {
+	// 					min: 20,
+	// 					max: 70
+	// 				}
+	// 			}],
+	// 		}
+	// 	}
+	// });
+	// new Chart("mainGraficoTemperaturaMedia", {
+	// 	type: "line",
+	// 	data: {
+	// 		labels: xHorario,
+	// 		datasets: [{
+	// 			label: 'Temperatura Média',
+	// 			fill: false,
+	// 			lineTension: 0,
+	// 			backgroundColor: "#d73232",
+	// 			borderColor: "#d73232",
+	// 			data: yTemperatura,
+	// 		},]
+	// 	},
+	// 	options: {
+	// 		legend: {
+	// 			display: true,
+	// 		},
+	// 		scales: {
+	// 			yAxes: [{
+	// 				ticks: {
+	// 					min: 15,
+	// 					max: 40
+	// 				}
+	// 			}],
+	// 		}
+	// 	}
+	// });
+	// new Chart("mainGraficoTemperaturaMediaMes", {
+	// 	type: "bar",
+	// 	data: {
+	// 		labels: xMes,
+	// 		datasets: [{
+	// 			label: 'Temperatura Média Mensal',
+	// 			fill: false,
+	// 			lineTension: 0,
+	// 			backgroundColor: "#d73232",
+	// 			borderColor: "#d73232",
+	// 			data: yTemperaturaMes
+	// 		},]
+	// 	},
+	// 	options: {
+	// 		legend: {
+	// 			display: true,
+	// 		},
+	// 		scales: {
+	// 			yAxes: [{
+	// 				ticks: {
+	// 					min: 15,
+	// 					max: 40
+	// 				}
+	// 			}],
+	// 		}
+	// 	}
+	// });
 
 </script>
