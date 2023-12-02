@@ -104,6 +104,7 @@ function fecharSalas() {
     document.getElementById("inputSalas").style.display = 'none'
 
     if (sala == 0) {
+        
         document.querySelector('.main_sala').style.display = 'flex';
         document.querySelector('.main_salas').style.display = 'none';
         document.querySelector('.salas_titulo').style.display = 'none';
@@ -121,18 +122,18 @@ function rack1() {
 
     if (primeiroRack == 0) {
         primeiroRack++;
+        rackNav1.innerHTML = `<img src="./img/minus.png" alt=""></img>`
         document.getElementById("rackDois").style.display = 'none';
         document.getElementById("rackTres").style.display = 'none';
         document.getElementById("rackUm").style.height = '95%';
         document.getElementById("rackMain").style.height = '32%';
-        document.getElementById("varSensores").style.display = 'block';
         document.getElementById("graficosRacks").style.display = 'flex';
     } else {
+        rackNav1.innerHTML = `<img src="./img/plus.png" alt=""></img>`
         document.getElementById("rackDois").style.display = 'block';
         document.getElementById("rackTres").style.display = 'block';
         document.getElementById("rackUm").style.height = '30%';
         document.getElementById("rackMain").style.height = '100%';
-        document.getElementById("varSensores").style.display = 'none';
         document.getElementById("graficosRacks").style.display = 'none';
         primeiroRack--;
     }
@@ -141,18 +142,18 @@ function rack2() {
 
     if (primeiroRack == 0) {
         primeiroRack++;
+        rackNav2.innerHTML = `<img src="./img/minus.png" alt=""></img>`
         document.getElementById("rackUm").style.display = 'none';
         document.getElementById("rackTres").style.display = 'none';
         document.getElementById("rackDois").style.height = '95%';
         document.getElementById("rackMain2").style.height = '32%';
-        document.getElementById("varSensores2").style.display = 'block';
         document.getElementById("graficosRacks2").style.display = 'flex';
     } else {
+        rackNav2.innerHTML = `<img src="./img/plus.png" alt=""></img>`
         document.getElementById("rackUm").style.display = 'block';
         document.getElementById("rackTres").style.display = 'block';
         document.getElementById("rackDois").style.height = '30%';
         document.getElementById("rackMain2").style.height = '100%';
-        document.getElementById("varSensores2").style.display = 'none';
         document.getElementById("graficosRacks2").style.display = 'none';
         primeiroRack--;
     }
@@ -161,18 +162,18 @@ function rack3() {
 
     if (primeiroRack == 0) {
         primeiroRack++;
+        rackNav3.innerHTML = `<img src="./img/minus.png" alt=""></img>`
         document.getElementById("rackDois").style.display = 'none';
         document.getElementById("rackUm").style.display = 'none';
         document.getElementById("rackTres").style.height = '95%';
         document.getElementById("rackMain3").style.height = '32%';
-        document.getElementById("varSensores3").style.display = 'block';
         document.getElementById("graficosRacks3").style.display = 'flex';
     } else {
+        rackNav3.innerHTML = `<img src="./img/plus.png" alt=""></img>`
         document.getElementById("rackDois").style.display = 'block';
         document.getElementById("rackUm").style.display = 'block';
         document.getElementById("rackTres").style.height = '30%';
         document.getElementById("rackMain3").style.height = '100%';
-        document.getElementById("varSensores3").style.display = 'none';
         document.getElementById("graficosRacks3").style.display = 'none';
         primeiroRack--;
     }
