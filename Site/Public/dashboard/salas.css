@@ -392,3 +392,7 @@ main {
     height: 100%;
     border-radius: 12px;
 }
+
+.img-alert{
+    height: 80%;
+}
