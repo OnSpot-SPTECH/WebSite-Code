@@ -395,4 +395,12 @@ main {
 
 .img-alert{
     height: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.img-alert img {
+    width: 47%;
+    height: 39%;
 }
