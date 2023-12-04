@@ -332,8 +332,8 @@
 		for (i = 0; i < resposta.length; i++) {
 			var registro = resposta[i];
 			labels.push(registro.data_hora);
-			dados.datasets[0].data.push(registro.umidade);
-			dados2.datasets[0].data.push(registro.temperatura);
+			dados.datasets[1].data.push(registro.umidade);
+			dados.datasets[0].data.push(registro.temperatura);
 			console.dir("inseriu na plotar")
 		}
 
@@ -605,20 +605,20 @@
 						dados.labels.shift(); // apagar o primeiro new Date(registro.dataHora).toLocaleTimeString()
 						dados.labels.push(new Date(novoRegistro[0].data_hora).toLocaleTimeString()); 
 
-						dados.datasets[0].data.shift();
-						dados.datasets[0].data.push(novoRegistro[0].umidade);
+						dados.datasets[1].data.shift();
+						dados.datasets[1].data.push(novoRegistro[0].umidade);
 						dados.datasets[0].data.shift();
 						dados.datasets[0].data.push(novoRegistro[0].temperatura);
 
 						dados2.datasets[0].data.shift();
 						dados2.datasets[0].data.push(novoRegistro[0].temperatura);
-						dados2.datasets[0].data.shift();
-						dados2.datasets[0].data.push(novoRegistro[0].umidade);
+						dados2.datasets[1].data.shift();
+						dados2.datasets[1].data.push(novoRegistro[0].umidade);
 
 						dados3.datasets[0].data.shift();
 						dados3.datasets[0].data.push(novoRegistro[0].temperatura);
-						dados3.datasets[0].data.shift();
-						dados3.datasets[0].data.push(novoRegistro[0].umidade);
+						dados3.datasets[1].data.shift();
+						dados3.datasets[1].data.push(novoRegistro[0].umidade);
 
 						myChart.update();
 						myChart2.update();
