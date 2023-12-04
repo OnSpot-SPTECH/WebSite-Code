@@ -431,19 +431,19 @@
 
 
 
-					if (novoRegistro[0].temperatura < 40 && novoRegistro[0].temperatura > 30) {
+					if (novoRegistro[0].temperatura < 40 && novoRegistro[0].temperatura > 36) {
 						document.getElementById("img1Sala1").src = "./img/tem_mt_alta.png"
 					}
-					else if (novoRegistro[0].temperatura <= 30 && novoRegistro[0].temperatura > 20) {
+					else if (novoRegistro[0].temperatura <= 35 && novoRegistro[0].temperatura > 26) {
 						document.getElementById("img1Sala1").src = "./img/temp_alta.png"
 					}
-					else if (novoRegistro[0].temperatura <= 20 && novoRegistro[0].temperatura > 15) {
+					else if (novoRegistro[0].temperatura <= 25 && novoRegistro[0].temperatura > 19) {
 						document.getElementById("img1Sala1").src = "./img/temp_controlada.png"
 					}
-					else if (novoRegistro[0].temperatura <= 15 && novoRegistro[0].temperatura > 5) {
+					else if (novoRegistro[0].temperatura <= 18 && novoRegistro[0].temperatura > 11) {
 						document.getElementById("img1Sala1").src = "./img/temp_baixa.png"
 					}
-					else if (novoRegistro[0].temperatura >= 5) {
+					else if (novoRegistro[0].temperatura >= 10) {
 						document.getElementById("img1Sala1").src = "./img/temp_mt_baixa.png"
 					}
 
