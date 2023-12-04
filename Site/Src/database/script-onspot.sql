@@ -95,3 +95,15 @@ fkRegistroSensor INT,
 CONSTRAINT fk_Registro_Sensor FOREIGN KEY (fkRegistroSensor) REFERENCES Sensor(id)
 );
 
+SELECT * FROM Registro;
+
+create user 'insertOnSpot'@'10.18.32.236' identified by 'OnSpotUser';
+
+grant all privileges on OnSpot2.* to 'insertOnSpot'@'10.18.32.236';
+
+flush privileges;
+
+
+
+
+

@@ -14,8 +14,7 @@ function obterDadosGraficos(id) {
                     where fk_aquario = ${idAquario}
                     order by id desc`;
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `SELECT AVG(temperatura), AVG(umidade) FROM Registro;`;
-        console.dir("testando sa porra")
+        instrucaoSql = `SELECT (temperatura), (umidade) FROM Registro ORDER BY id desc LIMIT 7;`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return
@@ -40,7 +39,7 @@ function atualizarGrafico(id) {
                     order by id desc`;
 
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `SELECT temperatura, umidade, data_hora FROM Registro ORDER BY id DESC LIMIT 1;`;
+        instrucaoSql = `SELECT temperatura, umidade, data_hora FROM Registro ORDER BY id DESC LIMIT 7;`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return
