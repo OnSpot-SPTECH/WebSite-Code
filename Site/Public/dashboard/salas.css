@@ -189,8 +189,10 @@ main {
 }
 
 .racks {
+    display: flex;
     width: 50%;
     flex-direction: column;
+    height: 100%;
 }
 
 .rack {
@@ -349,6 +351,7 @@ main {
     justify-content: center;
     font-family: 'Poppins', sans-serif;
     color: var(--cor3);
+    height: 100%;
 }
 
 .analy-section h1 {
@@ -361,8 +364,7 @@ main {
 }
 
 .div1 img {
-    max-width: 500px;
-    min-height: 400px;
+    width: 100%;
 }
 
 .analy img {
