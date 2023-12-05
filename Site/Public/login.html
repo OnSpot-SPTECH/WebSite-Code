@@ -29,12 +29,17 @@
                     </div>
 
                     <form id="formulario-login">
-                        <label htmlFor="">Email</label><br />
-                        <input type="text" id="emailFormulario" class="estiloform"> <br /> <br /> <br />
-                        <label htmlFor="">Senha</label> <br />
-                        <input type="password" id="senhaFormulario" class="estiloform" /> <br />
+                        <label htmlFor="">Email</label>
+                        <input type="text" id="emailFormulario" class="estiloform">
+                        <p style="font-size: 10px; color: red; height: 2.5%; width: 100%; visibility: hidden;"
+                            id="conteudo">Insira um email.</p>
+
+                        <label htmlFor="">Senha</label>
+                        <input type="password" id="senhaFormulario" class="estiloform" />
+                        <p style="font-size: 10px; color: red; height: 2.5%; width: 100%; visibility: hidden;"
+                            id="conteudo2">Senha incorreta.</p>
                     </form>
-                        <button onclick="entrar()" id="botao-acessar">ACESSAR</button>
+                    <button onclick="entrar()" id="botao-acessar">ACESSAR</button>
                 </div>
             </div>
         </div>
@@ -45,70 +50,56 @@
 
 <script>
 
-    function entrar()
-    {   
+    function entrar() {
         var email = emailFormulario.value
         var senha = senhaFormulario.value
         var frase = '@'
-        
-        if(email === '' || email.indexOf(frase) === -1 || senha === ''){
-            alert('dados invalidos.Por favor preencha o registro')
-            // finalizarAguardar();
-            return false;
+
+        if (email === '' || email.indexOf(frase) === -1 || senha === '') {
+            conteudo.style.visibility = 'visible'
+            conteudo2.style.visibility = 'visible'
         }
-        console.log("FORM LOGIN: ", email);
-        console.log("FORM SENHA: ", senha);
+        else {
+            fetch("/usuarios/autenticar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    emailServer: email,
+                    senhaServer: senha
+                })
+            }).then(function (resposta) {
+                console.log("ESTOU NO THEN DO entrar()!")
 
-        fetch("/usuarios/autenticar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                emailServer: email,
-                senhaServer: senha
+                if (resposta.ok) {
+                    console.log(resposta);
+
+                    resposta.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+                        sessionStorage.EMAIL_USUARIO = json[0].emailVar;
+                        sessionStorage.NOME_USUARIO = json[0].nomeVar;
+                        sessionStorage.ID_USUARIO = json[0].id;
+                        console.log(sessionStorage);
+                        // sessionStorage.AQUARIOS = JSON.stringify(json.salas)
+
+                        setTimeout(function () {
+                            window.location = "./dashboard/salas.html";
+                        }, 1000); // apenas para exibir o loading
+
+                    });
+
+                } else {
+
+                    console.log("Houve um erro ao tentar realizar o login!");
+
+                    resposta.text().then(texto => {
+                        console.error(texto);
+                        // finalizarAguardar(texto);
+                    });
+                }
             })
-        }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!")
-
-            if (resposta.ok) {
-                console.log(resposta);
-
-                resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-                    sessionStorage.EMAIL_USUARIO = json[0].emailVar;
-                    sessionStorage.NOME_USUARIO = json[0].nomeVar;
-                    sessionStorage.ID_USUARIO = json[0].id;
-                    console.log(sessionStorage);
-                    // sessionStorage.AQUARIOS = JSON.stringify(json.salas)
-
-                    setTimeout(function () {
-                        window.location = "./dashboard/salas.html";
-                    }, 1000); // apenas para exibir o loading
-
-                });
-
-            } else {
-
-                console.log("Houve um erro ao tentar realizar o login!");
-
-                resposta.text().then(texto => {
-                    console.error(texto);
-                    // finalizarAguardar(texto);
-                });
-            }
-
-        // }).catch(function (erro) {
-        //     console.log(erro);
-        })
-
-        // return false;
+        }
     }
-    
-
-    // function sumirMensagem() {
-    //     cardErro.style.display = "none"
-    // }
-
 </script>
