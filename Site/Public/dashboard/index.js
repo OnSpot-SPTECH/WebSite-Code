@@ -99,6 +99,7 @@ new Chart(ctx3, {
 
 var sala = 0;
 var primeiroRack = 0;
+var segundoRack = 0;
 function fecharSalas() {
 
     document.getElementById("inputSalas").style.display = 'none'
@@ -140,8 +141,8 @@ function rack1() {
 }
 function rack2() {
 
-    if (primeiroRack == 0) {
-        primeiroRack++;
+    if (segundoRack == 0) {
+        segundoRack++;
         rackNav2.innerHTML = `<img src="./img/minus.png" alt=""></img>`
         document.getElementById("rackUm").style.display = 'none';
         document.getElementById("rackTres").style.display = 'none';
@@ -155,7 +156,7 @@ function rack2() {
         document.getElementById("rackDois").style.height = '30%';
         document.getElementById("rackMain2").style.height = '100%';
         document.getElementById("graficosRacks2").style.display = 'none';
-        primeiroRack--;
+        segundoRack--;
     }
 }
 function rack3() {

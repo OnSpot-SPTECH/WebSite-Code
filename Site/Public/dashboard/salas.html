@@ -352,8 +352,8 @@
 				scales: {
 					yAxes: [{
 						ticks: {
-							min: 20,
-							max: 80
+							min: 0,
+							max: 100
 						}
 					}],
 				}
@@ -368,7 +368,7 @@
 					yAxes: [{
 						ticks: {
 							min: 0,
-							max: 60
+							max: 100
 						}
 					}],
 				}
@@ -383,7 +383,7 @@
 					yAxes: [{
 						ticks: {
 							min: 0,
-							max: 60
+							max: 100
 						}
 					}],
 				}
@@ -429,77 +429,71 @@
 
 
 
-					if (novoRegistro[0].temperatura < 40 && novoRegistro[0].temperatura > 36) {
+					if (novoRegistro[0].temperatura >= 35) {
 						document.getElementById("img1Sala1").src = "./img/tem_mt_alta.png"
 					}
-					else if (novoRegistro[0].temperatura <= 35 && novoRegistro[0].temperatura > 26) {
+					else if (novoRegistro[0].temperatura <= 34.9 && novoRegistro[0].temperatura >= 25) {
 						document.getElementById("img1Sala1").src = "./img/temp_alta.png"
 					}
-					else if (novoRegistro[0].temperatura <= 25 && novoRegistro[0].temperatura > 19) {
+					else if (novoRegistro[0].temperatura <= 24.9 && novoRegistro[0].temperatura >= 18) {
 						document.getElementById("img1Sala1").src = "./img/temp_controlada.png"
 					}
-					else if (novoRegistro[0].temperatura <= 18 && novoRegistro[0].temperatura > 11) {
+					else if (novoRegistro[0].temperatura <= 17.9 && novoRegistro[0].temperatura >= 10) {
 						document.getElementById("img1Sala1").src = "./img/temp_baixa.png"
 					}
-					else if (novoRegistro[0].temperatura >= 10) {
+					else if (novoRegistro[0].temperatura <= 9.9) {
 						document.getElementById("img1Sala1").src = "./img/temp_mt_baixa.png"
 					}
 
 
-					if (novoRegistro[0].umidade <= 80 && novoRegistro[0].umidade > 60) {
+					if (novoRegistro[0].umidade >= 80) {
 						document.getElementById("img2Sala1").src = "./img/umidade_mt_alta.png"
 					}
-					else if (novoRegistro[0].umidade <= 60 && novoRegistro[0].umidade > 40) {
+					else if (novoRegistro[0].umidade <= 79 && novoRegistro[0].umidade >= 60) {
 						document.getElementById("img2Sala1").src = "./img/umidade_alta.png"
 					}
-					else if (novoRegistro[0].umidade <= 40 && novoRegistro[0].umidade > 30) {
+					else if (novoRegistro[0].umidade <= 59 && novoRegistro[0].umidade >= 40) {
 						document.getElementById("img2Sala1").src = "./img/umidade_controlada.png"
 					}
-					else if (novoRegistro[0].umidade <= 30 && novoRegistro[0].umidade > 20) {
+					else if (novoRegistro[0].umidade <= 39 && novoRegistro[0].umidade >= 21) {
 						document.getElementById("img2Sala1").src = "./img/umidade_baixa.png"
 					}
-					else if (novoRegistro[0].umidade >= 20) {
+					else if (novoRegistro[0].umidade <= 20) {
 						document.getElementById("img2Sala1").src = "./img/umidade_mt_baixa.png"
 					}
 
 
-
-
-
-
-
-
-					if (novoRegistro[0].temperatura < 40 && novoRegistro[0].temperatura > 30) {
+					if (novoRegistro[0].temperatura >= 35) {
 						document.getElementById("img3Sala2").src = "./img/tem_mt_alta.png"
 					}
-					else if (novoRegistro[0].temperatura <= 30 && novoRegistro[0].temperatura > 20) {
+					else if (novoRegistro[0].temperatura <= 34.9 && novoRegistro[0].temperatura >= 25) {
 						document.getElementById("img3Sala2").src = "./img/temp_alta.png"
 					}
-					else if (novoRegistro[0].temperatura <= 20 && novoRegistro[0].temperatura > 15) {
+					else if (novoRegistro[0].temperatura <= 24.9 && novoRegistro[0].temperatura >= 18) {
 						document.getElementById("img3Sala2").src = "./img/temp_controlada.png"
 					}
-					else if (novoRegistro[0].temperatura <= 15 && novoRegistro[0].temperatura > 5) {
+					else if (novoRegistro[0].temperatura <= 17.9 && novoRegistro[0].temperatura >= 10) {
 						document.getElementById("img3Sala2").src = "./img/temp_baixa.png"
 					}
-					else if (novoRegistro[0].temperatura >= 5) {
+					else if (novoRegistro[0].temperatura <= 9.9) {
 						document.getElementById("img3Sala2").src = "./img/temp_mt_baixa.png"
 					}
 
 
 
-					if (novoRegistro[0].umidade <= 80 && novoRegistro[0].umidade > 60) {
+					if (novoRegistro[0].umidade >= 80) {
 						document.getElementById("img4Sala2").src = "./img/umidade_mt_alta.png"
 					}
-					else if (novoRegistro[0].umidade <= 60 && novoRegistro[0].umidade > 40) {
+					else if (novoRegistro[0].umidade <= 79 && novoRegistro[0].umidade >= 60) {
 						document.getElementById("img4Sala2").src = "./img/umidade_alta.png"
 					}
-					else if (novoRegistro[0].umidade <= 40 && novoRegistro[0].umidade > 30) {
+					else if (novoRegistro[0].umidade <= 59 && novoRegistro[0].umidade >= 40) {
 						document.getElementById("img4Sala2").src = "./img/umidade_controlada.png"
 					}
-					else if (novoRegistro[0].umidade <= 30 && novoRegistro[0].umidade > 20) {
+					else if (novoRegistro[0].umidade <= 39 && novoRegistro[0].umidade >= 21) {
 						document.getElementById("img4Sala2").src = "./img/umidade_baixa.png"
 					}
-					else if (novoRegistro[0].umidade >= 20) {
+					else if (novoRegistro[0].umidade <= 20) {
 						document.getElementById("img4Sala2").src = "./img/umidade_mt_baixa.png"
 					}
 
@@ -509,37 +503,36 @@
 
 
 
-					if (novoRegistro[0].temperatura < 40 && novoRegistro[0].temperatura > 30) {
+					if (novoRegistro[0].temperatura >= 35) {
 						document.getElementById("img5Sala3").src = "./img/tem_mt_alta.png"
 					}
-					else if (novoRegistro[0].temperatura <= 30 && novoRegistro[0].temperatura > 20) {
+					else if (novoRegistro[0].temperatura <= 34.9 && novoRegistro[0].temperatura >= 25) {
 						document.getElementById("img5Sala3").src = "./img/temp_alta.png"
 					}
-					else if (novoRegistro[0].temperatura <= 20 && novoRegistro[0].temperatura > 15) {
+					else if (novoRegistro[0].temperatura <= 24.9 && novoRegistro[0].temperatura >= 18) {
 						document.getElementById("img5Sala3").src = "./img/temp_controlada.png"
 					}
-					else if (novoRegistro[0].temperatura <= 15 && novoRegistro[0].temperatura > 5) {
+					else if (novoRegistro[0].temperatura <= 17.9 && novoRegistro[0].temperatura >= 10) {
 						document.getElementById("img5Sala3").src = "./img/temp_baixa.png"
 					}
-					else if (novoRegistro[0].temperatura >= 5) {
+					else if (novoRegistro[0].temperatura <= 9.9) {
 						document.getElementById("img5Sala3").src = "./img/temp_mt_baixa.png"
 					}
 
 
-
-					if (novoRegistro[0].umidade <= 80 && novoRegistro[0].umidade > 60) {
+					if (novoRegistro[0].umidade >= 80) {
 						document.getElementById("img6Sala3").src = "./img/umidade_mt_alta.png"
 					}
-					else if (novoRegistro[0].umidade <= 60 && novoRegistro[0].umidade > 40) {
+					else if (novoRegistro[0].umidade <= 79 && novoRegistro[0].umidade >= 60) {
 						document.getElementById("img6Sala3").src = "./img/umidade_alta.png"
 					}
-					else if (novoRegistro[0].umidade <= 40 && novoRegistro[0].umidade > 30) {
+					else if (novoRegistro[0].umidade <= 59 && novoRegistro[0].umidade >= 40) {
 						document.getElementById("img6Sala3").src = "./img/umidade_controlada.png"
 					}
-					else if (novoRegistro[0].umidade <= 30 && novoRegistro[0].umidade > 20) {
+					else if (novoRegistro[0].umidade <= 39 && novoRegistro[0].umidade >= 21) {
 						document.getElementById("img6Sala3").src = "./img/umidade_baixa.png"
 					}
-					else if (novoRegistro[0].umidade >= 20) {
+					else if (novoRegistro[0].umidade <= 20) {
 						document.getElementById("img6Sala3").src = "./img/umidade_mt_baixa.png"
 					}
 
@@ -549,39 +542,40 @@
 
 
 
-					if (novoRegistro[0].temperatura < 40 && novoRegistro[0].temperatura > 30) {
+					if (novoRegistro[0].temperatura >= 35) {
 						document.getElementById("img7Sala4").src = "./img/tem_mt_alta.png"
 					}
-					else if (novoRegistro[0].temperatura <= 30 && novoRegistro[0].temperatura > 20) {
+					else if (novoRegistro[0].temperatura <= 34.9 && novoRegistro[0].temperatura >= 25) {
 						document.getElementById("img7Sala4").src = "./img/temp_alta.png"
 					}
-					else if (novoRegistro[0].temperatura <= 20 && novoRegistro[0].temperatura > 15) {
+					else if (novoRegistro[0].temperatura <= 24.9 && novoRegistro[0].temperatura >= 18) {
 						document.getElementById("img7Sala4").src = "./img/temp_controlada.png"
 					}
-					else if (novoRegistro[0].temperatura <= 15 && novoRegistro[0].temperatura > 5) {
+					else if (novoRegistro[0].temperatura <= 17.9 && novoRegistro[0].temperatura >= 10) {
 						document.getElementById("img7Sala4").src = "./img/temp_baixa.png"
 					}
-					else if (novoRegistro[0].temperatura >= 5) {
+					else if (novoRegistro[0].temperatura <= 9.9) {
 						document.getElementById("img7Sala4").src = "./img/temp_mt_baixa.png"
 					}
 
 
 
-					if (novoRegistro[0].umidade <= 80 && novoRegistro[0].umidade > 60) {
+					if (novoRegistro[0].umidade >= 80) {
 						document.getElementById("img8Sala4").src = "./img/umidade_mt_alta.png"
 					}
-					else if (novoRegistro[0].umidade <= 60 && novoRegistro[0].umidade > 40) {
+					else if (novoRegistro[0].umidade <= 79 && novoRegistro[0].umidade >= 60) {
 						document.getElementById("img8Sala4").src = "./img/umidade_alta.png"
 					}
-					else if (novoRegistro[0].umidade <= 40 && novoRegistro[0].umidade > 30) {
+					else if (novoRegistro[0].umidade <= 59 && novoRegistro[0].umidade >= 40) {
 						document.getElementById("img8Sala4").src = "./img/umidade_controlada.png"
 					}
-					else if (novoRegistro[0].umidade <= 30 && novoRegistro[0].umidade > 20) {
+					else if (novoRegistro[0].umidade <= 39 && novoRegistro[0].umidade >= 21) {
 						document.getElementById("img8Sala4").src = "./img/umidade_baixa.png"
 					}
-					else if (novoRegistro[0].umidade >= 20) {
+					else if (novoRegistro[0].umidade <= 20) {
 						document.getElementById("img8Sala4").src = "./img/umidade_mt_baixa.png"
 					}
+
 
 
 
@@ -641,6 +635,8 @@
 
 	var sala = 0;
 	var primeiroRack = 0;
+	var primeiroRack = 0;
+
 	function fecharSalas() {
 		if (sala == 0) {
 

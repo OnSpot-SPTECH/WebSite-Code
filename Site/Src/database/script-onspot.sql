@@ -2,7 +2,7 @@ CREATE DATABASE OnSpot2;
 USE OnSpot2;
 
 SELECT * FROM empresa;
-SELECT * FROM usuario;
+SELECT * FROM registro;
 
 -- TABELA PARA CONTROLE E CADASTRO DE EMPRESAS CLIENTES
 CREATE TABLE Empresa(
@@ -96,6 +96,9 @@ CONSTRAINT fk_Registro_Sensor FOREIGN KEY (fkRegistroSensor) REFERENCES Sensor(i
 );
 
 SELECT * FROM Registro;
+
+INSERT INTO registro (temperatura, umidade)VALUES
+(10, 10);
 
 create user 'insertOnSpot'@'10.18.32.236' identified by 'OnSpotUser';
 
