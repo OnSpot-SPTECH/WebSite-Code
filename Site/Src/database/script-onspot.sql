@@ -3,6 +3,7 @@ USE OnSpot2;
 
 SELECT * FROM empresa;
 SELECT * FROM registro;
+SELECT * FROM usuario;
 
 -- TABELA PARA CONTROLE E CADASTRO DE EMPRESAS CLIENTES
 CREATE TABLE Empresa(
@@ -106,7 +107,77 @@ grant all privileges on OnSpot2.* to 'insertOnSpot'@'10.18.32.236';
 
 flush privileges;
 
+INSERT INTO registro (temperatura, umidade)VALUES
+(70, 90),
+(70, 90),
+(70, 90),
+(70, 90),
+(70, 90),
+(70, 90),
+(70, 90),
+(70, 90),
+(70, 90),
+(70, 90),
+(70, 90),
+(70, 90),
+(70, 90),
+(70, 90),
+(70, 90),
+(70, 90),
+(70, 90);
 
+INSERT INTO registro (temperatura, umidade) VALUES
+(25, 63),
+(25, 63),
+(25, 63),
+(25, 63),
+(25, 63),
+(25, 63),
+(25, 63),
+(25, 63),
+(25, 63),
+(25, 63),
+(25, 63),
+(25, 63),
+(25, 63),
+(25, 63),
+(25, 63),
+(25, 63),
+(25, 63),
+(25, 63);
 
+INSERT INTO registro (temperatura, umidade) VALUES
+(900, 0),
+(900, 0),
+(900, 0),
+(900, 0),
+(900, 0),
+(900, 0),
+(900, 0),
+(900, 0),
+(900, 0),
+(900, 0),
+(900, 0),
+(900, 0),
+(900, 0),
+(900, 0),
+(900, 0),
+(900, 0),
+(900, 0),
+(900, 0),
+(900, 0),
+(900, 0);
 
-
+INSERT INTO registro (temperatura, umidade) VALUES
+(17, 45),
+(17, 45),
+(17, 45),
+(17, 45),
+(17, 45),
+(17, 45),
+(17, 45),
+(17, 45),
+(17, 45),
+(17, 45),
+(17, 45),
+(17, 45);
