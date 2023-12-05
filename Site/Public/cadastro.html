@@ -24,22 +24,38 @@
                     <div>
                         <form class="inputs-cadastro" action="">
                             <label htmlfor="">Nome da empresa</label>
-                            <input id="nomeEmpresa" class="estilo-form" type="text"><br>
+                            <input id="nomeEmpresa" class="estilo-form" type="text">
+                            <p style="font-size: 10px; color: red; height: 2.5%; width: 100%;visibility: hidden;"
+                                id="conteudo">Insira o nome da empresa.</p>
+
                             <label htmlfor="">CNPJ</label>
-                            <input id="CNPJOTO" class="estilo-form" placeholder=" XX.XXX.XXX/0001-XX" type="text"><br>
+                            <input id="CNPJOTO" class="estilo-form" placeholder=" XX.XXX.XXX/0001-XX" type="text">
+                            <p style="font-size: 10px; color: red; height: 2.5%; width: 100%;visibility: hidden;"
+                                id="conteudo2">Insira um CNPJ válido.</p>
+
                             <label htmlfor="">Razão social</label>
                             <input id="razaoSocial" class="estilo-form" type="text">
+                            <p style="font-size: 10px; color: red; height: 2.5%; width: 100%;visibility: hidden;"
+                                id="conteudo3">Insira a Razão social da empresa.</p>
                         </form>
                     </div>
 
                     <div>
                         <form class="inputs-cadastro" action="">
                             <label htmlfor="">CEP</label>
-                            <input id="CEPregistro" class="estilo-form" placeholder="XXXXX-XXX" type="text"><br>
+                            <input id="CEPregistro" class="estilo-form" placeholder="XXXXX-XXX" type="text">
+                            <p style="font-size: 10px; color: red; height: 2.5%; width: 100%;visibility: hidden;"
+                                id="conteudo4">Insira um CEP válido.</p>
+
                             <label htmlfor="">Telefone</label>
-                            <input id="tel" class="estilo-form" placeholder="(XX)XXXXX-XXXX" type="text"><br>
+                            <input id="tel" class="estilo-form" placeholder="(XX)XXXXX-XXXX" type="text">
+                            <p style="font-size: 10px; color: red; height: 2.5%; width: 100%;visibility: hidden;"
+                                id="conteudo5">Insira um telefone válido.</p>
+
                             <label htmlfor="">Email</label>
                             <input id="emailRegistro" class="estilo-form" type="text">
+                            <p style="font-size: 10px; color: red; height: 2.5%; width: 100%;visibility: hidden;"
+                                id="conteudo6">Insira o email da empresa.</p>
                         </form>
                     </div>
 
@@ -53,74 +69,82 @@
 
 </html>
 
+<script src="./js/sessao.js"></script>
 <script>
 
-    function cadastrar() {
-        aguardar();
 
-        var nomeVar = nomeEmpresa.value;
-        var cnpjVar = CNPJOTO.value
-        var razaoVar = razaoSocial.value;
-        var cepVar = CEPregistro.value;
-        var telefoneVar = tel.value;
-        var emailVar = emailRegistro.value;
+    function cadastrar() {
+
+        var nome = nomeEmpresa.value;
+        var cnpj = CNPJOTO.value
+        var razao = razaoSocial.value;
+        var cep = CEPregistro.value;
+        var telefone = tel.value;
+        var email = emailRegistro.value;
         var frase = '@'
 
-        if (nome === '' || CNPJ <= 0 || razao === '' || cep <= 0 || telefone <= 0 || email === '' || email.indexOf(frase) === -1) {
-            alert('dados invalidos.Por favor preencha o registro')
+        if (nome === '' && cnpj === '' && razao === '' && cep === '' && telefone === '' && email === '') {
+            conteudo.style.visibility = 'visible'
+            conteudo2.style.visibility = 'visible'
+            conteudo3.style.visibility = 'visible'
+            conteudo4.style.visibility = 'visible'
+            conteudo5.style.visibility = 'visible'
+            conteudo6.style.visibility = 'visible'
+        }
+        else if (email.indexOf(frase) === -1)
+            conteudo6.style.visibility = 'visible' //email
+        else if (cnpj <= 0)
+            conteudo2.style.visibility = 'visible' //CPF
+        else if (cep <= 0)
+            conteudo4.style.visibility = 'visible' //CPF
+        else if (telefone < 11)
+            conteudo5.style.visibility = 'visible' //CPF
+        else {
+            // Enviando o valor da nova input
+            fetch("/usuarios/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    nomeServer: nomeVar,
+                    cnpjServer: cnpjVar,
+                    razaoServer: razaoVar,
+                    cepServer: cepVar,
+                    telefoneServer: telefoneVar,
+                    emailServer: emailVar,
+                    senhaServer: senhaVar,
+                    // empresaServer: empresaVar
+                }),
+            })
+                .then(function (resposta) {
+                    console.log("resposta: ", resposta);
 
-            finalizarAguardar();
+                    if (resposta.ok) {
+                        cardErro.style.display = "block";
+
+                        mensagem_erro.innerHTML =
+                            "Cadastro realizado com sucesso! Redirecionando para tela de Cadastro do usuario...";
+
+                        setTimeout(() => {
+                            window.location = "./cadastro2.html";
+                        }, "2000");
+
+                        limparFormulario();
+                        finalizarAguardar();
+                    } else {
+                        throw "Houve um erro ao tentar realizar o cadastro!";
+                    }
+                })
+                .catch(function (resposta) {
+                    console.log(`#ERRO: ${resposta}`);
+                    finalizarAguardar();
+                });
+
             return false;
         }
-        else {
-            window.location.href = './cadastro2.html'
-            setInterval(sumirMensagem, 5000);
-        }
-
-        // Enviando o valor da nova input
-        fetch("/usuarios/cadastrar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                // crie um atributo que recebe o valor recuperado aqui
-                // Agora vá para o arquivo routes/usuario.js
-                nomeServer: nomeVar,
-                cnpjServer: cnpjVar,
-                razaoServer: razaoVar,
-                cepServer: cepVar,
-                telefoneServer: telefoneVar,
-                emailServer: emailVar,
-                senhaServer: senhaVar,
-                // empresaServer: empresaVar
-            }),
-        })
-            .then(function (resposta) {
-                console.log("resposta: ", resposta);
-
-                if (resposta.ok) {
-                    cardErro.style.display = "block";
-
-                    mensagem_erro.innerHTML =
-                        "Cadastro realizado com sucesso! Redirecionando para tela de Cadastro do usuario...";
-
-                    setTimeout(() => {
-                        window.location = "./cadastro2.html";
-                    }, "2000");
-
-                    limparFormulario();
-                    finalizarAguardar();
-                } else {
-                    throw "Houve um erro ao tentar realizar o cadastro!";
-                }
-            })
-            .catch(function (resposta) {
-                console.log(`#ERRO: ${resposta}`);
-                finalizarAguardar();
-            });
-
-        return false;
     }
 
     function listar() {

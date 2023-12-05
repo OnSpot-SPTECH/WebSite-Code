@@ -35,6 +35,7 @@ body{
     align-items: center;
     text-align: center;
     margin: auto;
+    margin-top: 50px;
 }
 #div-logo-texto h1{
     font-size: 35px;
@@ -96,6 +97,7 @@ button{
     outline: none;
     font-size: 20px;
 }
+
 #btn-continuar:hover{
     background-color: #f9f9f9;
     color: #7b21c1;
