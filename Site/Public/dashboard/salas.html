@@ -335,6 +335,10 @@
 			labels.push(registro.data_hora);
 			dados.datasets[1].data.push(registro.umidade);
 			dados.datasets[0].data.push(registro.temperatura);
+			dados2.datasets[1].data.push(registro.umidade);
+			dados2.datasets[0].data.push(registro.temperatura);
+			dados3.datasets[1].data.push(registro.umidade);
+			dados3.datasets[0].data.push(registro.temperatura);
 			console.dir("inseriu na plotar")
 		}
 
@@ -595,6 +599,7 @@
 						console.log("Horário do último dado capturado:")
 						console.log(dados.labels[dados.labels.length - 1])
 						console.log("---------------------------------------------------------------")
+
 					} else {
 						// tirando e colocando valores no gráfico
 						dados.labels.shift(); // apagar o primeiro new Date(registro.dataHora).toLocaleTimeString()
