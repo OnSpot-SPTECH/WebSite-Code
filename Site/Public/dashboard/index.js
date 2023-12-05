@@ -178,3 +178,25 @@ function rack3() {
         primeiroRack--;
     }
 }
+
+
+var sala2 = 0;
+var primeiroRack2 = 0;
+function fecharSalas2() {
+
+    if (sala2 == 0) {
+        
+        document.querySelector('.main_sala').style.display = 'flex';
+        document.querySelector('.main_salas').style.display = 'none';
+        document.querySelector('.salas_titulo').style.display = 'none';
+        headerTitulo.innerHTML = 'Sala 2';
+        sala2++;
+    } else {
+        document.querySelector('.main_sala').style.display = 'none';
+        document.querySelector('.main_salas').style.display = 'flex';
+        document.querySelector('.salas_titulo').style.display = 'flex';
+        headerTitulo.innerHTML = 'Salas';
+        sala2--;
+    }
+}
+f

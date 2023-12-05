@@ -45,9 +45,7 @@
 			</section> -->
 			<div class="tituloInput">
 				<span id="salasTitulo" class="salas_titulo">Clique na sala desejada</span>
-				<div class="input-container">
-					<input type="text" id="inputSalas" class="sala-input" placeholder="Sua sala">
-				</div>
+				
 			</div>
 			<section id="salas" class="main_salas">
 				<div onclick="fecharSalas()" id="salaUm" class="salas">
@@ -57,21 +55,21 @@
 						<img id="img2Sala1" src="">
 					</div>
 				</div>
-				<div id="salaDois" class="salas">
+				<div onclick="fecharSalas2()" id="salaDois" class="salas">
 					Sala 2
 					<div class="img-alert">
 						<img id="img3Sala2" src="">
 						<img id="img4Sala2" src="">
 					</div>
 				</div>
-				<div id="salaTres" class="salas">
+				<div onclick="fecharSalas3()" id="salaTres" class="salas">
 					Sala 3
 					<div class="img-alert">
 						<img id="img5Sala3" src="">
 						<img id="img6Sala3" src="">
 					</div>
 				</div>
-				<div id="salaQuatro" class="salas">
+				<div onclick="fecharSalas4()" id="salaQuatro" class="salas">
 					Sala 4
 					<div class="img-alert">
 						<img id="img7Sala4" src="">
@@ -88,7 +86,7 @@
 							<div class="rack_nav" onclick="rack1()" id="rackNav1">
 								<img src="./img/plus.png" alt="">
 							</div>
-							<div class="square square_umi">
+							<!-- <div class="square square_umi">
 								<div class="circle circle-umi">
 									<div class="text">
 										40%
@@ -107,7 +105,7 @@
 								<div class="text2">
 									<p>Temperatura</p>
 								</div>
-							</div>
+							</div> -->
 						</div>
 						<div class="var_Sensores" id="varSensores">
 							Temperatura
@@ -127,7 +125,7 @@
 							<div class="rack_nav" onclick="rack2()" id="rackNav2">
 								<img src="./img/plus.png" alt="">
 							</div>
-							<div class="square square_umi">
+							<!-- <div class="square square_umi">
 								<div class="circle circle-umi">
 									<div class="text">
 										40%
@@ -146,7 +144,7 @@
 								<div class="text2">
 									<p>Temperatura</p>
 								</div>
-							</div>
+							</div> -->
 						</div>
 						<div class="var_Sensores" id="varSensores2">
 							Temperatura
@@ -166,7 +164,7 @@
 							<div class="rack_nav" onclick="rack3()" id="rackNav3">
 								<img src="./img/plus.png" alt="">
 							</div>
-							<div class="square square_umi">
+							<!-- <div class="square square_umi">
 								<div class="circle circle-umi">
 									<div class="text">
 										40%
@@ -185,7 +183,7 @@
 								<div class="text2">
 									<p>Temperatura</p>
 								</div>
-							</div>
+							</div> -->
 						</div>
 						<div class="graficos_Racks" id="graficosRacks3">
 							<div class="grafico_Rack" id="graficoRack3">
@@ -722,6 +720,55 @@
 			primeiroRack--;
 		}
 	}
-
-
+var sala2 = 0;
+function fecharSalas2() {
+    if (sala2 == 0) {
+        
+        document.querySelector('.main_sala').style.display = 'flex';
+        document.querySelector('.main_salas').style.display = 'none';
+        document.querySelector('.salas_titulo').style.display = 'none';
+        headerTitulo.innerHTML = 'Sala 2';
+        sala2++;
+    } else {
+        document.querySelector('.main_sala').style.display = 'none';
+        document.querySelector('.main_salas').style.display = 'flex';
+        document.querySelector('.salas_titulo').style.display = 'flex';
+        headerTitulo.innerHTML = 'Salas';
+        sala2--;
+    }
+}
+var sala3 = 0;
+function fecharSalas3() {
+    if (sala3 == 0) {
+        
+        document.querySelector('.main_sala').style.display = 'flex';
+        document.querySelector('.main_salas').style.display = 'none';
+        document.querySelector('.salas_titulo').style.display = 'none';
+        headerTitulo.innerHTML = 'Sala 3';
+        sala3++;
+    } else {
+        document.querySelector('.main_sala').style.display = 'none';
+        document.querySelector('.main_salas').style.display = 'flex';
+        document.querySelector('.salas_titulo').style.display = 'flex';
+        headerTitulo.innerHTML = 'Salas';
+        sala3--;
+    }
+}
+var sala4 = 0;
+function fecharSalas4() {
+    if (sala4 == 0) {
+        
+        document.querySelector('.main_sala').style.display = 'flex';
+        document.querySelector('.main_salas').style.display = 'none';
+        document.querySelector('.salas_titulo').style.display = 'none';
+        headerTitulo.innerHTML = 'Sala 4';
+        sala4++;
+    } else {
+        document.querySelector('.main_sala').style.display = 'none';
+        document.querySelector('.main_salas').style.display = 'flex';
+        document.querySelector('.salas_titulo').style.display = 'flex';
+        headerTitulo.innerHTML = 'Salas';
+        sala2--;
+    }
+}
 </script>
